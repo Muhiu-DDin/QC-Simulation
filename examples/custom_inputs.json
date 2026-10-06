@@ -1,0 +1,7 @@
+{
+  "cases": [
+    {"id":"custom-performance","kind":"xbar","title":"API response times","inputs":{"n":5,"observations":[[101,99,102,98,100],[100,103,99,101,102],[98,100,101,99,102],[101,100,102,99,98]],"unit":"milliseconds"},"interpretation":"Illustrative input only; replace with your real measurements."},
+    {"id":"custom-failures","kind":"p","title":"Failed software test runs","inputs":{"n":100,"p":0.02,"counts":[1,2,0,3,2,1,4,2,0,1]},"interpretation":"Each subgroup consists of 100 independent test outcomes. This is illustrative data."},
+    {"id":"custom-sampling","kind":"acceptance","title":"Acceptance plan","inputs":{"N":1000,"n":100,"c":1,"p":0.02,"risk":"consumer","model":"binomial"}}
+  ]
+}

@@ -1,0 +1,2330 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "SC10-1a",
+      "kind": "xbar",
+      "page": 477,
+      "pdf_page": 492,
+      "title": "Control limits",
+      "inputs": {
+        "n": 9,
+        "mean": 26.7,
+        "rbar": 5.3
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-3a",
+      "kind": "range",
+      "page": 484,
+      "pdf_page": 499,
+      "title": "Control limits",
+      "inputs": {
+        "n": 9,
+        "mean": 26.7,
+        "rbar": 5.3
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-1b",
+      "kind": "xbar",
+      "page": 477,
+      "pdf_page": 492,
+      "title": "Control limits",
+      "inputs": {
+        "n": 17,
+        "mean": 138.6,
+        "rbar": 15.1
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-3b",
+      "kind": "range",
+      "page": 484,
+      "pdf_page": 499,
+      "title": "Control limits",
+      "inputs": {
+        "n": 17,
+        "mean": 138.6,
+        "rbar": 15.1
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-1c",
+      "kind": "xbar",
+      "page": 477,
+      "pdf_page": 492,
+      "title": "Control limits",
+      "inputs": {
+        "n": 4,
+        "mean": 84.2,
+        "rbar": 9.6
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-3c",
+      "kind": "range",
+      "page": 484,
+      "pdf_page": 499,
+      "title": "Control limits",
+      "inputs": {
+        "n": 4,
+        "mean": 84.2,
+        "rbar": 9.6
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-1d",
+      "kind": "xbar",
+      "page": 477,
+      "pdf_page": 492,
+      "title": "Control limits",
+      "inputs": {
+        "n": 22,
+        "mean": 8.1,
+        "rbar": 7.4
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-3d",
+      "kind": "range",
+      "page": 484,
+      "pdf_page": 499,
+      "title": "Control limits",
+      "inputs": {
+        "n": 22,
+        "mean": 8.1,
+        "rbar": 7.4
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-2",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Altoona tires",
+      "inputs": {
+        "n": 5,
+        "means": [
+          50.5,
+          49.7,
+          50,
+          50.7,
+          50.7,
+          50.6,
+          49.8,
+          51.1,
+          50.2,
+          50.4,
+          50.6,
+          50.7
+        ],
+        "ranges": [
+          1.1,
+          1.6,
+          1.8,
+          0.1,
+          0.9,
+          2.1,
+          0.3,
+          0.8,
+          2.3,
+          1.3,
+          2,
+          2.1
+        ],
+        "unit": "thousand miles"
+      },
+      "interpretation": "No points exceed mean-chart limits. The range chart must also be examined."
+    },
+    {
+      "id": "SC10-4",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Altoona tire variability",
+      "inputs": {
+        "n": 5,
+        "means": [
+          50.5,
+          49.7,
+          50,
+          50.7,
+          50.7,
+          50.6,
+          49.8,
+          51.1,
+          50.2,
+          50.4,
+          50.6,
+          50.7
+        ],
+        "ranges": [
+          1.1,
+          1.6,
+          1.8,
+          0.1,
+          0.9,
+          2.1,
+          0.3,
+          0.8,
+          2.3,
+          1.3,
+          2,
+          2.1
+        ],
+        "unit": "thousand miles"
+      },
+      "interpretation": "The book identifies cycling in ranges; absence of outliers alone does not establish control."
+    },
+    {
+      "id": "SC10-5a",
+      "kind": "p",
+      "page": 491,
+      "pdf_page": 506,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 144,
+        "p": 0.1
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-5b",
+      "kind": "p",
+      "page": 491,
+      "pdf_page": 506,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 60,
+        "p": 0.9
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-5c",
+      "kind": "p",
+      "page": 491,
+      "pdf_page": 506,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 125,
+        "p": 0.36
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-5d",
+      "kind": "p",
+      "page": 491,
+      "pdf_page": 506,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 48,
+        "p": 0.75
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-6",
+      "kind": "p",
+      "page": 491,
+      "pdf_page": 506,
+      "title": "Meals on Wheels",
+      "inputs": {
+        "n": 150,
+        "proportions": [
+          0.8933,
+          0.8133,
+          0.9533,
+          0.8867,
+          0.96,
+          0.8667,
+          0.98,
+          0.84,
+          0.9067000000000001,
+          0.8067,
+          0.88,
+          0.8667,
+          0.9667,
+          0.8533,
+          0.7867000000000001,
+          0.8933,
+          0.8933,
+          0.7867000000000001,
+          0.94,
+          0.94,
+          0.9933,
+          0.9533,
+          0.9467,
+          0.9267,
+          0.8133,
+          0.8933,
+          0.9933,
+          0.9067000000000001,
+          0.92,
+          0.88
+        ],
+        "attribute": "on time"
+      },
+      "interpretation": "Days 2, 10, 15, 18 and 25 are below LCL. High on-time days also exceed UCL statistically, although they are favorable. Investigate routes, traffic and driver training. Percentages are used as printed, without reconstructing counts."
+    },
+    {
+      "id": "SC10-7",
+      "kind": "pareto",
+      "page": 498,
+      "pdf_page": 513,
+      "title": "Northway component faults",
+      "inputs": {
+        "counts": {
+          "CPU": 25,
+          "Floppy disk drives": 106,
+          "Hard disk drive": 237,
+          "I/O ports": 36,
+          "Keyboard": 60,
+          "Monitor": 42,
+          "Power supply": 186,
+          "RAM memory": 30,
+          "ROM BIOS": 7,
+          "Video adapter": 47,
+          "Other": 163
+        }
+      },
+      "interpretation": "Prioritize hard-disk and power-supply vendors. Other remains last, as in the chapter convention."
+    },
+    {
+      "id": "SC10-8a",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 150,
+        "c": 1,
+        "N": 2000,
+        "p": 0.005,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-8b",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 150,
+        "c": 2,
+        "N": 2000,
+        "p": 0.005,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-8c",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 1,
+        "N": 2000,
+        "p": 0.005,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-8d",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 2,
+        "N": 2000,
+        "p": 0.005,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-9a",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 150,
+        "c": 1,
+        "N": 2000,
+        "p": 0.01,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-9b",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 150,
+        "c": 2,
+        "N": 2000,
+        "p": 0.01,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-9c",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 1,
+        "N": 2000,
+        "p": 0.01,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "SC10-9d",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 2,
+        "N": 2000,
+        "p": 0.01,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-12a",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Known standard error",
+      "inputs": {
+        "n": 12,
+        "mean": 16.4,
+        "se": 1.2
+      },
+      "interpretation": "The given 1.2 is sigma of the sample mean, not individual sigma. Do not divide it by sqrt(n) again."
+    },
+    {
+      "id": "10-12b",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Mean control limits",
+      "inputs": {
+        "n": 12,
+        "mean": 16.4,
+        "rbar": 7.6
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-12c",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Mean control limits",
+      "inputs": {
+        "n": 8,
+        "mean": 4.1,
+        "rbar": 1.3
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-12d",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Mean control limits",
+      "inputs": {
+        "n": 15,
+        "mean": 141.7,
+        "rbar": 18.6
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-13",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Wilson pistons",
+      "inputs": {
+        "n": 8,
+        "means": [
+          15.85,
+          15.95,
+          15.86,
+          15.84,
+          15.91,
+          15.81,
+          15.86,
+          15.84,
+          15.83,
+          15.83,
+          15.72,
+          15.96,
+          15.88,
+          15.84,
+          15.89
+        ],
+        "ranges": [
+          0.15,
+          0.17,
+          0.18,
+          0.16,
+          0.14,
+          0.21,
+          0.13,
+          0.22,
+          0.19,
+          0.21,
+          0.28,
+          0.12,
+          0.19,
+          0.22,
+          0.24
+        ],
+        "unit": "cm"
+      },
+      "interpretation": "Batch 11 is below LCL; batches 2 and 12 exceed UCL. Investigate tooling, setup and measurement; correct identified causes before changing the baseline."
+    },
+    {
+      "id": "10-19",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Wilson piston variability",
+      "inputs": {
+        "n": 8,
+        "means": [
+          15.85,
+          15.95,
+          15.86,
+          15.84,
+          15.91,
+          15.81,
+          15.86,
+          15.84,
+          15.83,
+          15.83,
+          15.72,
+          15.96,
+          15.88,
+          15.84,
+          15.89
+        ],
+        "ranges": [
+          0.15,
+          0.17,
+          0.18,
+          0.16,
+          0.14,
+          0.21,
+          0.13,
+          0.22,
+          0.19,
+          0.21,
+          0.28,
+          0.12,
+          0.19,
+          0.22,
+          0.24
+        ],
+        "unit": "cm"
+      },
+      "interpretation": "Review ranges together with the mean-chart signal at batch 11."
+    },
+    {
+      "id": "10-14",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Emergency response times",
+      "inputs": {
+        "n": 9,
+        "means": [
+          11.6,
+          17.4,
+          14.8,
+          13.8,
+          13.9,
+          22.7,
+          16.6,
+          9.5,
+          12.7,
+          17.7,
+          16.3,
+          10.5,
+          22.5,
+          12.6,
+          11.4,
+          16,
+          11,
+          13.3,
+          9.3,
+          21.5,
+          17.9
+        ],
+        "ranges": [
+          14.1,
+          19.1,
+          22.9,
+          18,
+          14.6,
+          23.7,
+          21,
+          12.6,
+          17,
+          12,
+          15.1,
+          22.1,
+          24.1,
+          21.3,
+          12.1,
+          21.1,
+          13.5,
+          20.3,
+          16.8,
+          20.7,
+          23.2
+        ],
+        "unit": "minutes"
+      },
+      "interpretation": "Saturdays are groups 6, 13 and 20. Demand is higher; review staffing and dispatch. Saturday ranges are high within each week. Recalculation below is justified by the assigned cause in the exercise."
+    },
+    {
+      "id": "10-14c",
+      "kind": "xbar",
+      "page": 478,
+      "pdf_page": 493,
+      "title": "Emergency service, Saturdays excluded",
+      "inputs": {
+        "n": 9,
+        "means": [
+          11.6,
+          17.4,
+          14.8,
+          13.8,
+          13.9,
+          16.6,
+          9.5,
+          12.7,
+          17.7,
+          16.3,
+          10.5,
+          12.6,
+          11.4,
+          16,
+          11,
+          13.3,
+          9.3,
+          17.9
+        ],
+        "ranges": [
+          14.1,
+          19.1,
+          22.9,
+          18,
+          14.6,
+          21,
+          12.6,
+          17,
+          12,
+          15.1,
+          22.1,
+          21.3,
+          12.1,
+          21.1,
+          13.5,
+          20.3,
+          16.8,
+          23.2
+        ],
+        "unit": "minutes",
+        "labels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "21"
+        ]
+      },
+      "interpretation": "Only known Saturday observations are excluded. All remaining means are within limits; continue checking for patterns."
+    },
+    {
+      "id": "10-20",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Emergency response times",
+      "inputs": {
+        "n": 9,
+        "means": [
+          11.6,
+          17.4,
+          14.8,
+          13.8,
+          13.9,
+          22.7,
+          16.6,
+          9.5,
+          12.7,
+          17.7,
+          16.3,
+          10.5,
+          22.5,
+          12.6,
+          11.4,
+          16,
+          11,
+          13.3,
+          9.3,
+          21.5,
+          17.9
+        ],
+        "ranges": [
+          14.1,
+          19.1,
+          22.9,
+          18,
+          14.6,
+          23.7,
+          21,
+          12.6,
+          17,
+          12,
+          15.1,
+          22.1,
+          24.1,
+          21.3,
+          12.1,
+          21.1,
+          13.5,
+          20.3,
+          16.8,
+          20.7,
+          23.2
+        ],
+        "unit": "minutes"
+      },
+      "interpretation": "Saturdays are groups 6, 13 and 20. Demand is higher; review staffing and dispatch. Saturday ranges are high within each week. Recalculation below is justified by the assigned cause in the exercise."
+    },
+    {
+      "id": "10-20c",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Emergency service, Saturdays excluded",
+      "inputs": {
+        "n": 9,
+        "means": [
+          11.6,
+          17.4,
+          14.8,
+          13.8,
+          13.9,
+          16.6,
+          9.5,
+          12.7,
+          17.7,
+          16.3,
+          10.5,
+          12.6,
+          11.4,
+          16,
+          11,
+          13.3,
+          9.3,
+          17.9
+        ],
+        "ranges": [
+          14.1,
+          19.1,
+          22.9,
+          18,
+          14.6,
+          21,
+          12.6,
+          17,
+          12,
+          15.1,
+          22.1,
+          21.3,
+          12.1,
+          21.1,
+          13.5,
+          20.3,
+          16.8,
+          23.2
+        ],
+        "unit": "minutes",
+        "labels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "21"
+        ]
+      },
+      "interpretation": "Only known Saturday observations are excluded. All remaining means are within limits; continue checking for patterns."
+    },
+    {
+      "id": "10-15",
+      "kind": "xbar",
+      "page": 479,
+      "pdf_page": 494,
+      "title": "Track ball bearings",
+      "inputs": {
+        "n": 5,
+        "observations": [
+          [
+            5.03,
+            5.06,
+            4.86,
+            4.9,
+            4.95
+          ],
+          [
+            4.97,
+            4.94,
+            5.09,
+            4.78,
+            4.88
+          ],
+          [
+            5.02,
+            4.98,
+            4.94,
+            4.95,
+            4.8
+          ],
+          [
+            4.92,
+            4.93,
+            4.9,
+            4.92,
+            4.96
+          ],
+          [
+            5.01,
+            4.99,
+            4.93,
+            5.06,
+            5.01
+          ],
+          [
+            5,
+            4.95,
+            5.1,
+            4.85,
+            4.91
+          ],
+          [
+            4.94,
+            4.91,
+            5.05,
+            5.07,
+            4.88
+          ],
+          [
+            5,
+            4.98,
+            5.05,
+            4.96,
+            4.97
+          ],
+          [
+            4.99,
+            5.01,
+            4.93,
+            5.1,
+            4.98
+          ],
+          [
+            5.03,
+            4.96,
+            4.92,
+            5.01,
+            4.93
+          ],
+          [
+            5.02,
+            4.88,
+            5,
+            4.98,
+            5.09
+          ],
+          [
+            5.09,
+            5.01,
+            5.13,
+            4.89,
+            5.02
+          ],
+          [
+            4.9,
+            4.93,
+            4.97,
+            4.98,
+            5.12
+          ],
+          [
+            5.04,
+            4.96,
+            5.15,
+            5.04,
+            5.02
+          ],
+          [
+            5.09,
+            4.9,
+            5.04,
+            5.19,
+            5.03
+          ],
+          [
+            5.1,
+            5.01,
+            5.04,
+            5.05,
+            5.02
+          ],
+          [
+            4.97,
+            5.1,
+            5.12,
+            4.92,
+            5.04
+          ],
+          [
+            5.01,
+            4.99,
+            5.06,
+            5.04,
+            5.12
+          ]
+        ],
+        "unit": "mm"
+      },
+      "interpretation": "Means show a rise over time, including a long sequence above the center line late in the series. Investigate tool drift; ranges alone may not signal it."
+    },
+    {
+      "id": "10-21",
+      "kind": "range",
+      "page": 486,
+      "pdf_page": 501,
+      "title": "Track ball bearings",
+      "inputs": {
+        "n": 5,
+        "observations": [
+          [
+            5.03,
+            5.06,
+            4.86,
+            4.9,
+            4.95
+          ],
+          [
+            4.97,
+            4.94,
+            5.09,
+            4.78,
+            4.88
+          ],
+          [
+            5.02,
+            4.98,
+            4.94,
+            4.95,
+            4.8
+          ],
+          [
+            4.92,
+            4.93,
+            4.9,
+            4.92,
+            4.96
+          ],
+          [
+            5.01,
+            4.99,
+            4.93,
+            5.06,
+            5.01
+          ],
+          [
+            5,
+            4.95,
+            5.1,
+            4.85,
+            4.91
+          ],
+          [
+            4.94,
+            4.91,
+            5.05,
+            5.07,
+            4.88
+          ],
+          [
+            5,
+            4.98,
+            5.05,
+            4.96,
+            4.97
+          ],
+          [
+            4.99,
+            5.01,
+            4.93,
+            5.1,
+            4.98
+          ],
+          [
+            5.03,
+            4.96,
+            4.92,
+            5.01,
+            4.93
+          ],
+          [
+            5.02,
+            4.88,
+            5,
+            4.98,
+            5.09
+          ],
+          [
+            5.09,
+            5.01,
+            5.13,
+            4.89,
+            5.02
+          ],
+          [
+            4.9,
+            4.93,
+            4.97,
+            4.98,
+            5.12
+          ],
+          [
+            5.04,
+            4.96,
+            5.15,
+            5.04,
+            5.02
+          ],
+          [
+            5.09,
+            4.9,
+            5.04,
+            5.19,
+            5.03
+          ],
+          [
+            5.1,
+            5.01,
+            5.04,
+            5.05,
+            5.02
+          ],
+          [
+            4.97,
+            5.1,
+            5.12,
+            4.92,
+            5.04
+          ],
+          [
+            5.01,
+            4.99,
+            5.06,
+            5.04,
+            5.12
+          ]
+        ],
+        "unit": "mm"
+      },
+      "interpretation": "Means show a rise over time, including a long sequence above the center line late in the series. Investigate tool drift; ranges alone may not signal it."
+    },
+    {
+      "id": "10-16",
+      "kind": "xbar",
+      "page": 480,
+      "pdf_page": 495,
+      "title": "Northern White Metals brackets",
+      "inputs": {
+        "n": 15,
+        "means": [
+          4,
+          4.02,
+          4.01,
+          4,
+          4.03,
+          4.01,
+          4.03,
+          4,
+          4.03,
+          4.06,
+          4.04,
+          4.06,
+          4.04,
+          4.03,
+          4.06,
+          4.05,
+          4.01,
+          4.01,
+          4,
+          4.02,
+          3.99,
+          4.02,
+          4,
+          4
+        ],
+        "ranges": [
+          0.09,
+          0.1,
+          0.1,
+          0.11,
+          0.09,
+          0.11,
+          0.11,
+          0.1,
+          0.12,
+          0.11,
+          0.09,
+          0.1,
+          0.11,
+          0.09,
+          0.1,
+          0.1,
+          0.1,
+          0.11,
+          0.1,
+          0.09,
+          0.1,
+          0.11,
+          0.09,
+          0.09
+        ],
+        "unit": "inches"
+      },
+      "interpretation": "The second shift (groups 9-16) has higher means. Check saw recalibration between shifts; examine both charts."
+    },
+    {
+      "id": "10-22",
+      "kind": "range",
+      "page": 486,
+      "pdf_page": 501,
+      "title": "Northern White Metals brackets",
+      "inputs": {
+        "n": 15,
+        "means": [
+          4,
+          4.02,
+          4.01,
+          4,
+          4.03,
+          4.01,
+          4.03,
+          4,
+          4.03,
+          4.06,
+          4.04,
+          4.06,
+          4.04,
+          4.03,
+          4.06,
+          4.05,
+          4.01,
+          4.01,
+          4,
+          4.02,
+          3.99,
+          4.02,
+          4,
+          4
+        ],
+        "ranges": [
+          0.09,
+          0.1,
+          0.1,
+          0.11,
+          0.09,
+          0.11,
+          0.11,
+          0.1,
+          0.12,
+          0.11,
+          0.09,
+          0.1,
+          0.11,
+          0.09,
+          0.1,
+          0.1,
+          0.1,
+          0.11,
+          0.1,
+          0.09,
+          0.1,
+          0.11,
+          0.09,
+          0.09
+        ],
+        "unit": "inches"
+      },
+      "interpretation": "The second shift (groups 9-16) has higher means. Check saw recalibration between shifts; examine both charts."
+    },
+    {
+      "id": "10-17a",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Range limits",
+      "inputs": {
+        "n": 3,
+        "mean": 18.4,
+        "rbar": 3.1
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-17b",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Range limits",
+      "inputs": {
+        "n": 19,
+        "mean": 16.2,
+        "rbar": 6.9
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-17c",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Range limits",
+      "inputs": {
+        "n": 8,
+        "mean": 141.7,
+        "rbar": 18.2
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-17d",
+      "kind": "range",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Range limits",
+      "inputs": {
+        "n": 24,
+        "mean": 8.6,
+        "rbar": 1.4
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-17e",
+      "kind": "range_identity",
+      "page": 485,
+      "pdf_page": 500,
+      "title": "Recover upper range limit",
+      "inputs": {
+        "rbar": 6,
+        "lcl": 3
+      },
+      "interpretation": "For positive LCL, symmetric limits imply UCL = 2 Rbar - LCL = 9. No sample size is supplied."
+    },
+    {
+      "id": "10-24a",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 30,
+        "p": 0.25
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-24b",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 65,
+        "p": 0.15
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-24c",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 82,
+        "p": 0.05
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-24d",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 97,
+        "p": 0.42
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-24e",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "Proportion limits",
+      "inputs": {
+        "n": 124,
+        "p": 0.63
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-25",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "Airline luggage delivery",
+      "inputs": {
+        "n": 200,
+        "proportions": [
+          0.89,
+          0.91,
+          0.93,
+          0.95,
+          0.94,
+          0.96,
+          0.92,
+          0.91,
+          0.93,
+          0.9,
+          0.88,
+          0.94,
+          0.97,
+          0.94,
+          0.95,
+          0.92,
+          0.93,
+          0.92,
+          0.91,
+          0.93,
+          0.89
+        ],
+        "attribute": "correct delivery"
+      },
+      "interpretation": "No individual limit violations. Stable performance is not necessarily satisfactory: investigate incorrect deliveries and improve the system."
+    },
+    {
+      "id": "10-26b",
+      "kind": "p",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "BioAssist capsules",
+      "inputs": {
+        "n": 500,
+        "p": 0.015,
+        "proportions": [
+          0.024,
+          0.018000000000000002,
+          0.016,
+          0.006,
+          0.01,
+          0.013999999999999999,
+          0.02,
+          0.027999999999999997,
+          0.024,
+          0.016,
+          0.01,
+          0.004,
+          0.006,
+          0.016,
+          0.022000000000000002,
+          0.026000000000000002,
+          0.022000000000000002,
+          0.016,
+          0.01,
+          0.004,
+          0.012,
+          0.016,
+          0.022000000000000002,
+          0.027999999999999997,
+          0.018000000000000002,
+          0.016,
+          0.008,
+          0.004,
+          0.012,
+          0.013999999999999999,
+          0.02,
+          0.027999999999999997
+        ]
+      },
+      "interpretation": "Repeated cycles remain even when points are inside limits. Investigate periodic equipment or calibration effects."
+    },
+    {
+      "id": "10-26a",
+      "kind": "proportion_test",
+      "page": 492,
+      "pdf_page": 507,
+      "title": "BioAssist aggregate test",
+      "inputs": {
+        "n": 16000,
+        "successes": 255,
+        "p0": 0.015,
+        "alpha": 0.05
+      },
+      "interpretation": "H0: p = .015; H1: p > .015. Alpha .05 is a project assumption; failing to reject does not prove compliance."
+    },
+    {
+      "id": "10-27",
+      "kind": "p",
+      "page": 493,
+      "pdf_page": 508,
+      "title": "Stock-market chart design",
+      "inputs": {
+        "n": 100,
+        "p": 0.5
+      },
+      "interpretation": "CL .5, limits .35 and .65. No observations are provided. Stocks and days may be dependent, violating the simple binomial model; the chart alone cannot prove the belief."
+    },
+    {
+      "id": "10-28",
+      "kind": "p",
+      "page": 493,
+      "pdf_page": 508,
+      "title": "Late flight departures",
+      "inputs": {
+        "n": 240,
+        "counts": [
+          26,
+          19,
+          26,
+          22,
+          24,
+          19,
+          19,
+          20,
+          18,
+          18,
+          17,
+          9,
+          13,
+          10,
+          12,
+          14,
+          14,
+          13,
+          9,
+          10,
+          12,
+          15,
+          14,
+          15,
+          16,
+          18,
+          17,
+          16,
+          18,
+          17
+        ]
+      },
+      "interpretation": "Procedures began after day 10. Compare first, middle and final ten days; initial improvement is followed by deterioration. A single pooled chart can mask intervention effects."
+    },
+    {
+      "id": "10-31a",
+      "kind": "pareto",
+      "page": 498,
+      "pdf_page": 513,
+      "title": "Newspaper departments",
+      "inputs": {
+        "counts": {
+          "Classified": 104,
+          "Reporting": 52,
+          "Printing": 3,
+          "Advertising": 8
+        }
+      },
+      "interpretation": "Classified is the first department to investigate."
+    },
+    {
+      "id": "10-31b",
+      "kind": "pareto",
+      "page": 498,
+      "pdf_page": 513,
+      "title": "Classified advertisement errors",
+      "inputs": {
+        "counts": {
+          "Omitted advertisement": 18,
+          "Incorrect special instructions": 37,
+          "Advertisement in wrong section": 16,
+          "Incorrectly priced advertisement": 8,
+          "Advertisement on incorrect date": 6,
+          "Incorrect size of advertisement": 7,
+          "Incorrect phone number in advertisement": 9,
+          "Incorrect address in advertisement": 3
+        }
+      },
+      "interpretation": "Incorrect special instructions are the largest category. Review order capture and proofing with staff."
+    },
+    {
+      "id": "10-32",
+      "kind": "pareto",
+      "page": 499,
+      "pdf_page": 514,
+      "title": "Zippy Cola plants",
+      "inputs": {
+        "counts": {
+          "Atlanta": 267,
+          "Boston": 23,
+          "Chicago": 37,
+          "Houston": 175,
+          "Milwaukee": 19,
+          "New Orleans": 78,
+          "San Francisco": 28,
+          "Seattle": 43
+        }
+      },
+      "interpretation": "Visit Atlanta and Houston first. Counts do not account for different production volumes."
+    },
+    {
+      "id": "10-36a",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 175,
+        "c": 3,
+        "N": 1500,
+        "p": 0.02,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-36b",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 175,
+        "c": 5,
+        "N": 1500,
+        "p": 0.02,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-36c",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 3,
+        "N": 1500,
+        "p": 0.02,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-36d",
+      "kind": "acceptance",
+      "page": 505,
+      "pdf_page": 520,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 5,
+        "N": 1500,
+        "p": 0.02,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-37a",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 175,
+        "c": 3,
+        "N": 1500,
+        "p": 0.03,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-37b",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 175,
+        "c": 5,
+        "N": 1500,
+        "p": 0.03,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-37c",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 3,
+        "N": 1500,
+        "p": 0.03,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-37d",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 5,
+        "N": 1500,
+        "p": 0.03,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-47a",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 1,
+        "N": 2500,
+        "p": 0.01,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-47b",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 2,
+        "N": 2500,
+        "p": 0.01,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-47c",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 1,
+        "N": 2500,
+        "p": 0.01,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-47d",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.01,
+        "risk": "producer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-48a",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 1,
+        "N": 2500,
+        "p": 0.015,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-48b",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 200,
+        "c": 2,
+        "N": 2500,
+        "p": 0.015,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-48c",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 1,
+        "N": 2500,
+        "p": 0.015,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-48d",
+      "kind": "acceptance",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Single sampling risk",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.015,
+        "risk": "consumer",
+        "model": "binomial"
+      },
+      "interpretation": ""
+    },
+    {
+      "id": "10-38a",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.005,
+        "risk": "producer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-38b",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.01,
+        "risk": "producer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-38c",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.015,
+        "risk": "producer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-39a",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.01,
+        "risk": "consumer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-39b",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.015,
+        "risk": "consumer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-39c",
+      "kind": "acceptance",
+      "page": 506,
+      "pdf_page": 521,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 250,
+        "c": 2,
+        "N": 2500,
+        "p": 0.02,
+        "risk": "consumer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-55a",
+      "kind": "acceptance",
+      "page": 514,
+      "pdf_page": 529,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 300,
+        "c": 3,
+        "N": 3000,
+        "p": 0.005,
+        "risk": "producer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-55b",
+      "kind": "acceptance",
+      "page": 514,
+      "pdf_page": 529,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 300,
+        "c": 3,
+        "N": 3000,
+        "p": 0.01,
+        "risk": "producer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-55c",
+      "kind": "acceptance",
+      "page": 514,
+      "pdf_page": 529,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 300,
+        "c": 3,
+        "N": 3000,
+        "p": 0.015,
+        "risk": "producer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-56a",
+      "kind": "acceptance",
+      "page": 514,
+      "pdf_page": 529,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 300,
+        "c": 3,
+        "N": 3000,
+        "p": 0.01,
+        "risk": "consumer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-56b",
+      "kind": "acceptance",
+      "page": 514,
+      "pdf_page": 529,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 300,
+        "c": 3,
+        "N": 3000,
+        "p": 0.015,
+        "risk": "consumer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-56c",
+      "kind": "acceptance",
+      "page": 514,
+      "pdf_page": 529,
+      "title": "Read risk from OC graph",
+      "inputs": {
+        "n": 300,
+        "c": 3,
+        "N": 3000,
+        "p": 0.02,
+        "risk": "consumer",
+        "model": "poisson"
+      },
+      "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+    },
+    {
+      "id": "10-40a",
+      "kind": "proportion_test",
+      "page": 511,
+      "pdf_page": 526,
+      "title": "Audit aggregate test",
+      "inputs": {
+        "n": 2000,
+        "successes": 45,
+        "p0": 0.02,
+        "alpha": 0.05
+      },
+      "interpretation": "H0: p=.02; H1: p>.02. Alpha .05 is assumed; failing to reject is not proof that the target is met."
+    },
+    {
+      "id": "10-40b",
+      "kind": "p",
+      "page": 511,
+      "pdf_page": 526,
+      "title": "Weekly audit chart",
+      "inputs": {
+        "n": 125,
+        "p": 0.02,
+        "counts": [
+          2,
+          1,
+          2,
+          3,
+          5,
+          4,
+          5,
+          6,
+          3,
+          1,
+          1,
+          3,
+          2,
+          2,
+          3,
+          2
+        ]
+      },
+      "interpretation": "The rise toward the filing deadline warrants investigation even though individual points are inside limits."
+    },
+    {
+      "id": "10-44",
+      "kind": "xbar",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Global Bank check encoding",
+      "inputs": {
+        "n": 10,
+        "means": [
+          49.4,
+          49.9,
+          48.8,
+          50.1,
+          49.7,
+          48.1,
+          48.6,
+          48.7,
+          50.7,
+          51.3,
+          51.1,
+          51.6,
+          50,
+          50.5,
+          51.4,
+          50.1
+        ],
+        "ranges": [
+          4,
+          7,
+          7,
+          4,
+          7,
+          10,
+          7,
+          10,
+          6,
+          4,
+          9,
+          9,
+          6,
+          7,
+          4,
+          7
+        ],
+        "unit": "checks per two minutes"
+      },
+      "interpretation": "All first-shift means are below CL and all second-shift means above CL. Investigate operator, equipment and shift conditions; ranges do not show the same shift."
+    },
+    {
+      "id": "10-45",
+      "kind": "range",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Global Bank check encoding",
+      "inputs": {
+        "n": 10,
+        "means": [
+          49.4,
+          49.9,
+          48.8,
+          50.1,
+          49.7,
+          48.1,
+          48.6,
+          48.7,
+          50.7,
+          51.3,
+          51.1,
+          51.6,
+          50,
+          50.5,
+          51.4,
+          50.1
+        ],
+        "ranges": [
+          4,
+          7,
+          7,
+          4,
+          7,
+          10,
+          7,
+          10,
+          6,
+          4,
+          9,
+          9,
+          6,
+          7,
+          4,
+          7
+        ],
+        "unit": "checks per two minutes"
+      },
+      "interpretation": "All first-shift means are below CL and all second-shift means above CL. Investigate operator, equipment and shift conditions; ranges do not show the same shift."
+    },
+    {
+      "id": "10-46",
+      "kind": "pareto",
+      "page": 512,
+      "pdf_page": 527,
+      "title": "Construction punch-list problems",
+      "inputs": {
+        "counts": {
+          "Electrical": 257,
+          "Flooring": 23,
+          "Heating/AC": 35,
+          "Painting": 19,
+          "Plumbing": 22,
+          "Roofing": 31,
+          "Tile": 51,
+          "Wallboard": 303,
+          "Windows": 16,
+          "Other": 68
+        }
+      },
+      "interpretation": "Wallboard and electrical account for most problems. Multiple problems may occur in one condo; total faults is not the number of defective condos."
+    },
+    {
+      "id": "10-50",
+      "kind": "xbar",
+      "page": 513,
+      "pdf_page": 528,
+      "title": "Reliant disk coating means",
+      "inputs": {
+        "n": 24,
+        "means": [
+          75.3,
+          75,
+          74.8,
+          75,
+          75.3,
+          74.8,
+          74.8,
+          74.9,
+          74.6,
+          74.9,
+          75.2,
+          75.1,
+          74.8,
+          74.9,
+          74.9,
+          75.1,
+          75,
+          74.9,
+          74.9,
+          75.1
+        ],
+        "ranges": [
+          3.2,
+          3.3,
+          3.6,
+          3.5,
+          3.8,
+          3.7,
+          3.4,
+          3.3,
+          3.4,
+          3.1,
+          3.1,
+          3,
+          3.1,
+          2.9,
+          2.8,
+          2.8,
+          2.7,
+          2.9,
+          2.8,
+          2.9
+        ],
+        "unit": "microns"
+      },
+      "interpretation": "The last ten means vary less than the first ten. Mean-chart control limits are distinct from the individual specification 72-78 microns."
+    },
+    {
+      "id": "10-51",
+      "kind": "range",
+      "page": 513,
+      "pdf_page": 528,
+      "title": "Reliant coating variability",
+      "inputs": {
+        "n": 24,
+        "means": [
+          75.3,
+          75,
+          74.8,
+          75,
+          75.3,
+          74.8,
+          74.8,
+          74.9,
+          74.6,
+          74.9,
+          75.2,
+          75.1,
+          74.8,
+          74.9,
+          74.9,
+          75.1,
+          75,
+          74.9,
+          74.9,
+          75.1
+        ],
+        "ranges": [
+          3.2,
+          3.3,
+          3.6,
+          3.5,
+          3.8,
+          3.7,
+          3.4,
+          3.3,
+          3.4,
+          3.1,
+          3.1,
+          3,
+          3.1,
+          2.9,
+          2.8,
+          2.8,
+          2.7,
+          2.9,
+          2.8,
+          2.9
+        ],
+        "unit": "microns"
+      },
+      "interpretation": "Ranges decline and the last ten are all below CL. Reduced variation may be an improvement; identify the cause, sustain it, then establish a new baseline. The change explains tighter sample means."
+    },
+    {
+      "id": "10-52",
+      "kind": "p",
+      "page": 513,
+      "pdf_page": 528,
+      "title": "Photomatic print quality",
+      "inputs": {
+        "n": 2000,
+        "p": 0.001,
+        "counts": [
+          3,
+          1,
+          2,
+          4,
+          4,
+          2,
+          2,
+          3,
+          1,
+          0,
+          2,
+          2,
+          1,
+          3,
+          2,
+          2,
+          0,
+          4,
+          2,
+          0
+        ]
+      },
+      "interpretation": "No points exceed limits. A p chart evaluates stability relative to the target; it does not prove the manufacturer specification is satisfied."
+    }
+  ]
+}

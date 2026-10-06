@@ -1,0 +1,7 @@
+case,reference,provenance,status,field,expected,actual,absolute_error,tolerance,passed
+SC10-1a,book,printed_book,MATCH,CL,26.7,26.7,0.0,0.051,True
+SC10-1a,book,printed_book,MATCH,LCL,24.9,24.915488215488214,0.015488215488215218,0.051,True
+SC10-1a,book,printed_book,MATCH,UCL,28.5,28.484511784511785,0.015488215488215218,0.051,True
+SC10-1a,independent,independently_solved,MATCH,CL,26.7,26.7,0.0,1e-09,True
+SC10-1a,independent,independently_solved,MATCH,LCL,24.915488215488214,24.915488215488214,0.0,1e-09,True
+SC10-1a,independent,independently_solved,MATCH,UCL,28.484511784511785,28.484511784511785,0.0,1e-09,True

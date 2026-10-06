@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "seed": 20260901,
+    "trials": 100000,
+    "reference_sha256": "063b0b00508dd6112d665bcccbb4c3d2f3fd7e568103d71952c62886d8fb84f0",
+    "input_sha256": "063f5effa2d529ebf21ce8e3ca57bbaa195341e3f63073c8c8dc9f851c81ac02",
+    "versions": {
+      "python": "3.13.7",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "records": [
+    {
+      "case": {
+        "id": "SC10-1a",
+        "kind": "xbar",
+        "page": 477,
+        "pdf_page": 492,
+        "title": "Control limits",
+        "inputs": {
+          "n": 9,
+          "mean": 26.7,
+          "rbar": 5.3
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "CL": 26.7,
+        "LCL": 24.915488215488214,
+        "UCL": 28.484511784511785,
+        "values": [],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "grand_mean": 26.7,
+        "Rbar": 5.3,
+        "standard_error": 0.5948372615039281,
+        "n": 9
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "printed_book",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 26.7,
+              "actual": 26.7,
+              "absolute_error": 0.0,
+              "tolerance": 0.051,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 24.9,
+              "actual": 24.915488215488214,
+              "absolute_error": 0.015488215488215218,
+              "tolerance": 0.051,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 28.5,
+              "actual": 28.484511784511785,
+              "absolute_error": 0.015488215488215218,
+              "tolerance": 0.051,
+              "passed": true
+            }
+          ],
+          "note": ""
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 26.7,
+              "actual": 26.7,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 24.915488215488214,
+              "actual": 24.915488215488214,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 28.484511784511785,
+              "actual": 28.484511784511785,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00278,
+          "theoretical_probability": 0.0026997960632601866,
+          "absolute_error": 8.020393673981337e-05,
+          "ci99_low": 0.0023828560634577643,
+          "ci99_high": 0.003243119624882727,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 26.697279192872628,
+        "target_mean": 26.7,
+        "trials": 100000,
+        "assumption": "Normal independent subgroup means with fixed fitted center and standard error; this is a model check, not a replay of observed data."
+      },
+      "case_seed": 13160209793002525532
+    }
+  ]
+}

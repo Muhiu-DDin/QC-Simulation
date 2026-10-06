@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "seed": 20260901,
+    "trials": 100000,
+    "reference_sha256": "063b0b00508dd6112d665bcccbb4c3d2f3fd7e568103d71952c62886d8fb84f0",
+    "input_sha256": "e876e0372ff100aaf5d2c5e36342b33a220b1858338a3bb9101fc46f6af8be9b",
+    "versions": {
+      "python": "3.13.7",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "records": [
+    {
+      "case": {
+        "id": "custom-performance",
+        "kind": "xbar",
+        "title": "API response times",
+        "inputs": {
+          "n": 5,
+          "observations": [
+            [
+              101,
+              99,
+              102,
+              98,
+              100
+            ],
+            [
+              100,
+              103,
+              99,
+              101,
+              102
+            ],
+            [
+              98,
+              100,
+              101,
+              99,
+              102
+            ],
+            [
+              101,
+              100,
+              102,
+              99,
+              98
+            ]
+          ],
+          "unit": "milliseconds"
+        },
+        "interpretation": "Illustrative input only; replace with your real measurements."
+      },
+      "calculated": {
+        "CL": 100.25,
+        "LCL": 97.94279314445421,
+        "UCL": 102.55720685554579,
+        "values": [
+          100.0,
+          101.0,
+          100.0,
+          100.0
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "grand_mean": 100.25,
+        "Rbar": 4.0,
+        "standard_error": 0.7690689518485948,
+        "n": 5,
+        "first_half_mean": 100.5,
+        "second_half_mean": 100.0,
+        "first_half_mean_sd": 0.7071067811865476,
+        "second_half_mean_sd": 0.0
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00267,
+          "theoretical_probability": 0.0026997960632601866,
+          "absolute_error": 2.9796063260186488e-05,
+          "ci99_low": 0.002281384300383448,
+          "ci99_high": 0.0031246059837611497,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 100.2521524321563,
+        "target_mean": 100.25,
+        "trials": 100000,
+        "assumption": "Normal independent subgroup means with fixed fitted center and standard error; this is a model check, not a replay of observed data."
+      },
+      "case_seed": 17520382675634284395
+    },
+    {
+      "case": {
+        "id": "custom-failures",
+        "kind": "p",
+        "title": "Failed software test runs",
+        "inputs": {
+          "n": 100,
+          "p": 0.02,
+          "counts": [
+            1,
+            2,
+            0,
+            3,
+            2,
+            1,
+            4,
+            2,
+            0,
+            1
+          ]
+        },
+        "interpretation": "Each subgroup consists of 100 independent test outcomes. This is illustrative data."
+      },
+      "calculated": {
+        "CL": 0.02,
+        "LCL": 0.0,
+        "UCL": 0.062,
+        "values": [
+          0.01,
+          0.02,
+          0.0,
+          0.03,
+          0.02,
+          0.01,
+          0.04,
+          0.02,
+          0.0,
+          0.01
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "n": 100,
+        "standard_error": 0.014,
+        "observed_proportion": 0.016,
+        "center_source": "specified target"
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00408,
+          "theoretical_probability": 0.0040620540801008425,
+          "absolute_error": 1.794591989915783e-05,
+          "ci99_low": 0.0035926478711372006,
+          "ci99_high": 0.004633155321336588,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 0.019979499999999997,
+        "target_mean": 0.02,
+        "trials": 100000,
+        "assumption": "IID Bernoulli observations at the specified/estimated p; binomial tail is exact and discrete."
+      },
+      "case_seed": 12886729140554120478
+    },
+    {
+      "case": {
+        "id": "custom-sampling",
+        "kind": "acceptance",
+        "title": "Acceptance plan",
+        "inputs": {
+          "N": 1000,
+          "n": 100,
+          "c": 1,
+          "p": 0.02,
+          "risk": "consumer",
+          "model": "binomial"
+        }
+      },
+      "calculated": {
+        "probability": 0.40327171078200386,
+        "acceptance_probability": 0.40327171078200386,
+        "binomial_probability": 0.40327171078200386,
+        "poisson_probability": 0.40600584970983794,
+        "model": "binomial",
+        "finite_lot_defectives": 20,
+        "finite_lot_probability": 0.38915383345053933
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.40419,
+          "theoretical_probability": 0.40327171078200386,
+          "absolute_error": 0.0009182892179961377,
+          "ci99_low": 0.40019921151838017,
+          "ci99_high": 0.4081935014269959,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.38809,
+          "theoretical_probability": 0.38915383345053933,
+          "absolute_error": 0.001063833450539342,
+          "ci99_low": 0.38412812910194943,
+          "ci99_high": 0.3920667201383912,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 14599639504648322204
+    }
+  ]
+}

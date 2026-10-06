@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manual calculator | Quality Control</title><link rel="stylesheet" href="report-theme.css"><link rel="stylesheet" href="calculator.css"></head>
+<body><header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Quality Control<span class="chapter-label">Chapter 10</span></a><nav class="report-nav" aria-label="Report navigation"><a href="book-results.html">Book results</a><a href="calculator.html" aria-current="page">Calculator</a></nav><span class="course">Software Testing · Part 2B</span></div></header>
+<main><header class="report-heading"><div><p class="eyebrow">Manual input</p><h1>Calculate and compare</h1><p class="lede">Enter numerical values and select a book question for comparison, or calculate using your own data.</p></div></header>
+<div class="calculator-layout"><section class="exercise entry-panel"><form id="calculator-form">
+<h2>Numerical inputs</h2><p class="form-intro">Select a calculation, then enter the values required by its formula.</p>
+<label for="kind">Calculation type</label><select id="kind" name="kind">
+<option value="xbar">Mean control chart (X̄)</option><option value="range">Range control chart (R)</option><option value="p">Proportion control chart (p)</option><option value="acceptance">Acceptance sampling</option><option value="pareto">Pareto analysis</option><option value="proportion_test">Proportion hypothesis test</option><option value="range_identity">Recover upper range limit</option></select>
+<label for="data-source">Data source</label><select id="data-source"><option value="book">Compare with a book question</option><option value="own">My own data (not in the book)</option></select>
+<label for="exercise-select">Book question to compare</label><select id="exercise-select"><option value="">Select a book question</option></select>
+<p id="source-hint" class="field-hint"></p><div id="mode-container"><label for="entry-mode">Available data</label><select id="entry-mode"></select></div>
+<div id="input-fields" class="input-fields"></div>
+<label for="trials">Simulation trials</label><select id="trials"><option value="10000">10,000 — quick verification</option><option value="50000">50,000 — higher precision</option><option value="100000">100,000 — full verification</option></select>
+<p class="field-hint">Your submitted values are calculated first, then compared with the selected book answer. Choose your own data to calculate without a reference comparison.</p>
+<div class="form-actions"><button type="submit" id="calculate-button">Calculate and compare</button><button type="button" id="reset-button" class="secondary-button">Reset values</button></div>
+<p id="form-error" role="alert" hidden></p><p id="loading-message" role="status" hidden>Python is calculating your results. The first request may take a little longer.</p>
+</form></section><section class="result-container" aria-label="Calculation results"><div id="empty-result" class="exercise result-placeholder"><span class="eyebrow">Results</span><h2>Your calculation will appear here</h2><p>Select a book question or your own data, enter values on the left, then press <strong>Enter</strong> or select <strong>Calculate and compare</strong>.</p><ul><li>Calculated answers and a graph</li><li>Stored reference comparison, when available</li><li>Simulation verification</li></ul></div>
+<div id="result-content" hidden><div id="data-message" role="status" class="data-message"></div><div class="result-toolbar"><span>Calculation complete</span><button id="download-result" type="button" class="secondary-button">Download result</button></div><iframe id="result-frame" title="Calculated results and reference comparisons" sandbox="allow-scripts allow-downloads"></iframe></div></section></div>
+</main><script src="calculator.js" defer></script></body></html>
