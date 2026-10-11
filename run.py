@@ -31,7 +31,7 @@ def main():
     parser.add_argument('--output',type=Path,default=ROOT/'output')
     parser.add_argument('--trials',type=int,default=100000)
     parser.add_argument('--seed',type=int,default=20260901)
-    parser.add_argument('--threshold-ms',type=float,default=500,
+    parser.add_argument('--threshold-ms',type=float,default=None,
                         help='Editable batch-mean response-time target for dataset projects')
     parser.add_argument('--list',action='store_true')
     parser.add_argument('--strict',action='store_true',help='Exit 1 on reference mismatches (not random interval misses)')
@@ -45,7 +45,7 @@ def main():
             if trials>100000:
                 raise ValueError('Dataset simulation supports at most 100,000 trials.')
             payload=dict(project_type='dataset', scale=args.project,
-                         dataset_source='own' if args.dataset else 'demo' if args.synthetic_demo else 'forevermart',
+                         dataset_source='own' if args.dataset else 'demo' if args.synthetic_demo else 'study',
                          trials=trials, seed=seed, specification_ms=args.threshold_ms)
             if args.dataset:
                 payload['rows']=load_csv(args.dataset)

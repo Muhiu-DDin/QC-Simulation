@@ -1,0 +1,137 @@
+[
+  {
+    "id": "UI01",
+    "timestamp_utc": "2026-10-06T19:57:56.789Z",
+    "feature": "Catalog",
+    "test": "Collection displays the 40 products observed in the live API snapshot",
+    "expected": "40 product links",
+    "observed": 40,
+    "passed": true
+  },
+  {
+    "id": "UI02",
+    "timestamp_utc": "2026-10-06T19:58:26.226Z",
+    "feature": "Filters",
+    "test": "Men filter agrees with live catalog category count",
+    "expected": "15 Men products",
+    "observed": "15; true",
+    "passed": true
+  },
+  {
+    "id": "UI03",
+    "timestamp_utc": "2026-10-06T19:58:42.853Z",
+    "feature": "Filters",
+    "test": "Men + Topwear filter agrees with live catalog",
+    "expected": "12 products",
+    "observed": 12,
+    "passed": true
+  },
+  {
+    "id": "UI04",
+    "timestamp_utc": "2026-10-06T19:59:08.979Z",
+    "feature": "Sorting",
+    "test": "Low-to-high sorting",
+    "expected": "40 prices in nondecreasing order, 100 to 399",
+    "observed": "100,110,120,120,130,138,140,140,140,145,145,150,150,163,170,190,200,200,200,200,220,220,220,230,240,250,250,250,260,260,270,280,280,290,300,300,300,300,300,399",
+    "passed": true
+  },
+  {
+    "id": "UI05",
+    "timestamp_utc": "2026-10-06T19:59:16.418Z",
+    "feature": "Sorting",
+    "test": "High-to-low sorting",
+    "expected": "40 prices in nonincreasing order",
+    "observed": "399,300,300,300,300,300,290,280,280,270,260,260,250,250,250,240,230,220,220,220,200,200,200,200,190,170,163,150,150,145,145,140,140,140,138,130,120,120,110,100",
+    "passed": true
+  },
+  {
+    "id": "UI06",
+    "timestamp_utc": "2026-10-06T20:02:00.676Z",
+    "feature": "Search",
+    "test": "Search denim with filters clear",
+    "expected": "4 matching products from live snapshot",
+    "observed": "4 denim product links displayed",
+    "passed": true
+  },
+  {
+    "id": "UI07",
+    "timestamp_utc": "2026-10-06T20:02:05.935Z",
+    "feature": "Search",
+    "test": "Search a term absent from catalog",
+    "expected": "0 product matches",
+    "observed": "0 product links displayed",
+    "passed": true
+  },
+  {
+    "id": "UI08",
+    "timestamp_utc": "2026-10-06T20:02:12.787Z",
+    "feature": "Search",
+    "test": "Clear search",
+    "expected": "Restore 40 products",
+    "observed": "40 product links displayed",
+    "passed": true
+  },
+  {
+    "id": "UI09",
+    "timestamp_utc": "2026-10-06T20:02:17.809Z",
+    "feature": "Product detail",
+    "test": "Read chosen product detail",
+    "expected": "Snapshot name, price 200, sizes M/L/XL",
+    "observed": "Name, price 200 and M/L/XL match snapshot",
+    "passed": true
+  },
+  {
+    "id": "UI10",
+    "timestamp_utc": "2026-10-06T20:02:23.374Z",
+    "feature": "Cart validation",
+    "test": "Add without choosing size",
+    "expected": "Reject and ask for size; cart stays 0",
+    "observed": "please select the size toast; cart 0",
+    "passed": true
+  },
+  {
+    "id": "UI11",
+    "timestamp_utc": "2026-10-06T20:02:28.999Z",
+    "feature": "Guest cart",
+    "test": "Choose size M and add one",
+    "expected": "Cart count becomes 1 with success message",
+    "observed": "cart icon 1; item added successfully",
+    "passed": true
+  },
+  {
+    "id": "UI12",
+    "timestamp_utc": "2026-10-06T20:02:37.492Z",
+    "feature": "Cart totals",
+    "test": "One product priced 200, size M",
+    "expected": "Subtotal 200, shipping 10, total 210",
+    "observed": "200 + 10 = 210 displayed",
+    "passed": true
+  },
+  {
+    "id": "UI13",
+    "timestamp_utc": "2026-10-06T20:02:37.492Z",
+    "feature": "Cart identification",
+    "test": "Identify cart product by readable name",
+    "expected": "Cart line shows product name (study usability criterion)",
+    "observed": "Cart line shows image, price and size but no product name",
+    "passed": false
+  },
+  {
+    "id": "UI14",
+    "timestamp_utc": "2026-10-06T20:02:44.191Z",
+    "feature": "Cart totals",
+    "test": "Increase quantity from 1 to 2",
+    "expected": "Subtotal 400, shipping 10, total 410",
+    "observed": "Quantity 2; 400 + 10 = 410 displayed",
+    "passed": true
+  },
+  {
+    "id": "UI15",
+    "timestamp_utc": "2026-10-06T20:02:56.660Z",
+    "feature": "Guest cart persistence",
+    "test": "Refresh cart after adding two size M units",
+    "expected": "Keep quantity 2 and total 410 (study usability criterion)",
+    "observed": "After refresh cart is empty, badge 0, subtotal and total 0",
+    "passed": false
+  }
+]

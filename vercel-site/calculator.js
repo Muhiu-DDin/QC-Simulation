@@ -59,7 +59,7 @@ function selectWorkflow(next) {
     : 'Select an assigned book question, enter its values, then press Enter or select Calculate and compare.';
   $('empty-result-list').replaceChildren();
   const points = next === 'dataset'
-    ? ['Failure rate, performance summary and exploratory statistics', 'Process charts and performance requirement checks', 'Simulation compared with the dataset’s calculated failure rate']
+    ? ['Original PDF study calculations and reference comparison', 'Recorded-data charts and separate simulation charts', 'Simulation of another selection of recorded groups']
     : ['Answers calculated using the question’s formula', 'Comparison with available stored reference answers', 'Charts and simulation verification, where applicable'];
   points.forEach(text => { const li = document.createElement('li'); li.textContent = text; $('empty-result-list').append(li); });
 }
@@ -263,22 +263,25 @@ function parseCSV(text) {
   if (value.length || record.length || afterQuote) endRecord();
   if (records.length < 2) throw Error('Add the column header and at least one data batch.');
   const headers = records.shift().map(item => item.trim());
-  const required = ['period', 'passed', 'failed', 'response_ms'];
+  const rawColumns = ['period', 't1_ms', 't2_ms', 't3_ms', 't4_ms', 't5_ms'];
+  const rawMicro = headers.includes('t1_ms');
+  const required = rawMicro ? rawColumns : ['period', 'passed', 'failed', 'response_ms'];
   if (new Set(headers).size !== headers.length) throw Error('CSV column names must be unique.');
-  if (required.some(name => !headers.includes(name))) throw Error('Required CSV columns: period,passed,failed,response_ms.');
-  if (headers.some(name => !required.includes(name))) throw Error('Use only these CSV columns: period,passed,failed,response_ms.');
+  if (required.some(name => !headers.includes(name)) || headers.some(name => !required.includes(name))) throw Error(`Required CSV columns: ${required.join(',')}.`);
+  if (rawMicro && (records.length < 5 || records.length > 500)) throw Error('For raw micro timings, provide 5–500 groups of five timings.');
   return records.map((fields, index) => {
     if (fields.length !== headers.length) throw Error(`Data batch ${index + 1} has ${fields.length} fields; expected ${headers.length}.`);
     const row = {};
     headers.forEach((name, column) => { row[name] = fields[column].trim(); });
     if (!row.period) throw Error(`Data batch ${index + 1} needs a period label.`);
-    for (const name of ['passed', 'failed', 'response_ms']) {
+    for (const name of required.slice(1)) {
       if (!row[name] || !Number.isFinite(Number(row[name]))) throw Error(`Data batch ${index + 1}: ${name} must be a finite number.`);
       row[name] = Number(row[name]);
       if (row[name] < 0) throw Error(`Data batch ${index + 1}: ${name} cannot be negative.`);
-      if (name !== 'response_ms' && !Number.isSafeInteger(row[name])) throw Error(`Data batch ${index + 1}: ${name} must be a whole-number count.`);
+      if (rawMicro && row[name] <= 0) throw Error(`Data batch ${index + 1}: ${name} must be a positive timing in milliseconds.`);
+      if (!rawMicro && name !== 'response_ms' && !Number.isSafeInteger(row[name])) throw Error(`Data batch ${index + 1}: ${name} must be a whole-number count.`);
     }
-    if (row.passed + row.failed === 0) throw Error(`Data batch ${index + 1} must contain at least one check.`);
+    if (!rawMicro && row.passed + row.failed === 0) throw Error(`Data batch ${index + 1} must contain at least one check.`);
     return row;
   });
 }
@@ -292,20 +295,23 @@ function updateDatasetSource(reset = true) {
   const own = choice === 'own', macro = scale === 'macro';
   $('csv-inputs').hidden = !own;
   $('csv-text').required = own;
+  $('study-downloads').hidden = choice !== 'study';
+  $('download-template').textContent = macro ? 'Download aggregate-check CSV template' : 'Download five-timing micro CSV template';
+  $('csv-text').placeholder = macro ? 'period,passed,failed,response_ms\nRound 1,5,0,245' : 'period,t1_ms,t2_ms,t3_ms,t4_ms,t5_ms\nGroup 1,650,670,660,680,655';
   if (choice === 'demo') {
     $('scale-hint').textContent = `${macro ? 'Macro demo: 10,000' : 'Micro demo: 30'} synthetic batches. These are examples, not recorded measurements.`;
-  } else if (choice === 'forevermart') {
+  } else if (choice === 'study') {
     const stats = datasetManifest?.scales?.[scale];
     const sample = stats ? `${Number(stats.rows).toLocaleString()} batches, ${Number(stats.checks).toLocaleString()} recorded HTTP checks. ` : '';
-    $('scale-hint').textContent = sample + (macro ? 'Wider sample across public website routes. Larger than the micro sample; not industrial big data.' : 'Focused sample of homepage checks. Quality assurance and quality control apply at both project scales.');
+    $('scale-hint').textContent = sample + (macro ? 'Every round checks the same five services: HTML, JavaScript, catalog, product detail and anonymous access protection.' : 'Each group contains five consecutive response times from the product catalog API.');
   } else {
-    $('scale-hint').textContent = 'Use the smaller or larger dataset relevant to your project. Both scales accept up to 20,000 batches; the analysis method is the same.';
+    $('scale-hint').textContent = macro ? 'Import pass/fail counts and mean timings for ordered batches. Per-service details require the original per-check records.' : 'Import five individual timings per group for mean/range charts, or aggregate pass/fail batches for failure-rate analysis.';
   }
   $('dataset-source-hint').textContent = own
-    ? 'Your independent dataset has no textbook answer. Simulations check the fitted failure-count model and recorded weighted timing mean.'
+    ? 'Your data are independent of the stored PDF study and textbook exercises. No reference comparison is made. Raw micro timings support group resampling; aggregate data support failure-model and weighted-mean verification.'
     : choice === 'demo' ? 'Generated example data, not measurements from your website. The same fixed seed reproduces the demo.'
-      : 'Recorded HTTP checks from ForeverMart. Timing includes network, TLS and response download; it does not measure browser rendering or prove complete software quality.';
-  if (choice === 'forevermart' && datasetManifest) {
+      : 'Original PDF study measurements. Charts use recorded data; simulation reuses their groups. This does not make new requests to ForeverMart or measure browser rendering.';
+  if (choice === 'study' && datasetManifest) {
     const date = datasetManifest.captured_at_utc || datasetManifest.captured_at || datasetManifest.capture_date;
     if (date) $('dataset-source-hint').textContent += ` Captured: ${date}.`;
   }
@@ -390,10 +396,15 @@ $('dataset-form').addEventListener('submit', async event => {
   const error = $('dataset-error');
   error.hidden = true;
   try {
-    const specification = Number($('specification-ms').value);
-    if (!Number.isFinite(specification) || specification <= 0) throw Error('Enter a positive response time requirement in milliseconds.');
-    const payload = {project_type: 'dataset', scale: $('dataset-scale').value, dataset_source: $('dataset-source').value, specification_ms: specification, trials: Number($('dataset-trials').value)};
-    if (payload.dataset_source === 'own') payload.rows = parseCSV($('csv-text').value);
+    const specification = $('specification-ms').value.trim() === '' ? null : Number($('specification-ms').value);
+    if (specification !== null && (!Number.isFinite(specification) || specification <= 0)) throw Error('Enter a positive response time target in milliseconds, or leave it empty.');
+    const seed = Number($('dataset-seed').value);
+    if (!$('dataset-seed').value.trim() || !Number.isInteger(seed) || seed < 0 || seed > 4294967295) throw Error('Enter a whole-number seed between 0 and 4294967295.');
+    const payload = {project_type: 'dataset', scale: $('dataset-scale').value, dataset_source: $('dataset-source').value, specification_ms: specification, trials: Number($('dataset-trials').value), seed};
+    if (payload.dataset_source === 'own') {
+      payload.rows = parseCSV($('csv-text').value);
+      if (payload.rows[0].t1_ms !== undefined && payload.scale !== 'micro') throw Error('Five-timing CSV files are for micro studies. Select Micro, or use aggregate-check columns for Macro.');
+    }
     await sendCalculation(payload, $('analyse-button'), error, $('dataset-loading'));
   } catch (e) { error.textContent = e.message; error.hidden = false; }
 });
@@ -413,7 +424,14 @@ $('csv-file').addEventListener('change', async event => {
   finally { event.target.value = ''; }
 });
 $('csv-text').addEventListener('input', () => { $('csv-file-status').textContent = 'The CSV editor contains your current input values.'; });
-$('download-template').addEventListener('click', () => saveDownload('period,passed,failed,response_ms\r\nBatch 1,98,2,245\r\nBatch 2,96,4,310\r\nBatch 3,99,1,280\r\n', 'software-testing-dataset-template.csv', 'text/csv;charset=utf-8'));
+$('download-template').addEventListener('click', () => {
+  const micro = $('dataset-scale').value === 'micro';
+  const text = micro ? 'period,t1_ms,t2_ms,t3_ms,t4_ms,t5_ms\r\nGroup 1,650,670,660,680,655\r\nGroup 2,660,655,675,665,650\r\nGroup 3,670,690,680,665,660\r\nGroup 4,655,660,670,650,675\r\nGroup 5,665,675,660,680,655\r\n' : 'period,passed,failed,response_ms\r\nRound 1,5,0,245\r\nRound 2,4,1,310\r\nRound 3,5,0,280\r\n';
+  saveDownload(text, micro ? 'micro-five-timings-template.csv' : 'macro-checks-template.csv', 'text/csv;charset=utf-8');
+});
+$('download-report').addEventListener('click', () => {
+  if (lastResult) saveDownload(lastResult.report_html, 'qc-analysis-report.html', 'text/html;charset=utf-8');
+});
 $('download-result').addEventListener('click', () => {
   if (!lastResult) return;
   const result = {...lastResult};

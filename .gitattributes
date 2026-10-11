@@ -1,0 +1,4 @@
+# Original dated study evidence must retain its exact bytes on Windows and
+# Linux; its SHA-256 provenance is verified by the deployed calculator.
+data/forevermart_study/** -text whitespace=cr-at-eol
+vercel-site/data/forevermart_study/** -text whitespace=cr-at-eol

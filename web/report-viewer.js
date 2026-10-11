@@ -11,7 +11,7 @@
 
   function safeURL(value, image = false) {
     const url = value.trim();
-    if (/^data:image\/png;base64,[A-Za-z0-9+/=\s]+$/i.test(url)) return true;
+    if (/^data:image\/(?:png|jpeg);base64,[A-Za-z0-9+/=\s]+$/i.test(url)) return true;
     if (image) return false;
     return url.startsWith('#') || /^https:\/\//i.test(url);
   }

@@ -1,0 +1,59 @@
+{
+  "study": "Software Testing portfolio Part 2C",
+  "site": "https://forevermart.vercel.app",
+  "api": "https://foreverbackend-k8zm.onrender.com/api",
+  "collection_started_pk": "2026-10-07T00:56:44.175026+05:00",
+  "timezone": "Asia/Karachi (UTC+05:00)",
+  "micro_batches": 25,
+  "micro_n": 5,
+  "macro_batches": 20,
+  "macro_checks_per_batch": 5,
+  "timeout_seconds": 30,
+  "pause_seconds": 0.5,
+  "batch_pause_seconds": 2,
+  "request_timing": "Fresh HTTPS request, start through complete body read; includes network/TLS/server transfer, not browser rendering.",
+  "retries": 0,
+  "user_agent": "SoftwareTesting-Student-Part2C/1.0 (paced read-only study)",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "selected_product_id": "68ee7c73675d613eba9e96c6",
+  "script_asset_url": "https://forevermart.vercel.app/assets/index-DVL-Rtn7.js",
+  "discovery_requests": 2,
+  "interpretation": "Micro = one endpoint performance; macro = fixed public service-check suite. Class-specific definitions not supplied.",
+  "covered": "Public catalog, one public product, storefront HTML/JS delivery, anonymous access rejection; guest UI exploration recorded separately.",
+  "excluded": "Authenticated accounts, stored carts/orders, payments, purchases, production writes, stress/load testing.",
+  "macro_check_definitions": [
+    {
+      "feature": "Storefront HTML",
+      "url": "https://forevermart.vercel.app",
+      "criterion": "html",
+      "expected": "200 + expected storefront HTML shell"
+    },
+    {
+      "feature": "Frontend JavaScript",
+      "url": "https://forevermart.vercel.app/assets/index-DVL-Rtn7.js",
+      "criterion": "script",
+      "expected": "200 + JavaScript asset"
+    },
+    {
+      "feature": "Product catalog",
+      "url": "https://foreverbackend-k8zm.onrender.com/api/admin/product/list",
+      "criterion": "catalog",
+      "expected": "200 + nonempty catalog with IDs, names and nonnegative prices"
+    },
+    {
+      "feature": "Product detail",
+      "url": "https://foreverbackend-k8zm.onrender.com/api/admin/product/single/68ee7c73675d613eba9e96c6",
+      "criterion": "product",
+      "expected": "200 + selected product ID and name"
+    },
+    {
+      "feature": "Anonymous access protection",
+      "url": "https://foreverbackend-k8zm.onrender.com/api/user/getUser",
+      "criterion": "protected",
+      "expected": "401 when no login cookies are supplied"
+    }
+  ],
+  "collection_finished_pk": "2026-10-07T01:01:27.709887+05:00",
+  "measured_requests": 225
+}

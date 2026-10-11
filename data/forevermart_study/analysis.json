@@ -1,0 +1,821 @@
+{
+  "metadata": {
+    "study": "Software Testing portfolio Part 2C",
+    "site": "https://forevermart.vercel.app",
+    "api": "https://foreverbackend-k8zm.onrender.com/api",
+    "collection_started_pk": "2026-10-07T00:56:44.175026+05:00",
+    "timezone": "Asia/Karachi (UTC+05:00)",
+    "micro_batches": 25,
+    "micro_n": 5,
+    "macro_batches": 20,
+    "macro_checks_per_batch": 5,
+    "timeout_seconds": 30,
+    "pause_seconds": 0.5,
+    "batch_pause_seconds": 2,
+    "request_timing": "Fresh HTTPS request, start through complete body read; includes network/TLS/server transfer, not browser rendering.",
+    "retries": 0,
+    "user_agent": "SoftwareTesting-Student-Part2C/1.0 (paced read-only study)",
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "selected_product_id": "68ee7c73675d613eba9e96c6",
+    "script_asset_url": "https://forevermart.vercel.app/assets/index-DVL-Rtn7.js",
+    "discovery_requests": 2,
+    "interpretation": "Micro = one endpoint performance; macro = fixed public service-check suite. Class-specific definitions not supplied.",
+    "covered": "Public catalog, one public product, storefront HTML/JS delivery, anonymous access rejection; guest UI exploration recorded separately.",
+    "excluded": "Authenticated accounts, stored carts/orders, payments, purchases, production writes, stress/load testing.",
+    "macro_check_definitions": [
+      {
+        "feature": "Storefront HTML",
+        "url": "https://forevermart.vercel.app",
+        "criterion": "html",
+        "expected": "200 + expected storefront HTML shell"
+      },
+      {
+        "feature": "Frontend JavaScript",
+        "url": "https://forevermart.vercel.app/assets/index-DVL-Rtn7.js",
+        "criterion": "script",
+        "expected": "200 + JavaScript asset"
+      },
+      {
+        "feature": "Product catalog",
+        "url": "https://foreverbackend-k8zm.onrender.com/api/admin/product/list",
+        "criterion": "catalog",
+        "expected": "200 + nonempty catalog with IDs, names and nonnegative prices"
+      },
+      {
+        "feature": "Product detail",
+        "url": "https://foreverbackend-k8zm.onrender.com/api/admin/product/single/68ee7c73675d613eba9e96c6",
+        "criterion": "product",
+        "expected": "200 + selected product ID and name"
+      },
+      {
+        "feature": "Anonymous access protection",
+        "url": "https://foreverbackend-k8zm.onrender.com/api/user/getUser",
+        "criterion": "protected",
+        "expected": "401 when no login cookies are supplied"
+      }
+    ],
+    "collection_finished_pk": "2026-10-07T01:01:27.709887+05:00",
+    "measured_requests": 225
+  },
+  "book_factors": {
+    "n": 5,
+    "d2": 2.326,
+    "A2": 0.577,
+    "D3": 0.0,
+    "D4": 2.114
+  },
+  "micro": {
+    "count": 125,
+    "successful": 125,
+    "failures": 0,
+    "complete_groups": 25,
+    "omitted_groups": [],
+    "min_ms": 624.7812999645248,
+    "max_ms": 1062.308399938047,
+    "mean_ms": 683.4187056021765,
+    "median_ms": 660.0374999688938,
+    "p95_ms": 774.7069400269538,
+    "p99_ms": 1033.050391925499,
+    "sample_sd_ms": 74.94985707842736,
+    "q1_ms": 649.1162999300286,
+    "q3_ms": 683.7407000130042,
+    "tukey_low_ms": 597.1796998055652,
+    "tukey_high_ms": 735.6773001374677,
+    "tukey_outliers": 14,
+    "mean_signals": [
+      13,
+      14
+    ],
+    "range_signals": [
+      1,
+      3,
+      12,
+      13
+    ],
+    "halfwidth_d2_ms": 64.76514681372997,
+    "halfwidth_rounded_A2_ms": 64.78741101466119,
+    "limits": {
+      "xbar_cl": 683.4187056021765,
+      "xbar_lcl": 618.6535587884465,
+      "xbar_ucl": 748.1838524159065,
+      "range_cl": 112.28320799767971,
+      "range_lcl": 0.0,
+      "range_ucl": 237.3667017070949,
+      "sigma_estimate": 48.273090282751376
+    }
+  },
+  "micro_groups": [
+    {
+      "batch": 1,
+      "timestamp_pk": "2026-10-07T00:56:44.266366+05:00",
+      "t1_ms": 657.4280000058934,
+      "t2_ms": 1006.7843000870198,
+      "t3_ms": 659.7208000021055,
+      "t4_ms": 658.1042999168858,
+      "t5_ms": 675.2035999670625,
+      "mean_ms": 731.4481999957934,
+      "range_ms": 349.3563000811264,
+      "mean_signal": false,
+      "range_signal": true
+    },
+    {
+      "batch": 2,
+      "timestamp_pk": "2026-10-07T00:56:56.726931+05:00",
+      "t1_ms": 634.4149999786168,
+      "t2_ms": 659.2335000168532,
+      "t3_ms": 650.8732999209315,
+      "t4_ms": 624.7812999645248,
+      "t5_ms": 663.1083000684157,
+      "mean_ms": 646.4822799898684,
+      "range_ms": 38.327000103890896,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 3,
+      "timestamp_pk": "2026-10-07T00:57:08.809074+05:00",
+      "t1_ms": 639.5933000603691,
+      "t2_ms": 641.5407999884337,
+      "t3_ms": 1039.8925999179482,
+      "t4_ms": 705.1903000101447,
+      "t5_ms": 631.8831000244245,
+      "mean_ms": 731.620020000264,
+      "range_ms": 408.00949989352375,
+      "mean_signal": false,
+      "range_signal": true
+    },
+    {
+      "batch": 4,
+      "timestamp_pk": "2026-10-07T00:57:21.332989+05:00",
+      "t1_ms": 725.0387000385672,
+      "t2_ms": 765.6974999699742,
+      "t3_ms": 752.9730000533164,
+      "t4_ms": 642.009099945426,
+      "t5_ms": 641.987600014545,
+      "mean_ms": 705.5411800043657,
+      "range_ms": 123.70989995542914,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 5,
+      "timestamp_pk": "2026-10-07T00:57:33.697399+05:00",
+      "t1_ms": 649.5507000945508,
+      "t2_ms": 668.2970999972895,
+      "t3_ms": 637.7101000398397,
+      "t4_ms": 647.8864999953657,
+      "t5_ms": 649.2555999429896,
+      "mean_ms": 650.5400000140071,
+      "range_ms": 30.586999957449734,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 6,
+      "timestamp_pk": "2026-10-07T00:57:45.745704+05:00",
+      "t1_ms": 656.7632999503985,
+      "t2_ms": 661.6470000008121,
+      "t3_ms": 672.3917999770492,
+      "t4_ms": 665.0766000384465,
+      "t5_ms": 661.2943999934942,
+      "mean_ms": 663.4346199920401,
+      "range_ms": 15.628500026650727,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 7,
+      "timestamp_pk": "2026-10-07T00:57:58.017268+05:00",
+      "t1_ms": 670.8485999843106,
+      "t2_ms": 648.7418999895453,
+      "t3_ms": 642.0412000734359,
+      "t4_ms": 690.1079999515787,
+      "t5_ms": 648.3074000570923,
+      "mean_ms": 660.0094200111926,
+      "range_ms": 48.066799878142774,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 8,
+      "timestamp_pk": "2026-10-07T00:58:10.198953+05:00",
+      "t1_ms": 632.551799993962,
+      "t2_ms": 636.9776000501588,
+      "t3_ms": 655.6879000272602,
+      "t4_ms": 673.6322999931872,
+      "t5_ms": 628.7735000951216,
+      "mean_ms": 645.524620031938,
+      "range_ms": 44.85879989806563,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 9,
+      "timestamp_pk": "2026-10-07T00:58:22.230175+05:00",
+      "t1_ms": 641.1574999801815,
+      "t2_ms": 668.4234999120235,
+      "t3_ms": 634.0377999003977,
+      "t4_ms": 646.2725999299437,
+      "t5_ms": 662.6273000147194,
+      "mean_ms": 650.5037399474531,
+      "range_ms": 34.385700011625886,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 10,
+      "timestamp_pk": "2026-10-07T00:58:34.330619+05:00",
+      "t1_ms": 690.5638000462204,
+      "t2_ms": 668.8285999698564,
+      "t3_ms": 660.0374999688938,
+      "t4_ms": 647.1350999781862,
+      "t5_ms": 675.162100000307,
+      "mean_ms": 668.3454199926928,
+      "range_ms": 43.42870006803423,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 11,
+      "timestamp_pk": "2026-10-07T00:58:46.455677+05:00",
+      "t1_ms": 630.4086000891402,
+      "t2_ms": 697.9404999874532,
+      "t3_ms": 644.1722000017762,
+      "t4_ms": 685.8725000638515,
+      "t5_ms": 647.8483000537381,
+      "mean_ms": 661.2484200391918,
+      "range_ms": 67.53189989831299,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 12,
+      "timestamp_pk": "2026-10-07T00:58:58.544179+05:00",
+      "t1_ms": 634.6728999633342,
+      "t2_ms": 651.3652000576258,
+      "t3_ms": 627.4602999910712,
+      "t4_ms": 672.7765999967232,
+      "t5_ms": 1062.308399938047,
+      "mean_ms": 729.7166799893603,
+      "range_ms": 434.8480999469757,
+      "mean_signal": false,
+      "range_signal": true
+    },
+    {
+      "batch": 13,
+      "timestamp_pk": "2026-10-07T00:59:11.100031+05:00",
+      "t1_ms": 721.5433000819758,
+      "t2_ms": 657.6873000012711,
+      "t3_ms": 1011.3833999494091,
+      "t4_ms": 736.9542999658734,
+      "t5_ms": 821.9815000193194,
+      "mean_ms": 789.9099600035697,
+      "range_ms": 353.696099948138,
+      "mean_signal": true,
+      "range_signal": true
+    },
+    {
+      "batch": 14,
+      "timestamp_pk": "2026-10-07T00:59:24.249730+05:00",
+      "t1_ms": 693.0045000044629,
+      "t2_ms": 776.9593000411987,
+      "t3_ms": 736.7432999890298,
+      "t4_ms": 908.7482000468299,
+      "t5_ms": 734.0982999885455,
+      "mean_ms": 769.9107200140134,
+      "range_ms": 215.74370004236698,
+      "mean_signal": true,
+      "range_signal": false
+    },
+    {
+      "batch": 15,
+      "timestamp_pk": "2026-10-07T00:59:36.950292+05:00",
+      "t1_ms": 663.3984000654891,
+      "t2_ms": 655.2540000993758,
+      "t3_ms": 647.0485999016091,
+      "t4_ms": 647.8323000483215,
+      "t5_ms": 631.0554000083357,
+      "mean_ms": 648.9177400246263,
+      "range_ms": 32.343000057153404,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 16,
+      "timestamp_pk": "2026-10-07T00:59:49.055910+05:00",
+      "t1_ms": 657.7505000168458,
+      "t2_ms": 640.5480999965221,
+      "t3_ms": 656.0882000485435,
+      "t4_ms": 651.826599962078,
+      "t5_ms": 651.0848000179976,
+      "mean_ms": 651.4596400083974,
+      "range_ms": 17.202400020323694,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 17,
+      "timestamp_pk": "2026-10-07T01:00:01.199501+05:00",
+      "t1_ms": 656.5110000083223,
+      "t2_ms": 713.3134000468999,
+      "t3_ms": 649.1162999300286,
+      "t4_ms": 656.929099932313,
+      "t5_ms": 657.7143999747932,
+      "mean_ms": 666.7168399784714,
+      "range_ms": 64.1971001168713,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 18,
+      "timestamp_pk": "2026-10-07T01:00:13.408764+05:00",
+      "t1_ms": 653.1857000663877,
+      "t2_ms": 658.7099001044407,
+      "t3_ms": 674.3449999485165,
+      "t4_ms": 723.9468999905512,
+      "t5_ms": 654.0939999977127,
+      "mean_ms": 672.8563000215217,
+      "range_ms": 70.76119992416352,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 19,
+      "timestamp_pk": "2026-10-07T01:00:25.649670+05:00",
+      "t1_ms": 666.2978999083862,
+      "t2_ms": 669.2786000203341,
+      "t3_ms": 680.2042999770492,
+      "t4_ms": 749.1241000825539,
+      "t5_ms": 652.3363000014797,
+      "mean_ms": 683.4482399979606,
+      "range_ms": 96.78780008107424,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 20,
+      "timestamp_pk": "2026-10-07T01:00:37.929916+05:00",
+      "t1_ms": 753.523699939251,
+      "t2_ms": 694.800200057216,
+      "t3_ms": 655.1525000249967,
+      "t4_ms": 717.9914000444114,
+      "t5_ms": 742.3311000457034,
+      "mean_ms": 712.7597800223157,
+      "range_ms": 98.37119991425425,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 21,
+      "timestamp_pk": "2026-10-07T01:00:50.450424+05:00",
+      "t1_ms": 649.2469999939203,
+      "t2_ms": 673.9407000131905,
+      "t3_ms": 656.9674999918789,
+      "t4_ms": 638.254199991934,
+      "t5_ms": 661.1364999553189,
+      "mean_ms": 655.9091799892485,
+      "range_ms": 35.686500021256506,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 22,
+      "timestamp_pk": "2026-10-07T01:00:58.237062+05:00",
+      "t1_ms": 683.7407000130042,
+      "t2_ms": 650.7560999598354,
+      "t3_ms": 674.974299967289,
+      "t4_ms": 691.0785000072792,
+      "t5_ms": 678.9980999892578,
+      "mean_ms": 675.9095399873331,
+      "range_ms": 40.32240004744381,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 23,
+      "timestamp_pk": "2026-10-07T01:01:06.123912+05:00",
+      "t1_ms": 657.8481999458745,
+      "t2_ms": 674.7150999726728,
+      "t3_ms": 662.1999000199139,
+      "t4_ms": 647.7091000415385,
+      "t5_ms": 670.9954999387264,
+      "mean_ms": 662.6935599837452,
+      "range_ms": 27.005999931134284,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 24,
+      "timestamp_pk": "2026-10-07T01:01:13.945822+05:00",
+      "t1_ms": 705.4067000281066,
+      "t2_ms": 659.7721000434831,
+      "t3_ms": 651.0252999141812,
+      "t4_ms": 677.7228999417275,
+      "t5_ms": 673.8048000261188,
+      "mean_ms": 673.5463599907234,
+      "range_ms": 54.38140011392534,
+      "mean_signal": false,
+      "range_signal": false
+    },
+    {
+      "batch": 25,
+      "timestamp_pk": "2026-10-07T01:01:21.819438+05:00",
+      "t1_ms": 645.2019000425935,
+      "t2_ms": 707.0451000472531,
+      "t3_ms": 675.6707000313327,
+      "t4_ms": 689.5188000053167,
+      "t5_ms": 667.639399995096,
+      "mean_ms": 677.0151800243184,
+      "range_ms": 61.84320000465959,
+      "mean_signal": false,
+      "range_signal": false
+    }
+  ],
+  "macro": {
+    "attempts": 100,
+    "failures": 0,
+    "passed": 100,
+    "pbar": 0.0,
+    "limits": {
+      "cl": 0.0,
+      "lcl": 0,
+      "ucl": 0.0
+    },
+    "wilson_95_interval": [
+      0,
+      0.03699349820698566
+    ],
+    "failure_categories": {},
+    "features": [
+      {
+        "feature": "Storefront HTML",
+        "attempts": 20,
+        "passed": 20,
+        "failed": 0,
+        "expected_status": 200,
+        "median_ms": 187.68959993030876,
+        "p95_ms": 278.11036504572263
+      },
+      {
+        "feature": "Frontend JavaScript",
+        "attempts": 20,
+        "passed": 20,
+        "failed": 0,
+        "expected_status": 200,
+        "median_ms": 274.9106999253854,
+        "p95_ms": 335.2675300382544
+      },
+      {
+        "feature": "Product catalog",
+        "attempts": 20,
+        "passed": 20,
+        "failed": 0,
+        "expected_status": 200,
+        "median_ms": 662.3842499684542,
+        "p95_ms": 736.4613099896815
+      },
+      {
+        "feature": "Product detail",
+        "attempts": 20,
+        "passed": 20,
+        "failed": 0,
+        "expected_status": 200,
+        "median_ms": 451.1899499921128,
+        "p95_ms": 482.8696400101762
+      },
+      {
+        "feature": "Anonymous access protection",
+        "attempts": 20,
+        "passed": 20,
+        "failed": 0,
+        "expected_status": 401,
+        "median_ms": 251.34279998019338,
+        "p95_ms": 342.82576495897956
+      }
+    ],
+    "groups": [
+      {
+        "batch": 1,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 2,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 3,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 4,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 5,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 6,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 7,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 8,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 9,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 10,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 11,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 12,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 13,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 14,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 15,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 16,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 17,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 18,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 19,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      },
+      {
+        "batch": 20,
+        "checks": 5,
+        "failures": 0,
+        "proportion_failed": 0.0,
+        "outside_limits": false
+      }
+    ]
+  },
+  "catalog": {
+    "count": 40,
+    "unique_ids": 40,
+    "categories": {
+      "Men": 15,
+      "Women": 10,
+      "Kid": 15
+    },
+    "subcategories": {
+      "Topwear": 32,
+      "Bottomwear": 8
+    },
+    "min_price": 100.0,
+    "max_price": 399.0,
+    "mean_price": 211.75,
+    "median_price": 210.0,
+    "issues": [],
+    "checks_scope": "Field presence/types, nonnegative prices, unique IDs; image URLs are present but not each downloaded."
+  },
+  "ui": {
+    "count": 15,
+    "passed": 13,
+    "failed": 2,
+    "checks": [
+      {
+        "id": "UI01",
+        "timestamp_utc": "2026-10-06T19:57:56.789Z",
+        "feature": "Catalog",
+        "test": "Collection displays the 40 products observed in the live API snapshot",
+        "expected": "40 product links",
+        "observed": 40,
+        "passed": true
+      },
+      {
+        "id": "UI02",
+        "timestamp_utc": "2026-10-06T19:58:26.226Z",
+        "feature": "Filters",
+        "test": "Men filter agrees with live catalog category count",
+        "expected": "15 Men products",
+        "observed": "15; true",
+        "passed": true
+      },
+      {
+        "id": "UI03",
+        "timestamp_utc": "2026-10-06T19:58:42.853Z",
+        "feature": "Filters",
+        "test": "Men + Topwear filter agrees with live catalog",
+        "expected": "12 products",
+        "observed": 12,
+        "passed": true
+      },
+      {
+        "id": "UI04",
+        "timestamp_utc": "2026-10-06T19:59:08.979Z",
+        "feature": "Sorting",
+        "test": "Low-to-high sorting",
+        "expected": "40 prices in nondecreasing order, 100 to 399",
+        "observed": "100,110,120,120,130,138,140,140,140,145,145,150,150,163,170,190,200,200,200,200,220,220,220,230,240,250,250,250,260,260,270,280,280,290,300,300,300,300,300,399",
+        "passed": true
+      },
+      {
+        "id": "UI05",
+        "timestamp_utc": "2026-10-06T19:59:16.418Z",
+        "feature": "Sorting",
+        "test": "High-to-low sorting",
+        "expected": "40 prices in nonincreasing order",
+        "observed": "399,300,300,300,300,300,290,280,280,270,260,260,250,250,250,240,230,220,220,220,200,200,200,200,190,170,163,150,150,145,145,140,140,140,138,130,120,120,110,100",
+        "passed": true
+      },
+      {
+        "id": "UI06",
+        "timestamp_utc": "2026-10-06T20:02:00.676Z",
+        "feature": "Search",
+        "test": "Search denim with filters clear",
+        "expected": "4 matching products from live snapshot",
+        "observed": "4 denim product links displayed",
+        "passed": true
+      },
+      {
+        "id": "UI07",
+        "timestamp_utc": "2026-10-06T20:02:05.935Z",
+        "feature": "Search",
+        "test": "Search a term absent from catalog",
+        "expected": "0 product matches",
+        "observed": "0 product links displayed",
+        "passed": true
+      },
+      {
+        "id": "UI08",
+        "timestamp_utc": "2026-10-06T20:02:12.787Z",
+        "feature": "Search",
+        "test": "Clear search",
+        "expected": "Restore 40 products",
+        "observed": "40 product links displayed",
+        "passed": true
+      },
+      {
+        "id": "UI09",
+        "timestamp_utc": "2026-10-06T20:02:17.809Z",
+        "feature": "Product detail",
+        "test": "Read chosen product detail",
+        "expected": "Snapshot name, price 200, sizes M/L/XL",
+        "observed": "Name, price 200 and M/L/XL match snapshot",
+        "passed": true
+      },
+      {
+        "id": "UI10",
+        "timestamp_utc": "2026-10-06T20:02:23.374Z",
+        "feature": "Cart validation",
+        "test": "Add without choosing size",
+        "expected": "Reject and ask for size; cart stays 0",
+        "observed": "please select the size toast; cart 0",
+        "passed": true
+      },
+      {
+        "id": "UI11",
+        "timestamp_utc": "2026-10-06T20:02:28.999Z",
+        "feature": "Guest cart",
+        "test": "Choose size M and add one",
+        "expected": "Cart count becomes 1 with success message",
+        "observed": "cart icon 1; item added successfully",
+        "passed": true
+      },
+      {
+        "id": "UI12",
+        "timestamp_utc": "2026-10-06T20:02:37.492Z",
+        "feature": "Cart totals",
+        "test": "One product priced 200, size M",
+        "expected": "Subtotal 200, shipping 10, total 210",
+        "observed": "200 + 10 = 210 displayed",
+        "passed": true
+      },
+      {
+        "id": "UI13",
+        "timestamp_utc": "2026-10-06T20:02:37.492Z",
+        "feature": "Cart identification",
+        "test": "Identify cart product by readable name",
+        "expected": "Cart line shows product name (study usability criterion)",
+        "observed": "Cart line shows image, price and size but no product name",
+        "passed": false
+      },
+      {
+        "id": "UI14",
+        "timestamp_utc": "2026-10-06T20:02:44.191Z",
+        "feature": "Cart totals",
+        "test": "Increase quantity from 1 to 2",
+        "expected": "Subtotal 400, shipping 10, total 410",
+        "observed": "Quantity 2; 400 + 10 = 410 displayed",
+        "passed": true
+      },
+      {
+        "id": "UI15",
+        "timestamp_utc": "2026-10-06T20:02:56.660Z",
+        "feature": "Guest cart persistence",
+        "test": "Refresh cart after adding two size M units",
+        "expected": "Keep quantity 2 and total 410 (study usability criterion)",
+        "observed": "After refresh cart is empty, badge 0, subtotal and total 0",
+        "passed": false
+      }
+    ]
+  },
+  "validation": {
+    "result": "PASS",
+    "raw_files_sha256": {
+      "requests.csv": "a0d70a49264918c8341de4a5b7089a5f8170d9bddcada59192301dfecaa67d21",
+      "metadata.json": "34f324b3d40d9180fd460e92817097b60a632cc7de9d02ec5de9776348001c19",
+      "products_snapshot.json": "337c7f74a784a701ff458bf0a94d996bc8a84c6ddc3a926700160a1a2740a65d",
+      "discovery.json": "fded695c69dc17b086442c550d64a3b564ed5d1171c1ca63d8453d3311059385",
+      "evidence/ui_checks.json": "3428547168ce00a05dacb7c89d86005fd259b78b48ebbc37af4c708ff5a47576"
+    },
+    "checks": [
+      "Metadata, row counts, unique sequential request IDs and chronological timestamps agree.",
+      "Every attempt has a finite positive time, pass/fail label and response SHA-256.",
+      "All passing statuses satisfy the expected contract; expected 401 is a pass.",
+      "All micro groups and all fixed macro rounds are structurally complete.",
+      "NumPy subgroup means and ranges agree with independent direct calculations.",
+      "Grand mean independently recomputed; catalog category counts sum to total.",
+      "Failed attempts retained; incomplete latency groups explicitly listed.",
+      "Book n=5 factors used: d2=2.326, D3=0, D4=2.114; d2 formula defines Xbar limits."
+    ]
+  }
+}

@@ -121,3 +121,62 @@ test('an invalid successful API response shows an error without an empty complet
   assert.equal(document.getElementById('analyse-button').disabled, false);
   dom.window.close();
 });
+
+test('default dataset submission selects the PDF study, has no invented target and sends the seed', async () => {
+  const dom = setup();
+  let submitted;
+  dom.window.fetch = async (url, options) => {
+    if (options) submitted = JSON.parse(options.body);
+    return {ok:true, json:async () => options ? {report_html:fixture} : url.includes('chapter10') ? {cases:[]} : {}};
+  };
+  dom.window.eval(calculator);
+  const d = dom.window.document;
+  d.getElementById('dataset-tab').click();
+  d.getElementById('dataset-form').dispatchEvent(new dom.window.Event('submit', {cancelable:true}));
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(submitted.dataset_source, 'study');
+  assert.equal(submitted.specification_ms, null);
+  assert.equal(submitted.seed, 20260901);
+  assert.equal(d.getElementById('study-downloads').hidden, false);
+  dom.window.close();
+});
+
+test('own raw micro timings can be submitted, and cannot silently be used in macro mode', async () => {
+  const dom = setup();
+  const submitted = [];
+  dom.window.fetch = async (url, options) => {
+    if (options) submitted.push(JSON.parse(options.body));
+    return {ok:true, json:async () => options ? {report_html:fixture} : url.includes('chapter10') ? {cases:[]} : {}};
+  };
+  dom.window.eval(calculator);
+  const d = dom.window.document;
+  d.getElementById('dataset-tab').click();
+  d.getElementById('dataset-source').value = 'own';
+  d.getElementById('dataset-source').dispatchEvent(new dom.window.Event('change'));
+  d.getElementById('csv-text').value = 'period,t1_ms,t2_ms,t3_ms,t4_ms,t5_ms\n'+Array.from({length:5}, (_,i)=>`${i},100,200,300,400,500`).join('\n');
+  d.getElementById('dataset-form').dispatchEvent(new dom.window.Event('submit', {cancelable:true}));
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(submitted.length, 1);
+  assert.equal(submitted[0].rows.length, 5);
+  assert.equal(submitted[0].rows[0].t5_ms, 500);
+  assert.equal(d.getElementById('study-downloads').hidden, true);
+  d.getElementById('dataset-scale').value = 'macro';
+  d.getElementById('dataset-scale').dispatchEvent(new dom.window.Event('change'));
+  d.getElementById('dataset-form').dispatchEvent(new dom.window.Event('submit', {cancelable:true}));
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(submitted.length, 1);
+  assert.match(d.getElementById('dataset-error').textContent, /for micro studies/);
+  dom.window.close();
+});
+
+test('original cart JPEG evidence is retained while SVG or external images are rejected', () => {
+  const dom = setup();
+  const report = fixture.replace('</main>', '<img src="data:image/jpeg;base64,/9j/AA==" alt="Cart evidence">'+
+    '<img src="data:image/svg+xml;base64,PHN2Zz4=" alt="Untrusted SVG"></main>');
+  const host = dom.window.document.getElementById('result-report');
+  dom.window.QCReportViewer.render(host, report);
+  assert.equal(host.shadowRoot.querySelectorAll('img[src]').length, 2);
+  assert.match(host.shadowRoot.querySelector('img[alt="Cart evidence"]').src, /^data:image\/jpeg/);
+  assert.equal(host.shadowRoot.querySelector('img[alt="Untrusted SVG"]').hasAttribute('src'), false);
+  dom.window.close();
+});

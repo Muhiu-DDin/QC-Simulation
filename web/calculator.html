@@ -6,7 +6,7 @@
   <title>Quality Control | Simulation workspace</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
   <link rel="stylesheet" href="report-theme.css">
-  <link rel="stylesheet" href="calculator.css?v=2">
+  <link rel="stylesheet" href="calculator.css?v=3">
 </head>
 <body>
   <header class="topbar"><div class="topbar-inner">
@@ -43,23 +43,25 @@
         </div>
         <div id="dataset-panel" role="tabpanel" aria-labelledby="dataset-tab" hidden>
           <form id="dataset-form">
-            <h2>Dataset analysis</h2><p class="form-intro">Analyse recorded website checks and response times, then verify the sampling model and weighted timing mean.</p>
-            <label for="dataset-scale">Project scale</label><select id="dataset-scale"><option value="micro">Micro — focused, smaller dataset</option><option value="macro">Macro — wider, larger dataset</option></select>
-            <p id="scale-hint" class="field-hint">Micro uses focused homepage checks. Macro covers a wider selection of public routes. Both are measured samples; neither is an industrial big-data system.</p>
-            <label for="dataset-source">Dataset source</label><select id="dataset-source"><option value="forevermart">ForeverMart recorded website checks</option><option value="own">My own CSV dataset</option><option value="demo">Synthetic demo (example only)</option></select>
-            <p id="dataset-source-hint" class="field-hint">Recorded HTTP checks from ForeverMart. Timing includes network, TLS and response download; it does not measure browser rendering or prove complete software quality.</p>
+            <h2>Dataset analysis</h2><p class="form-intro">Reproduce your PDF study, then simulate another selection of its recorded groups.</p>
+            <label for="dataset-scale">Study</label><select id="dataset-scale"><option value="micro">Micro — catalog response times</option><option value="macro">Macro — five-service check suite</option></select>
+            <p id="scale-hint" class="field-hint">Micro: 25 groups of five catalog timings. Macro: 20 rounds of the same five service checks.</p>
+            <label for="dataset-source">Dataset source</label><select id="dataset-source"><option value="study">ForeverMart — attached PDF study</option><option value="own">My own CSV dataset</option><option value="demo">Synthetic demo (example only)</option></select>
+            <p id="dataset-source-hint" class="field-hint">Original measurements from 7 October 2026. These saved measurements match the attached PDF study; running the analysis does not collect new website data.</p>
+            <p id="study-downloads" class="field-hint"><a href="data/forevermart_study/requests.csv" download>Download original measurements</a></p>
             <div id="csv-inputs" hidden>
               <label for="csv-file">Import a CSV file</label><input id="csv-file" type="file" accept=".csv,text/csv" aria-describedby="csv-format-hint">
               <p id="csv-file-status" class="field-hint" role="status"></p>
               <label for="csv-text">CSV data</label><textarea id="csv-text" rows="7" spellcheck="false" placeholder="period,passed,failed,response_ms&#10;Batch 1,98,2,245&#10;Batch 2,96,4,310" aria-describedby="csv-format-hint"></textarea>
-              <p id="csv-format-hint" class="field-hint">Upload a file to fill this editor, or paste your data here. Required columns: <strong>period</strong> (batch label), <strong>passed</strong> and <strong>failed</strong> (whole-number check counts), <strong>response_ms</strong> (the batch’s mean response time in milliseconds). Each batch must contain at least one check. Maximum: 20,000 batches and 2 MB.</p>
+              <p id="csv-format-hint" class="field-hint">For mean/range charts in micro mode: <strong>period,t1_ms,t2_ms,t3_ms,t4_ms,t5_ms</strong> — five individual successful timings per group, 5–500 groups. For aggregate checks in either mode: <strong>period,passed,failed,response_ms</strong> — counts and their batch mean, up to 20,000 batches. Aggregate means cannot recover individual ranges or percentiles. Maximum file size: 2 MB.</p>
               <button type="button" id="download-template" class="text-button">Download a CSV template</button>
             </div>
-            <label for="specification-ms">Response time requirement (ms)</label><input id="specification-ms" type="number" min="0.001" step="any" value="500" placeholder="Enter the maximum acceptable batch mean, e.g. 500" required>
-            <p class="field-hint">A batch mean above this value exceeds your chosen performance target. The default 500 ms is a study target; adjust it to your requirement. It is separate from statistical control limits.</p>
+            <label for="specification-ms">Optional response time target (ms)</label><input id="specification-ms" type="number" min="0.001" step="any" placeholder="Leave empty, or enter your target, e.g. 800">
+            <p class="field-hint">The PDF study has no fixed timing requirement. Add a target only if you have one; it is separate from statistical control limits.</p>
             <details class="advanced-options"><summary>Simulation settings</summary><div>
               <label for="dataset-trials">Random simulation trials</label><select id="dataset-trials"><option value="10000">10,000 trials</option><option value="50000">50,000 trials</option><option value="100000">100,000 trials</option></select>
-              <p class="field-hint">Random batches check the calculated probability of crossing the chart limits. Separately, resampled response times check the weighted timing mean. More trials reduce simulation noise; they do not add real website checks.</p>
+              <label for="dataset-seed">Random seed</label><input id="dataset-seed" type="number" min="0" max="4294967295" step="1" value="20260901" placeholder="Enter a whole number for reproducible results">
+              <p class="field-hint">The PDF study resamples whole recorded groups to show how its mean and limits can vary. The macro report also checks the failure-count formula. Same data, trials and seed give the same simulation. Change the seed for a different random selection; no new website checks are made.</p>
             </div></details>
             <div class="form-actions"><button type="submit" id="analyse-button">Analyse and simulate</button></div>
             <p id="dataset-error" class="form-error" role="alert" hidden></p><p id="dataset-loading" class="loading-message" role="status" hidden>Python is analysing your dataset and preparing the charts.</p>
@@ -68,11 +70,11 @@
       </section>
       <section class="result-container" aria-label="Calculation results" aria-live="polite">
         <div id="empty-result" class="exercise result-placeholder"><span class="eyebrow">Results</span><h2>Your analysis will appear here</h2><p id="empty-result-description">Select an assigned book question, enter its values, then press Enter or select Calculate and compare.</p><ul id="empty-result-list"><li>Answers calculated using the question’s formula</li><li>Comparison with available stored reference answers</li><li>Charts and simulation verification, where applicable</li></ul></div>
-        <div id="result-content" hidden><div id="data-message" role="status" class="data-message"></div><div class="result-toolbar"><span>Analysis complete</span><button id="download-result" type="button" class="secondary-button">Download result JSON</button></div><div id="result-report" class="report-viewer" role="region" aria-label="Calculated results, charts and verification"></div></div>
+        <div id="result-content" hidden><div id="data-message" role="status" class="data-message"></div><div class="result-toolbar"><span>Analysis complete</span><button id="download-report" type="button" class="secondary-button">Download report</button><button id="download-result" type="button" class="secondary-button">Download result JSON</button></div><div id="result-report" class="report-viewer" role="region" aria-label="Calculated results, charts and verification"></div></div>
       </section>
     </div>
   </main>
-  <script src="report-viewer.js?v=2" defer></script>
-  <script src="calculator.js?v=2" defer></script>
+  <script src="report-viewer.js?v=3" defer></script>
+  <script src="calculator.js?v=3" defer></script>
 </body>
 </html>

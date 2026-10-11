@@ -1,5 +1,7 @@
 # ForeverMart micro and macro mini-projects
 
+**Historical HTTP-sample guide:** This page describes the separate 11 October homepage/route capture. The current default website and CLI use the original attached PDF study (125 catalog timings and 100 service checks) with group bootstrap simulation. Follow [the current PDF-study guide](PDF_STUDY_SIMULATION.md) for that workflow. The older files remain preserved for provenance; their counts and measurement scope are different.
+
 The assignment's Part 2B verifies numerical answers using software. Part 2C asks for data, formulas, graphs and exploratory analysis at micro and macro levels. This project offers both through separate forms and reports.
 
 ## Dataset source and collection

@@ -65,43 +65,48 @@ Useful commands:
 
 The default report is `output/report.html`; `comparison.csv`, `results.json` and `graphs/` provide exportable evidence. Outside-range book IDs are excluded from the default run and book dropdown.
 
-## Part 2C — ForeverMart micro and macro data
+## Part 2C — ForeverMart PDF study and simulation
 
-Select **Micro / macro data · Part 2C**, then choose the scale:
+The default website and CLI now reproduce the original study behind your attached **report.pdf**, captured on **7 October 2026 (Pakistan time)**. Calculations are compared with that study's separately frozen answers. Simulation is added to the recorded-data analysis; pressing the button does not collect new website measurements.
 
-| Recorded dataset | Scope | Batches | Actual HTTP checks |
+| Study | Scope | Groups / rounds | Actual recorded requests |
 |---|---|---:|---:|
-| Micro | Focused homepage observations | 20 | 60 |
-| Macro | Broader observations across eight public routes | 100 | 300 |
+| Micro | Product catalog API timings | 25 × 5 timings | 125 |
+| Macro | Same five service checks in every round | 20 × 5 checks | 100 |
 
-These are **real, dated measurements from https://forevermart.vercel.app/**, recorded on 11 October 2026. Each CSV row contains three sequential checks and their mean response time. A check passes when it returns HTTP 200, HTML content and the React root element. All 360 checks in this capture passed that narrow criterion. This does not establish that browser interactions, shopping, login or checkout work.
+Micro produces individual latency summaries, mean/range charts, timing exploration and catalog statistics. Macro produces service pass/fail results, a p chart, endpoint performance, catalog exploration and **15 separate browser checks (13 passed, two study-criterion issues)** with original cart evidence, remedies and retest steps. Those browser issues are not added to the 100 service checks. Expected HTTP 401 counts as a pass for anonymous access protection.
 
-The macro dataset is larger and has wider coverage than the micro dataset; **100 batches are not an industrial Big Data dataset**. For larger real datasets, import your own CSV, up to 20,000 batches and 2 MB per request. The optional synthetic example supplies 10,000 teaching batches and is explicitly labelled synthetic; it is separate from the ForeverMart measurements.
+Each simulation randomly picks whole recorded groups with replacement, then recalculates the study average. Micro also recalculates chart limits. Macro separately checks the binomial failure-count formula. The reports distinguish **recorded-data charts** from the **simulation distribution chart** and explain the exploratory bootstrap interval separately from Monte Carlo error. Fixed data, trials and seed reproduce the results. The original study is a dated sample, not a live monitor or load test.
 
-The analysis includes:
+1. Open **Micro and macro datasets · Part 2C**.
+2. Choose **ForeverMart — attached PDF study** and Micro or Macro.
+3. Leave the timing target empty unless you have an additional requirement.
+4. Select **Analyse and simulate**.
+5. Use **Download report** for the standalone HTML report; open it and Print → Save as PDF if needed. Use **Download result JSON** for calculated values and provenance.
 
-- Count-weighted pass/failure rates and 95% Wilson intervals.
-- A p chart with subgroup-specific limits when batch sizes differ.
-- Ordered batch response times and a histogram of batch means.
-- An editable timing threshold; 500 ms is a study target, not an established website SLA.
-- Exact binomial probability compared with Monte Carlo estimates.
-- Empirical response-time resampling compared with the calculated weighted mean.
-- Dataset provenance, model assumptions and practical investigation steps.
-
-The recorded all-pass data give a fitted failure probability of zero. The report shows the Wilson upper bound and explains why zero observed failures is not proof of zero risk. Timing resampling still verifies the empirical mean. More simulation trials reduce simulation noise; they do not collect more real website evidence.
-
-To generate standalone mini-project reports:
+The chart signals and bootstrap intervals need careful interpretation because the observations are serial and the micro baseline has changing variability. They do not prove a software defect, a stable process or an SLA. [The PDF-study guide](docs/PDF_STUDY_SIMULATION.md) explains the data, formulas, assumptions, simulation and submission.
 
 ```powershell
-.\.venv\Scripts\python.exe run.py --project micro
-.\.venv\Scripts\python.exe run.py --project macro
+.\.venv\Scripts\python.exe run.py --project micro --trials 10000
+.\.venv\Scripts\python.exe run.py --project macro --trials 10000
 ```
 
-Open `output/forevermart-micro/report.html` and `output/forevermart-macro/report.html`. Both include two exported PNG charts and complete JSON results. These runs do not overwrite the book report.
+These generate `output/forevermart-micro/report.html` and `output/forevermart-macro/report.html` with charts and JSON. The earlier 11 October homepage/route sample remains preserved for traceability; it is distinct from the PDF study. The synthetic demo is explicitly labelled example data.
 
 ## Use your own dataset
 
-In the dataset form choose **My own CSV data**, then upload or paste a CSV using exactly these columns:
+For equivalent micro mean/range charts, import **five individual successful timings per group**, with 5–500 uniquely labelled groups:
+
+```csv
+period,t1_ms,t2_ms,t3_ms,t4_ms,t5_ms
+Group 1,650,670,660,680,655
+Group 2,660,655,675,665,650
+Group 3,670,690,680,665,660
+Group 4,655,660,670,650,675
+Group 5,665,675,660,680,655
+```
+
+For aggregate pass/fail analysis in either scale, the existing format still works (maximum 20,000 rows and 2 MB):
 
 ```csv
 period,passed,failed,response_ms
@@ -109,17 +114,13 @@ batch-001,98,2,240.5
 batch-002,95,5,310.8
 ```
 
-`period` is a unique ordered batch label. `passed` and `failed` are nonnegative whole outcome counts whose sum must be positive. `response_ms` is the positive **mean** response time for that same batch. The example above is illustrative, not additional ForeverMart evidence.
-
-You may change the response-time threshold and run one dataset analysis at a time. Own-data results show **Independent data** and never compare against textbook answers. [The mini-project guide](docs/MINI_PROJECTS.md) explains collection, formulas and interpretation.
-
-CLI equivalent:
+These examples are illustrative. `response_ms` is the positive mean for the same executions represented by the nonnegative whole pass/fail counts. Aggregate means cannot reconstruct individual latency percentiles or within-group ranges. Own-data results never claim a match with textbook or original PDF answers. The form provides downloadable templates.
 
 ```powershell
 .\.venv\Scripts\python.exe run.py --project macro --dataset my_data.csv --threshold-ms 700 --output output\my-dataset
 ```
 
-For individual custom numerical exercises, the existing JSON input format remains available:
+Custom numerical exercises still use the existing JSON format:
 
 ```powershell
 .\.venv\Scripts\python.exe run.py --input examples\custom_inputs.json --output output\custom
@@ -132,11 +133,13 @@ For individual custom numerical exercises, the existing JSON input format remain
 | `data/chapter10_inputs.json` | Preserved full source transcription; runtime assignment filter selects 10.40–10.59 |
 | `data/chapter10_answers.json`, `book_answers.py` | Preserved frozen answers and their provenance; never generated from runtime results |
 | `data/assignment_scope.json`, `qc/scope.py` | Active exercise range and numerical/conceptual coverage |
-| `data/forevermart_micro.csv`, `data/forevermart_macro.csv` | Actual website measurement batches |
+| `data/forevermart_study/`, `data/forevermart_study_manifest.json` | Original PDF study measurements, frozen answers, catalog and UI evidence |
+| `data/forevermart_micro.csv`, `data/forevermart_macro.csv` | Preserved earlier 11 October HTTP sample, distinct from the PDF study |
 | `data/forevermart_http_checks.json` | Raw evidence for every recorded request |
 | `data/forevermart_dataset_manifest.json` | Collection dates, routes, definitions and file hashes |
 | `qc/calculations.py`, `qc/simulation.py`, `qc/comparison.py` | Numerical formulas, sampling models and reference comparisons |
-| `qc/dataset_projects.py` | Independent dataset validation, analysis, charts and simulations |
+| `qc/dataset_projects.py` | Aggregate CSV analysis and dataset dispatch |
+| `qc/study_data.py`, `qc/study_projects.py` | Original PDF-study recalculation, raw micro analysis, bootstrap simulation and report |
 | `qc/web_service.py`, `api/calculate.py`, `serve.py` | Shared calculation service, web endpoint and local server |
 | `web/` | Input forms, browser code and the charcoal/red theme |
 | `tools/prepare_vercel.py`, `vercel-site/` | Prepared website; only the 22 assigned book cases and references are exported |
@@ -151,7 +154,7 @@ For individual custom numerical exercises, the existing JSON input format remain
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The collector can refresh the real website sample; doing so intentionally changes the dated evidence and its hashes:
+The legacy collector can refresh the separate 11 October-style HTTP sample; it does not alter or replace the frozen PDF-study evidence:
 
 ```powershell
 .\.venv\Scripts\python.exe tools\collect_forevermart_data.py

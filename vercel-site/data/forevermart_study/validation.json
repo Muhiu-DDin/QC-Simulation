@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "raw_files_sha256": {
+    "requests.csv": "a0d70a49264918c8341de4a5b7089a5f8170d9bddcada59192301dfecaa67d21",
+    "metadata.json": "34f324b3d40d9180fd460e92817097b60a632cc7de9d02ec5de9776348001c19",
+    "products_snapshot.json": "337c7f74a784a701ff458bf0a94d996bc8a84c6ddc3a926700160a1a2740a65d",
+    "discovery.json": "fded695c69dc17b086442c550d64a3b564ed5d1171c1ca63d8453d3311059385",
+    "evidence/ui_checks.json": "3428547168ce00a05dacb7c89d86005fd259b78b48ebbc37af4c708ff5a47576"
+  },
+  "checks": [
+    "Metadata, row counts, unique sequential request IDs and chronological timestamps agree.",
+    "Every attempt has a finite positive time, pass/fail label and response SHA-256.",
+    "All passing statuses satisfy the expected contract; expected 401 is a pass.",
+    "All micro groups and all fixed macro rounds are structurally complete.",
+    "NumPy subgroup means and ranges agree with independent direct calculations.",
+    "Grand mean independently recomputed; catalog category counts sum to total.",
+    "Failed attempts retained; incomplete latency groups explicitly listed.",
+    "Book n=5 factors used: d2=2.326, D3=0, D4=2.114; d2 formula defines Xbar limits."
+  ]
+}

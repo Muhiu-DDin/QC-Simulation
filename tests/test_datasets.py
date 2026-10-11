@@ -123,7 +123,7 @@ class DatasetProjectTests(unittest.TestCase):
         self.assertIn("not collected website measurements", response["message"])
         self.assertEqual(response["record"]["case"]["inputs"]["dataset_source"], "demo")
 
-    def test_recorded_website_source_is_default_and_displays_collection_definition(self):
+    def test_legacy_recorded_website_source_displays_collection_definition(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             data = root / "data"
@@ -134,7 +134,7 @@ class DatasetProjectTests(unittest.TestCase):
                 check_definition="HTTP 200 and a React root", synthetic=False,
                 scales={"micro": {"routes": ["/"]}})), encoding="utf-8")
             with patch("qc.dataset_projects.ROOT", root), patch("qc.dataset_projects._plots", return_value={"failure_chart": "", "timing_chart": ""}):
-                response = evaluate_dataset(dict(scale="micro", trials=100))
+                response = evaluate_dataset(dict(scale="micro", dataset_source="forevermart", trials=100))
             self.assertEqual(response["record"]["case"]["inputs"]["dataset_source"], "forevermart")
             self.assertEqual(response["record"]["calculated"]["total_executions"], 6)
             self.assertFalse(response["record"]["provenance"]["synthetic"])

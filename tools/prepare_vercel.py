@@ -65,7 +65,7 @@ catalog=json.loads(ROOT.joinpath('data/chapter10_inputs.json').read_text(encodin
 catalog['cases']=assigned_cases(catalog['cases'])
 catalog['assignment']=assignment_manifest()
 target.joinpath('chapter10_inputs.json').write_text(json.dumps(catalog,indent=2),encoding='utf-8')
-shutil.copy2(ROOT/'data/forevermart_dataset_manifest.json',target/'dataset_manifest.json')
+shutil.copy2(ROOT/'data/forevermart_study_manifest.json',target/'dataset_manifest.json')
 for scale in ['micro','macro']:
     shutil.copy2(ROOT/'data'/f'forevermart_{scale}.csv',target/f'forevermart_{scale}.csv')
 for folder in ['qc','data','api']:
@@ -73,6 +73,11 @@ for folder in ['qc','data','api']:
     destination.mkdir(exist_ok=True)
     for path in ROOT.joinpath(folder).iterdir():
         if path.is_file() and path.suffix in ('.py','.json','.csv'): shutil.copy2(path,destination/path.name)
+study_source=ROOT/'data/forevermart_study'
+study_target=target/'data/forevermart_study'
+# Publish only the explicitly imported public study, never the unrelated QA
+# report output, test-account evidence or the user's original PDF/book files.
+shutil.copytree(study_source,study_target,dirs_exist_ok=True)
 target.joinpath('data/chapter10_inputs.json').write_text(json.dumps(catalog,indent=2),encoding='utf-8')
 answers=json.loads(ROOT.joinpath('data/chapter10_answers.json').read_text(encoding='utf-8'))
 answers['references']={key:value for key,value in answers['references'].items() if key in expected}

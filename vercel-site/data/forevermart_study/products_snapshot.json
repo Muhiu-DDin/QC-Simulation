@@ -1,0 +1,831 @@
+{
+  "success": true,
+  "message": "successfully fetched products",
+  "products": [
+    {
+      "_id": "68ee7c73675d613eba9e96c6",
+      "productName": "Men Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 200,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png",
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/qodhefrulj8qypvky848.png",
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760459894/tlf1nf9elnj0ymklvncl.png",
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/wxmmspzquwotcfr57kt5.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": true,
+      "createdAt": "2025-10-14T16:38:11.048Z",
+      "updatedAt": "2025-10-14T16:38:11.048Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f38f15f780484273055b41",
+      "productName": "Women Zip-Front Relaxed Fit Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 399,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760792349/i73ls8iipmxou5os6odw.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "M",
+        "S",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-18T12:59:01.038Z",
+      "updatedAt": "2025-10-18T12:59:01.038Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f447b0afda2a7672b771",
+      "productName": "Men Tapered Fit Flat-Front Trousers",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 145,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761145929/l3fecmq5uzea8gouredx.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Men",
+      "size": [
+        "M",
+        "S",
+        "L"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:12:07.221Z",
+      "updatedAt": "2025-10-22T15:12:07.221Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f66eb0afda2a7672b797",
+      "productName": "Women Zip-Front Relaxed Fit Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 230,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146480/hz881bj1vlzm7j3ooqfj.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:21:18.577Z",
+      "updatedAt": "2025-10-22T15:21:18.577Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef266a6a3e3ef181805006",
+      "productName": "Girls Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 220,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760503406/ubb1siajk0iiaqarlzbi.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "L",
+        "XL",
+        "S"
+      ],
+      "bestSeller": true,
+      "createdAt": "2025-10-15T04:43:22.931Z",
+      "updatedAt": "2025-10-15T04:43:22.931Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2f0f6a3e3ef181805049",
+      "productName": "Men Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 280,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505618/kgpqwznwkvvgmhyh2xqz.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:20:15.335Z",
+      "updatedAt": "2025-10-15T05:20:15.335Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2f9c6a3e3ef181805052",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.\"",
+      "price": 300,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505759/wbnpk3a8fgvi3e9cmuh7.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:22:36.136Z",
+      "updatedAt": "2025-10-15T05:22:36.136Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2bba6a3e3ef181805028",
+      "productName": "Men Tapered Fit Flat-Front Trousers",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 110,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760504765/of1kyuzornq68uzvmxsr.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:06:02.348Z",
+      "updatedAt": "2025-10-15T05:06:02.348Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f78bb0afda2a7672b7a9",
+      "productName": "Men Slim Fit Relaxed Denim Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 300,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146765/lxx26kgeu14e4vwj8fty.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "L",
+        "M",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:26:03.973Z",
+      "updatedAt": "2025-10-22T15:26:03.973Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2b7c6a3e3ef181805024",
+      "productName": "Girls Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 100,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760504703/yoygszimkdgtnrakbgk6.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:05:00.616Z",
+      "updatedAt": "2025-10-15T05:05:00.616Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2e906a3e3ef181805040",
+      "productName": "Women Zip-Front Relaxed Fit Jacket",
+      "description": "        description: \"A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.\",\r\n",
+      "price": 270,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505491/zwhv63sudzsgmfkjtqok.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:18:08.360Z",
+      "updatedAt": "2025-10-15T05:18:08.360Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f256b0afda2a7672b74a",
+      "productName": "Girls Round Neck Cotton Top",
+      "description": "\"A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 138,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761145431/sjerb9yxz3j1eli9siwg.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "M",
+        "L",
+        "S",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:03:50.182Z",
+      "updatedAt": "2025-10-22T15:03:50.182Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f2b4b0afda2a7672b74d",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment",
+      "price": 140,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761145526/iotykbaqswujqulf5mup.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "L",
+        "XL",
+        "M",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:05:24.535Z",
+      "updatedAt": "2025-10-22T15:05:24.535Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f3e1b0afda2a7672b761",
+      "productName": "Girls Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 140,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761145827/jb7jja4bcr0m11s4qy1g.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "M",
+        "S",
+        "L"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:10:25.587Z",
+      "updatedAt": "2025-10-22T15:10:25.587Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f420b0afda2a7672b76e",
+      "productName": "Men Tapered Fit Flat-Front Trousers",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 200,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761145890/eskfjsxearowcc5jv9jx.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Men",
+      "size": [
+        "M",
+        "L",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:11:28.970Z",
+      "updatedAt": "2025-10-22T15:11:28.970Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f4e8b0afda2a7672b77e",
+      "productName": "Women Palazzo Pants with Waist Belt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 200,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146090/azvrlfifdqlugqrl9vb6.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Women",
+      "size": [
+        "L",
+        "M",
+        "S",
+        "XL",
+        "XXL"
+      ],
+      "bestSeller": true,
+      "createdAt": "2025-10-22T15:14:48.444Z",
+      "updatedAt": "2025-10-22T15:14:48.444Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f33f18654765a1c0149968",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 250,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760771872/aogrpq1eve5q5aalpfnd.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-18T07:17:44.358Z",
+      "updatedAt": "2025-10-18T07:17:44.358Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f718b0afda2a7672b7a0",
+      "productName": "Kid Tapered Slim Fit Trouser",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 120,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146650/sjmbogcq9rqmjtqakapc.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Kid",
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:24:08.255Z",
+      "updatedAt": "2025-10-22T15:24:08.255Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f5adb0afda2a7672b78b",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.\"",
+      "price": 130,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146287/ntagkh1llvcrqjnqxyl4.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "M",
+        "S",
+        "L"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:18:05.765Z",
+      "updatedAt": "2025-10-22T15:18:05.765Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2f5c6a3e3ef18180504d",
+      "productName": "Men Slim Fit Relaxed Denim Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 290,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505696/jcmlocy6fllifsixov8t.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:21:32.933Z",
+      "updatedAt": "2025-10-15T05:21:32.933Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f528b0afda2a7672b781",
+      "productName": "Women Palazzo Pants with Waist Belt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 220,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146154/mmqptrfhbjlppjrrzu0l.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Women",
+      "size": [
+        "L",
+        "XL",
+        "M",
+        "S",
+        "XXL"
+      ],
+      "bestSeller": true,
+      "createdAt": "2025-10-22T15:15:52.337Z",
+      "updatedAt": "2025-10-22T15:15:52.337Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f6a5b0afda2a7672b79a",
+      "productName": "Men Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment",
+      "price": 280,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146535/end1qhnkpvzdxj0n03yv.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:22:13.472Z",
+      "updatedAt": "2025-10-22T15:22:13.472Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f4c1b0afda2a7672b77b",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 163,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146051/dsgj7g50hgi3uam6lee7.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "L",
+        "M"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:14:09.431Z",
+      "updatedAt": "2025-10-22T15:14:09.431Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2b246a3e3ef181805020",
+      "productName": "Men Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 140,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760504616/z7wz0o6oltczwjvr1ffn.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:03:32.943Z",
+      "updatedAt": "2025-10-15T05:03:32.943Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f54cb0afda2a7672b784",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 150,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146190/tmnyucdgcbh4o8wzh7mf.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:16:28.894Z",
+      "updatedAt": "2025-10-22T15:16:28.894Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f609b0afda2a7672b791",
+      "productName": "Men Slim Fit Relaxed Denim Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 300,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146379/qnlstiybfthi41yew2bx.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "M",
+        "S",
+        "XL",
+        "XXL",
+        "L"
+      ],
+      "bestSeller": true,
+      "createdAt": "2025-10-22T15:19:37.618Z",
+      "updatedAt": "2025-10-22T15:19:37.618Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2bea6a3e3ef18180502c",
+      "productName": "Men Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 120,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760504813/hmc2opqndfsvauxypvhj.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:06:50.631Z",
+      "updatedAt": "2025-10-15T05:06:50.631Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f49db0afda2a7672b778",
+      "productName": "Boy Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 145,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146015/tckpvoixy5ebnzwa6nt7.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "M",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:13:33.586Z",
+      "updatedAt": "2025-10-22T15:13:33.586Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f6d6b0afda2a7672b79d",
+      "productName": "Men Printed Plain Cotton Shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment",
+      "price": 260,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146584/exeyrdxvjoaxuwoft69n.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:23:02.307Z",
+      "updatedAt": "2025-10-22T15:23:02.307Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2c8f6a3e3ef181805031",
+      "productName": "Men Round Neck Pure Cotton T-shirt",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 150,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760504979/dv1f2zhdm8h6kxqrvnx7.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:09:35.769Z",
+      "updatedAt": "2025-10-15T05:09:35.769Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2d9c6a3e3ef181805036",
+      "productName": "Women Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 260,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505247/l8nceequqtzdtqvybtb5.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:14:04.643Z",
+      "updatedAt": "2025-10-15T05:14:04.643Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f7bbb0afda2a7672b7ac",
+      "productName": "Kid Tapered Slim Fit Trouser",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment",
+      "price": 170,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146813/sleqv1jrzviy4iaduj6s.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Kid",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:26:51.178Z",
+      "updatedAt": "2025-10-22T15:26:51.178Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2ecd6a3e3ef181805044",
+      "productName": "Women Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 250,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505552/ytcybdrzh9fbw0npd5bf.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:19:09.697Z",
+      "updatedAt": "2025-10-15T05:19:09.697Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f0f02c2d5346716c88ef3f",
+      "productName": "Kid Tapered Slim Fit Trouser",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 300,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760620593/jddogcphi9tbdb1vqvyu.png"
+      ],
+      "subCategory": "Bottomwear",
+      "category": "Kid",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-16T13:16:28.661Z",
+      "updatedAt": "2025-10-16T13:16:28.661Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f64ab0afda2a7672b794",
+      "productName": "Women Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment",
+      "price": 200,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146444/ubwv5f8xlpyvdphvzfpq.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "L",
+        "XL",
+        "M"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:20:42.577Z",
+      "updatedAt": "2025-10-22T15:20:42.577Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f749b0afda2a7672b7a3",
+      "productName": "Women Zip-Front Relaxed Fit Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 250,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146699/hx3lgf4t3rlszlz0uc07.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "M",
+        "L",
+        "S",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:24:57.620Z",
+      "updatedAt": "2025-10-22T15:24:57.620Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2e406a3e3ef18180503c",
+      "productName": "Women Zip-Front Relaxed Fit Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 240,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760505411/njrcx5qcr8extqwfbnub.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Women",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:16:48.590Z",
+      "updatedAt": "2025-10-15T05:16:48.590Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f5d3b0afda2a7672b78e",
+      "productName": "Girls Round Neck Cotton Top",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 220,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146325/gkn4uudlr0w2xvyna4ir.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Kid",
+      "size": [
+        "L",
+        "M",
+        "S"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:18:43.754Z",
+      "updatedAt": "2025-10-22T15:18:43.754Z",
+      "__v": 0
+    },
+    {
+      "_id": "68f8f764b0afda2a7672b7a6",
+      "productName": "Men Slim Fit Relaxed Denim Jacket",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 300,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1761146726/jozxmectv9xmxmepdcqr.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-22T15:25:24.151Z",
+      "updatedAt": "2025-10-22T15:25:24.151Z",
+      "__v": 0
+    },
+    {
+      "_id": "68ef2ae16a3e3ef18180501b",
+      "productName": "Men Tapered Fit Flat-Front Trousers",
+      "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+      "price": 190,
+      "image": [
+        "https://res.cloudinary.com/damxkllgw/image/upload/v1760504548/cu7nrmztd8rzuig3pnpf.png"
+      ],
+      "subCategory": "Topwear",
+      "category": "Men",
+      "size": [
+        "S",
+        "L",
+        "XL"
+      ],
+      "bestSeller": false,
+      "createdAt": "2025-10-15T05:02:25.257Z",
+      "updatedAt": "2025-10-15T05:02:25.257Z",
+      "__v": 0
+    }
+  ]
+}

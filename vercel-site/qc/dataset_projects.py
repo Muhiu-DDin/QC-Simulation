@@ -71,8 +71,10 @@ def load_csv(path):
     with Path(path).open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)
         headers = reader.fieldnames or []
-        if len(headers) != len(set(headers)) or set(headers) != set(REQUIRED_COLUMNS):
-            raise ValueError("CSV headers must be exactly: period,passed,failed,response_ms.")
+        from .study_projects import RAW_COLUMNS, validate_micro_rows
+        raw_micro = set(headers) == set(RAW_COLUMNS)
+        if len(headers) != len(set(headers)) or (not raw_micro and set(headers) != set(REQUIRED_COLUMNS)):
+            raise ValueError("CSV headers must be period,passed,failed,response_ms, or period,t1_ms,t2_ms,t3_ms,t4_ms,t5_ms for raw micro timings.")
         rows = []
         for index, row in enumerate(reader, 2):
             if None in row or any(value is None for value in row.values()):
@@ -80,7 +82,7 @@ def load_csv(path):
             rows.append(row)
             if len(rows) > MAX_ROWS:
                 raise ValueError(f"Use at most {MAX_ROWS:,} dataset rows online.")
-    return validate_rows(rows)
+    return validate_micro_rows(rows) if raw_micro else validate_rows(rows)
 
 
 def generate_demo(scale="micro"):
@@ -213,10 +215,12 @@ def _plots(groups, rows, p, specification):
         timing = Figure(figsize=(11.5, 4.6), constrained_layout=True)
         left, right = timing.subplots(1, 2, gridspec_kw={"width_ratios": [1.6, 1]})
         left.plot(x, [g["response_ms"] for g in groups], color="#30333b", linewidth=1.2)
-        left.axhline(specification, color=color, linestyle="--", label=f"Batch-mean threshold: {specification:g} ms")
+        if specification is not None:
+            left.axhline(specification, color=color, linestyle="--", label=f"Batch-mean threshold: {specification:g} ms")
         left.set(xlabel="Ordered batch" if len(groups) == len(rows) else "Consecutive batch group", ylabel="Mean response time (ms)", title="Batch-mean timing")
         left.grid(axis="y", alpha=.18)
-        left.legend(fontsize=8)
+        if specification is not None:
+            left.legend(fontsize=8)
         values = [row["response_ms"] for row in rows]
         right.hist(values, bins=min(30, max(1, math.ceil(math.sqrt(len(values))))), color="#bd3039", alpha=.8, edgecolor="white")
         right.set(xlabel="Batch mean (ms)", ylabel="Number of batches", title="Distribution of batch means")
@@ -268,8 +272,8 @@ def _report(record, plots, message):
         ("Execution-weighted mean response", _format(summary["weighted_mean_response_ms"], 2) + " ms"),
         ("Median of batch means", _format(summary["median_batch_response_ms"], 2) + " ms"),
         ("95th percentile of batch means", _format(summary["p95_batch_response_ms"], 2) + " ms"),
-        ("Batch-mean threshold", _format(summary["specification_ms"]) + " ms"),
-        ("Batches above timing threshold", f"{summary['timing_threshold_batch_count']:,}"),
+        ("Optional batch-mean target", _format(summary["specification_ms"]) + " ms" if summary["specification_ms"] is not None else "Not specified"),
+        ("Batches above timing target", f"{summary['timing_threshold_batch_count']:,}" if summary["specification_ms"] is not None else "Not evaluated"),
         ("Original batches outside p-chart limits", f"{summary['control_signal_batch_count']:,}"),
         ("Chart groups outside group limits", f"{summary['control_signal_group_count']:,} of {len(summary['chart_groups']):,}"),
     ]
@@ -322,9 +326,14 @@ def evaluate_dataset(payload):
     scale = payload.get("scale", "micro")
     if scale not in ("micro", "macro"):
         raise ValueError("Dataset scale must be micro or macro.")
-    source = payload.get("dataset_source", "own" if "rows" in payload else "forevermart")
-    if source not in ("forevermart", "demo", "own"):
-        raise ValueError("Choose forevermart, demo or own as the dataset source.")
+    source = payload.get("dataset_source", "own" if "rows" in payload else "study")
+    if source not in ("study", "forevermart", "demo", "own"):
+        raise ValueError("Choose study, forevermart, demo or own as the dataset source.")
+    rows_input = payload.get("rows")
+    raw_micro = source == "own" and isinstance(rows_input, list) and rows_input and isinstance(rows_input[0], dict) and "t1_ms" in rows_input[0]
+    if source == "study" or raw_micro:
+        from .study_projects import evaluate_study
+        return evaluate_study({**payload, "dataset_source": source})
     if source != "own" and "rows" in payload:
         raise ValueError("Choose own dataset source to analyze supplied rows.")
     provenance = {}
@@ -338,7 +347,9 @@ def evaluate_dataset(payload):
             provenance = json.loads(manifest.read_text(encoding="utf-8"))
     else:
         rows = validate_rows(generate_demo(scale) if source == "demo" else payload.get("rows"))
-    specification = _number(payload.get("specification_ms", 500), "Response-time threshold", minimum=1e-9)
+    specification = payload.get("specification_ms")
+    if specification is not None:
+        specification = _number(specification, "Response-time threshold", minimum=1e-9)
     trials = _number(payload.get("trials", 10000), "Simulation trials", integral=True, minimum=100, maximum=100000)
     seed = _number(payload.get("seed", DEMO_SEED), "Random seed", integral=True, maximum=2**32 - 1)
     n = np.array([row["passed"] + row["failed"] for row in rows], dtype=np.int64)
@@ -360,10 +371,10 @@ def evaluate_dataset(payload):
                    weighted_std_batch_response_ms=float(np.sqrt(np.average((times - weighted_mean)**2, weights=n))),
                    median_batch_response_ms=float(np.median(times)), p95_batch_response_ms=float(np.quantile(times, .95)),
                    min_batch_response_ms=float(times.min()), max_batch_response_ms=float(times.max()),
-                   specification_ms=specification, timing_threshold_batch_count=int(np.count_nonzero(times > specification)),
+                   specification_ms=specification, timing_threshold_batch_count=None if specification is None else int(np.count_nonzero(times > specification)),
                    control_signal_batch_count=int(alerts.sum()),
                    control_signal_periods=[row["period"] for row, flag in zip(rows, alerts) if flag],
-                   timing_threshold_periods=[row["period"] for row in rows if row["response_ms"] > specification],
+                   timing_threshold_periods=[] if specification is None else [row["period"] for row in rows if row["response_ms"] > specification],
                    control_signal_group_count=sum(g["control_signal"] for g in groups), chart_groups=groups,
                    first_batch_limits=dict(LCL=float(low[0]), CL=p, UCL=float(high[0])),
                    last_batch_limits=dict(LCL=float(low[-1]), CL=p, UCL=float(high[-1])))
