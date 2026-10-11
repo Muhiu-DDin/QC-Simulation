@@ -57,7 +57,7 @@ required_assets={(target/relative).resolve() for relative in report_assets}
 for stale in graph_folder.glob('*.png'):
     if stale.resolve().is_relative_to(graph_folder) and stale.resolve() not in required_assets:
         stale.unlink()
-for filename in ['calculator.html','calculator.css','calculator.js','favicon.svg']:
+for filename in ['calculator.html','calculator.css','calculator.js','report-viewer.js','favicon.svg']:
     shutil.copy2(ROOT/'web'/filename,target/filename)
 shutil.copy2(ROOT/'web/calculator.html',target/'index.html')
 target.joinpath('report-theme.css').write_text(CSS,encoding='utf-8')

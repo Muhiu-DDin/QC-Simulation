@@ -6,7 +6,7 @@
   <title>Quality Control | Simulation workspace</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
   <link rel="stylesheet" href="report-theme.css">
-  <link rel="stylesheet" href="calculator.css">
+  <link rel="stylesheet" href="calculator.css?v=2">
 </head>
 <body>
   <header class="topbar"><div class="topbar-inner">
@@ -68,10 +68,11 @@
       </section>
       <section class="result-container" aria-label="Calculation results" aria-live="polite">
         <div id="empty-result" class="exercise result-placeholder"><span class="eyebrow">Results</span><h2>Your analysis will appear here</h2><p id="empty-result-description">Select an assigned book question, enter its values, then press Enter or select Calculate and compare.</p><ul id="empty-result-list"><li>Answers calculated using the question’s formula</li><li>Comparison with available stored reference answers</li><li>Charts and simulation verification, where applicable</li></ul></div>
-        <div id="result-content" hidden><div id="data-message" role="status" class="data-message"></div><div class="result-toolbar"><span>Analysis complete</span><button id="download-result" type="button" class="secondary-button">Download result JSON</button></div><iframe id="result-frame" title="Calculated results, charts and verification" sandbox="allow-scripts allow-downloads"></iframe></div>
+        <div id="result-content" hidden><div id="data-message" role="status" class="data-message"></div><div class="result-toolbar"><span>Analysis complete</span><button id="download-result" type="button" class="secondary-button">Download result JSON</button></div><div id="result-report" class="report-viewer" role="region" aria-label="Calculated results, charts and verification"></div></div>
       </section>
     </div>
   </main>
-  <script src="calculator.js" defer></script>
+  <script src="report-viewer.js?v=2" defer></script>
+  <script src="calculator.js?v=2" defer></script>
 </body>
 </html>

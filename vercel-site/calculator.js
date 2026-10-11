@@ -42,7 +42,7 @@ function clearResult() {
   lastResult = null;
   $('result-content').hidden = true;
   $('empty-result').hidden = false;
-  $('result-frame').srcdoc = '';
+  window.QCReportViewer.clear($('result-report'));
 }
 
 function selectWorkflow(next) {
@@ -313,18 +313,12 @@ function updateDatasetSource(reset = true) {
 
 function showResult(result) {
   if (typeof result.report_html !== 'string') throw Error('The server returned no report. Please try the calculation again.');
+  window.QCReportViewer.render($('result-report'), result.report_html);
   lastResult = result;
   $('empty-result').hidden = true;
   $('result-content').hidden = false;
   $('data-message').textContent = result.message || 'Analysis complete.';
   $('data-message').className = 'data-message' + (result.category === 'book' ? ' book-data' : '');
-  const embeddedStyle = '<style>.topbar,.report-heading,.overview,footer,.subtle-link{display:none!important}main{padding:16px!important;max-width:none!important}.exercise{padding:20px!important;margin:0 0 16px!important}.workspace{display:block!important}.panel-heading{align-items:flex-start}.panel-heading p{max-width:240px}body{min-height:0!important}</style>';
-  const resizeScript = '<script>(()=>{let pending=false;const resize=()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;parent.postMessage({type:"qc-result-height",height:Math.ceil(document.body.getBoundingClientRect().height)+24},"*")})};addEventListener("load",resize);addEventListener("resize",resize);document.addEventListener("toggle",resize,true);new ResizeObserver(resize).observe(document.body);new MutationObserver(resize).observe(document.body,{childList:true,subtree:true});resize()})()<\/script>';
-  let documentHTML = result.report_html;
-  documentHTML = documentHTML.includes('</head>') ? documentHTML.replace('</head>', embeddedStyle + '</head>') : embeddedStyle + documentHTML;
-  documentHTML = documentHTML.includes('</body>') ? documentHTML.replace('</body>', resizeScript + '</body>') : documentHTML + resizeScript;
-  $('result-frame').style.height = '900px';
-  $('result-frame').srcdoc = documentHTML;
   if (matchMedia('(max-width:850px)').matches) $('result-content').scrollIntoView({behavior: 'smooth', block: 'start'});
 }
 
@@ -426,12 +420,6 @@ $('download-result').addEventListener('click', () => {
   delete result.report_html;
   saveDownload(JSON.stringify(result, null, 2), workflow === 'dataset' ? 'qc-dataset-analysis.json' : 'qc-calculation.json', 'application/json');
 });
-window.addEventListener('message', event => {
-  if (event.source !== $('result-frame').contentWindow || event.data?.type !== 'qc-result-height') return;
-  const height = Number(event.data.height);
-  if (Number.isFinite(height) && height > 0) $('result-frame').style.height = Math.min(28000, Math.max(420, height)) + 'px';
-});
-
 fetch('chapter10_inputs.json').then(response => {
   if (!response.ok) throw Error('Unable to load stored exercises. You can still use your own numerical values or the dataset workflow.');
   return response.json();

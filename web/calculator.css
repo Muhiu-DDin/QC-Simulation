@@ -26,7 +26,7 @@ button:hover{background:#a52832}button:disabled{opacity:.6;cursor:not-allowed}
 .data-message{border:1px solid #79707a;border-left:4px solid #d7505c;background:#3c3038;padding:16px 18px;border-radius:6px;color:#f7e5e8;font-size:13px;line-height:1.6;margin-bottom:14px;overflow-wrap:anywhere}
 .data-message.book-data{background:#293c37;border-color:#4c7869;border-left-color:#8cbda7;color:#dcf0e6}
 .result-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px;font-size:12px;color:#bbc1cd}
-iframe{display:block;width:100%;height:1600px;border:1px solid #50525c;border-radius:9px;background:#292a32}
+.report-viewer{display:block;width:100%;min-width:0;overflow:hidden;border:1px solid #50525c;border-radius:9px;background:#292a32}
 [hidden]{display:none!important}
 @media(max-width:1100px){.calculator-layout{grid-template-columns:330px minmax(0,1fr)}}
 @media(max-width:850px){.calculator-layout{grid-template-columns:1fr}.entry-panel{position:static;max-height:none}.input-fields{grid-template-columns:1fr 1fr}.workflow-picker button{padding:15px 18px}.result-placeholder{min-height:260px}}
