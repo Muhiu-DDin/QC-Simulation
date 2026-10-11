@@ -161,4 +161,51 @@ Then regenerate the micro/macro reports and prepare the website again. This coll
 
 The historical [complete chapter guide](docs/CHAPTER10_GUIDE.md) and [source audit](docs/SOURCE_NOTES.md) remain for source traceability. The active scope is defined by the new assigned exercise guide. Do not regenerate the frozen references just to force agreement with calculated results.
 
-Vercel preparation has been updated, but local changes do not automatically update an existing deployment. Run `tools/prepare_vercel.py` before any later deployment. No new npm project is required.
+## Deploy to Vercel from GitHub
+
+The deployment folder is **`vercel-site`**. It contains the homepage (`index.html`),
+the calculator, the book report, and the Python calculation endpoint. Deploying
+the repository root does not serve this homepage.
+
+1. Prepare the current website from the project terminal:
+
+   ```powershell
+   .\.venv\Scripts\python.exe tools\prepare_vercel.py
+   ```
+
+2. Commit and push **`vercel-site/`**, **`.gitignore`**, **`tools/prepare_vercel.py`**,
+   and **`README.md`** to GitHub. The deployment folder is now allowed by Git.
+   Use VS Code Source Control to stage those paths, commit, and push/sync. Check
+   that GitHub shows `vercel-site/index.html` and `vercel-site/vercel.json`.
+   Local reports under `output/` are not needed for deployment.
+
+3. Import the GitHub repository in Vercel using these settings:
+
+   | Setting | Value |
+   |---|---|
+   | Root Directory | `vercel-site` |
+   | Application / Framework Preset | **Other** |
+   | Build Command | Enable Override and leave empty |
+   | Output Directory | `.` (a single dot) |
+   | Install Command | Leave default |
+   | Environment Variables | None required |
+
+   The prepared `vercel.json` also specifies Other, an empty build command, and
+   output `.`. Python dependencies are installed for `api/calculate.py` using
+   the dependency files inside `vercel-site`.
+
+4. Click **Deploy**. For an existing Vercel project, change the Root Directory
+   and build settings in **Settings → Build and Deployment**, save, then deploy
+   the newest GitHub commit.
+
+5. Check the deployed homepage, `/book-results.html`, and `/api/calculate`.
+   The last address should return a JSON response containing `"status": "ready"`.
+   Finally, select a book exercise in the calculator, load its book values, and
+   submit it to confirm that calculations work online.
+
+Run the preparation command and commit/push the refreshed `vercel-site/` files
+after future source changes. Vercel serves the HTML interface and runs the Python
+API on demand; it does not run `serve.py` as a permanent local server.
+
+Official references: [static build settings](https://vercel.com/docs/builds/configure-a-build)
+and [Python functions in `/api`](https://vercel.com/docs/functions/runtimes/python/api-directory).

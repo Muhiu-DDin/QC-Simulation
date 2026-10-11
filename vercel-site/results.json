@@ -1,0 +1,2065 @@
+{
+  "metadata": {
+    "seed": 20260901,
+    "trials": 100000,
+    "assignment": "Chapter 10: Exercises 10.40-10.59",
+    "engine_sha256": "7f0ccacb353c1a7df11079a3367ca616223c27227d63ceda8fd737c848a8213d",
+    "reference_sha256": "063b0b00508dd6112d665bcccbb4c3d2f3fd7e568103d71952c62886d8fb84f0",
+    "input_sha256": "063f5effa2d529ebf21ce8e3ca57bbaa195341e3f63073c8c8dc9f851c81ac02",
+    "versions": {
+      "python": "3.13.7",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "records": [
+    {
+      "case": {
+        "id": "10-40a",
+        "kind": "proportion_test",
+        "page": 511,
+        "pdf_page": 526,
+        "title": "Audit aggregate test",
+        "inputs": {
+          "n": 2000,
+          "successes": 45,
+          "p0": 0.02,
+          "alpha": 0.05
+        },
+        "interpretation": "H0: p=.02; H1: p>.02. Alpha .05 is assumed; failing to reject is not proof that the target is met."
+      },
+      "calculated": {
+        "observed_proportion": 0.0225,
+        "z": 0.7985957062499245,
+        "p_value": 0.2122624390856061,
+        "exact_binomial_p_value": 0.23230834253450122,
+        "alpha": 0.05,
+        "reject_H0": false
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "observed_proportion",
+              "expected": 0.0225,
+              "actual": 0.0225,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "z",
+              "expected": 0.7985957062499245,
+              "actual": 0.7985957062499245,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "p_value",
+              "expected": 0.2122624390856061,
+              "actual": 0.2122624390856061,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "exact_null_tail": {
+          "estimate": 0.23454,
+          "theoretical_probability": 0.23230834253450122,
+          "absolute_error": 0.0022316574654987764,
+          "ci99_low": 0.23110634896530177,
+          "ci99_high": 0.2380088746906792,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 10057041862476870428
+    },
+    {
+      "case": {
+        "id": "10-40b",
+        "kind": "p",
+        "page": 511,
+        "pdf_page": 526,
+        "title": "Weekly audit chart",
+        "inputs": {
+          "n": 125,
+          "p": 0.02,
+          "counts": [
+            2,
+            1,
+            2,
+            3,
+            5,
+            4,
+            5,
+            6,
+            3,
+            1,
+            1,
+            3,
+            2,
+            2,
+            3,
+            2
+          ]
+        },
+        "interpretation": "The rise toward the filing deadline warrants investigation even though individual points are inside limits."
+      },
+      "calculated": {
+        "CL": 0.02,
+        "LCL": 0.0,
+        "UCL": 0.05756594202199647,
+        "values": [
+          0.016,
+          0.008,
+          0.016,
+          0.024,
+          0.04,
+          0.032,
+          0.04,
+          0.048,
+          0.024,
+          0.008,
+          0.008,
+          0.024,
+          0.016,
+          0.016,
+          0.024,
+          0.016
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "n": 125,
+        "standard_error": 0.012521980673998822,
+        "observed_proportion": 0.0225,
+        "center_source": "specified target"
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 0.02,
+              "actual": 0.02,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 0,
+              "actual": 0.0,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 0.05756594202199647,
+              "actual": 0.05756594202199647,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00365,
+          "theoretical_probability": 0.0038086875919447023,
+          "absolute_error": 0.00015868759194470226,
+          "ci99_low": 0.003190631255149796,
+          "ci99_high": 0.004175228993649133,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 0.0199896,
+        "target_mean": 0.02,
+        "trials": 100000,
+        "assumption": "IID Bernoulli observations at the specified/estimated p; binomial tail is exact and discrete."
+      },
+      "case_seed": 13840965632092764109
+    },
+    {
+      "case": {
+        "id": "10-44",
+        "kind": "xbar",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Global Bank check encoding",
+        "inputs": {
+          "n": 10,
+          "means": [
+            49.4,
+            49.9,
+            48.8,
+            50.1,
+            49.7,
+            48.1,
+            48.6,
+            48.7,
+            50.7,
+            51.3,
+            51.1,
+            51.6,
+            50,
+            50.5,
+            51.4,
+            50.1
+          ],
+          "ranges": [
+            4,
+            7,
+            7,
+            4,
+            7,
+            10,
+            7,
+            10,
+            6,
+            4,
+            9,
+            9,
+            6,
+            7,
+            4,
+            7
+          ],
+          "unit": "checks per two minutes"
+        },
+        "interpretation": "All first-shift means are below CL and all second-shift means above CL. Investigate operator, equipment and shift conditions; ranges do not show the same shift."
+      },
+      "calculated": {
+        "CL": 50.0,
+        "LCL": 47.91955417094186,
+        "UCL": 52.08044582905814,
+        "values": [
+          49.4,
+          49.9,
+          48.8,
+          50.1,
+          49.7,
+          48.1,
+          48.6,
+          48.7,
+          50.7,
+          51.3,
+          51.1,
+          51.6,
+          50.0,
+          50.5,
+          51.4,
+          50.1
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "grand_mean": 50.0,
+        "Rbar": 6.75,
+        "standard_error": 0.6934819430193815,
+        "n": 10,
+        "first_half_mean": 49.1625,
+        "second_half_mean": 50.8375,
+        "first_half_mean_sd": 0.7130167299179289,
+        "second_half_mean_sd": 0.6045954964153419
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 50.0,
+              "actual": 50.0,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 47.91955417094186,
+              "actual": 47.91955417094186,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 52.08044582905814,
+              "actual": 52.08044582905814,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00266,
+          "theoretical_probability": 0.0026997960632601866,
+          "absolute_error": 3.9796063260186514e-05,
+          "ci99_low": 0.0022721682444729377,
+          "ci99_high": 0.0031138233665629427,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 50.003321835747826,
+        "target_mean": 50.0,
+        "trials": 100000,
+        "assumption": "Normal independent subgroup means with fixed fitted center and standard error; this is a model check, not a replay of observed data."
+      },
+      "case_seed": 16442167752095407238
+    },
+    {
+      "case": {
+        "id": "10-45",
+        "kind": "range",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Global Bank check encoding",
+        "inputs": {
+          "n": 10,
+          "means": [
+            49.4,
+            49.9,
+            48.8,
+            50.1,
+            49.7,
+            48.1,
+            48.6,
+            48.7,
+            50.7,
+            51.3,
+            51.1,
+            51.6,
+            50,
+            50.5,
+            51.4,
+            50.1
+          ],
+          "ranges": [
+            4,
+            7,
+            7,
+            4,
+            7,
+            10,
+            7,
+            10,
+            6,
+            4,
+            9,
+            9,
+            6,
+            7,
+            4,
+            7
+          ],
+          "unit": "checks per two minutes"
+        },
+        "interpretation": "All first-shift means are below CL and all second-shift means above CL. Investigate operator, equipment and shift conditions; ranges do not show the same shift."
+      },
+      "calculated": {
+        "CL": 6.75,
+        "LCL": 1.50525,
+        "UCL": 11.99475,
+        "values": [
+          4.0,
+          7.0,
+          7.0,
+          4.0,
+          7.0,
+          10.0,
+          7.0,
+          10.0,
+          6.0,
+          4.0,
+          9.0,
+          9.0,
+          6.0,
+          7.0,
+          4.0,
+          7.0
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "Rbar": 6.75,
+        "n": 10,
+        "first_half_mean": 49.1625,
+        "second_half_mean": 50.8375,
+        "first_half_mean_sd": 0.7130167299179289,
+        "second_half_mean_sd": 0.6045954964153419
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 6.75,
+              "actual": 6.75,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 1.50525,
+              "actual": 1.50525,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 11.99475,
+              "actual": 11.99475,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "simulated_mean": 6.743396292445535,
+        "target_mean": 6.75,
+        "mean_standard_error": 0.005504117540811636,
+        "mean_ci99_low": 6.729218625193735,
+        "mean_ci99_high": 6.757573959697335,
+        "target_in_mean_ci99": true,
+        "mean_absolute_error": 0.006603707554464933,
+        "out_of_limits_fraction": 0.00404,
+        "trials": 100000,
+        "assumption": "IID normal individual observations. R limits use rounded appendix factors; the range distribution is not normal."
+      },
+      "case_seed": 3312298984391488323
+    },
+    {
+      "case": {
+        "id": "10-46",
+        "kind": "pareto",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Construction punch-list problems",
+        "inputs": {
+          "counts": {
+            "Electrical": 257,
+            "Flooring": 23,
+            "Heating/AC": 35,
+            "Painting": 19,
+            "Plumbing": 22,
+            "Roofing": 31,
+            "Tile": 51,
+            "Wallboard": 303,
+            "Windows": 16,
+            "Other": 68
+          }
+        },
+        "interpretation": "Wallboard and electrical account for most problems. Multiple problems may occur in one condo; total faults is not the number of defective condos."
+      },
+      "calculated": {
+        "total": 825,
+        "labels": [
+          "Wallboard",
+          "Electrical",
+          "Tile",
+          "Heating/AC",
+          "Roofing",
+          "Flooring",
+          "Plumbing",
+          "Painting",
+          "Windows",
+          "Other"
+        ],
+        "counts": [
+          303,
+          257,
+          51,
+          35,
+          31,
+          23,
+          22,
+          19,
+          16,
+          68
+        ],
+        "cumulative_percent": [
+          36.72727272727273,
+          67.87878787878789,
+          74.06060606060606,
+          78.30303030303031,
+          82.06060606060606,
+          84.84848484848484,
+          87.51515151515152,
+          89.81818181818181,
+          91.75757575757576,
+          100.0
+        ],
+        "largest_category": "Wallboard",
+        "largest_count": 303
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "total",
+              "expected": 825,
+              "actual": 825,
+              "absolute_error": 0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "largest_count",
+              "expected": 303,
+              "actual": 303,
+              "absolute_error": 0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "largest_category",
+              "expected": "Wallboard",
+              "actual": "Wallboard",
+              "absolute_error": null,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "note": "Deterministic arithmetic or Pareto counts: Monte Carlo is not applicable."
+      },
+      "case_seed": 80241081378156389
+    },
+    {
+      "case": {
+        "id": "10-47a",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 200,
+          "c": 1,
+          "N": 2500,
+          "p": 0.01,
+          "risk": "producer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.5953543153279742,
+        "acceptance_probability": 0.4046456846720258,
+        "binomial_probability": 0.5953543153279742,
+        "poisson_probability": 0.593994150290162,
+        "model": "binomial",
+        "finite_lot_defectives": 25,
+        "finite_lot_probability": 0.6065829169632314
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.5953543153279742,
+              "actual": 0.5953543153279742,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.5968,
+          "theoretical_probability": 0.5953543153279742,
+          "absolute_error": 0.001445684672025771,
+          "ci99_low": 0.5927980155847797,
+          "ci99_high": 0.6007891401076072,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.60693,
+          "theoretical_probability": 0.6065829169632314,
+          "absolute_error": 0.00034708303676855845,
+          "ci99_low": 0.6029445133919976,
+          "ci99_high": 0.6109012981595202,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 7117878825856359763
+    },
+    {
+      "case": {
+        "id": "10-47b",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 200,
+          "c": 2,
+          "N": 2500,
+          "p": 0.01,
+          "risk": "producer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.3233213054643431,
+        "acceptance_probability": 0.6766786945356569,
+        "binomial_probability": 0.3233213054643431,
+        "poisson_probability": 0.3233235838169366,
+        "model": "binomial",
+        "finite_lot_defectives": 25,
+        "finite_lot_probability": 0.3230510877200248
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.3233213054643441,
+              "actual": 0.3233213054643431,
+              "absolute_error": 9.992007221626409e-16,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.32436,
+          "theoretical_probability": 0.3233213054643431,
+          "absolute_error": 0.0010386945356568589,
+          "ci99_low": 0.32055857182869923,
+          "ci99_high": 0.3281847336897838,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.32277,
+          "theoretical_probability": 0.3230510877200248,
+          "absolute_error": 0.0002810877200247752,
+          "ci99_low": 0.31897356114710984,
+          "ci99_high": 0.326589955347087,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 2441653868213123622
+    },
+    {
+      "case": {
+        "id": "10-47c",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 250,
+          "c": 1,
+          "N": 2500,
+          "p": 0.01,
+          "risk": "producer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.7142482612060479,
+        "acceptance_probability": 0.28575173879395216,
+        "binomial_probability": 0.7142482612060479,
+        "poisson_probability": 0.7127025048163542,
+        "model": "binomial",
+        "finite_lot_defectives": 25,
+        "finite_lot_probability": 0.73028960521587
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.7142482612060479,
+              "actual": 0.7142482612060479,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.71278,
+          "theoretical_probability": 0.7142482612060479,
+          "absolute_error": 0.0014682612060479272,
+          "ci99_low": 0.7090804295836387,
+          "ci99_high": 0.7164513368236557,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.72772,
+          "theoretical_probability": 0.73028960521587,
+          "absolute_error": 0.002569605215870019,
+          "ci99_low": 0.7240791535901168,
+          "ci99_high": 0.7313306304416018,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 4070191577590201840
+    },
+    {
+      "case": {
+        "id": "10-47d",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 250,
+          "c": 2,
+          "N": 2500,
+          "p": 0.01,
+          "risk": "producer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.4568310266842741,
+        "acceptance_probability": 0.5431689733157259,
+        "binomial_probability": 0.4568310266842741,
+        "poisson_probability": 0.4561868841166703,
+        "model": "binomial",
+        "finite_lot_defectives": 25,
+        "finite_lot_probability": 0.46345194114323285
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.45683102668427533,
+              "actual": 0.4568310266842741,
+              "absolute_error": 1.2212453270876722e-15,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.45607,
+          "theoretical_probability": 0.4568310266842741,
+          "absolute_error": 0.0007610266842741353,
+          "ci99_low": 0.45201605430159075,
+          "ci99_high": 0.4601297747318125,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.46295,
+          "theoretical_probability": 0.46345194114323285,
+          "absolute_error": 0.0005019411432328758,
+          "ci99_low": 0.4588910450456962,
+          "ci99_high": 0.46701387108650483,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 358977306233846836
+    },
+    {
+      "case": {
+        "id": "10-48a",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 200,
+          "c": 1,
+          "N": 2500,
+          "p": 0.015,
+          "risk": "consumer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.19689658999318088,
+        "acceptance_probability": 0.19689658999318088,
+        "binomial_probability": 0.19689658999318088,
+        "poisson_probability": 0.1991482734714558,
+        "model": "binomial",
+        "finite_lot_note": "N*p is noninteger; no exact fixed-lot result without specifying an integer D."
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.19689658999318088,
+              "actual": 0.19689658999318088,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.19731,
+          "theoretical_probability": 0.19689658999318088,
+          "absolute_error": 0.00041341000681913154,
+          "ci99_low": 0.19408848140785595,
+          "ci99_high": 0.20057168226436922,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 3501762946351562861
+    },
+    {
+      "case": {
+        "id": "10-48b",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 200,
+          "c": 2,
+          "N": 2500,
+          "p": 0.015,
+          "risk": "consumer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.42149632165046613,
+        "acceptance_probability": 0.42149632165046613,
+        "binomial_probability": 0.42149632165046613,
+        "poisson_probability": 0.42319008112684364,
+        "model": "binomial",
+        "finite_lot_note": "N*p is noninteger; no exact fixed-lot result without specifying an integer D."
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.4214963216504661,
+              "actual": 0.42149632165046613,
+              "absolute_error": 5.551115123125783e-17,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.42071,
+          "theoretical_probability": 0.42149632165046613,
+          "absolute_error": 0.0007863216504661596,
+          "ci99_low": 0.41669418264608005,
+          "ci99_high": 0.42473633827489754,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 1635519461771823706
+    },
+    {
+      "case": {
+        "id": "10-48c",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 250,
+          "c": 1,
+          "N": 2500,
+          "p": 0.015,
+          "risk": "consumer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.10988575013690904,
+        "acceptance_probability": 0.10988575013690904,
+        "binomial_probability": 0.10988575013690904,
+        "poisson_probability": 0.11170929281604328,
+        "model": "binomial",
+        "finite_lot_note": "N*p is noninteger; no exact fixed-lot result without specifying an integer D."
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.10988575013690904,
+              "actual": 0.10988575013690904,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.11017,
+          "theoretical_probability": 0.10988575013690904,
+          "absolute_error": 0.0002842498630909601,
+          "ci99_low": 0.1076454519387126,
+          "ci99_high": 0.11274627426414686,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 13352259398823506459
+    },
+    {
+      "case": {
+        "id": "10-48d",
+        "kind": "acceptance",
+        "page": 512,
+        "pdf_page": 527,
+        "title": "Single sampling risk",
+        "inputs": {
+          "n": 250,
+          "c": 2,
+          "N": 2500,
+          "p": 0.015,
+          "risk": "consumer",
+          "model": "binomial"
+        },
+        "interpretation": ""
+      },
+      "calculated": {
+        "probability": 0.27488312768021517,
+        "acceptance_probability": 0.27488312768021517,
+        "binomial_probability": 0.27488312768021517,
+        "poisson_probability": 0.2770684433661073,
+        "model": "binomial",
+        "finite_lot_note": "N*p is noninteger; no exact fixed-lot result without specifying an integer D."
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.27488312768021517,
+              "actual": 0.27488312768021517,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.27476,
+          "theoretical_probability": 0.27488312768021517,
+          "absolute_error": 0.00012312768021516263,
+          "ci99_low": 0.27113894265986127,
+          "ci99_high": 0.2784109442393822,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 12528708950472355517
+    },
+    {
+      "case": {
+        "id": "10-50",
+        "kind": "xbar",
+        "page": 513,
+        "pdf_page": 528,
+        "title": "Reliant disk coating means",
+        "inputs": {
+          "n": 24,
+          "means": [
+            75.3,
+            75,
+            74.8,
+            75,
+            75.3,
+            74.8,
+            74.8,
+            74.9,
+            74.6,
+            74.9,
+            75.2,
+            75.1,
+            74.8,
+            74.9,
+            74.9,
+            75.1,
+            75,
+            74.9,
+            74.9,
+            75.1
+          ],
+          "ranges": [
+            3.2,
+            3.3,
+            3.6,
+            3.5,
+            3.8,
+            3.7,
+            3.4,
+            3.3,
+            3.4,
+            3.1,
+            3.1,
+            3,
+            3.1,
+            2.9,
+            2.8,
+            2.8,
+            2.7,
+            2.9,
+            2.8,
+            2.9
+          ],
+          "unit": "microns"
+        },
+        "interpretation": "The last ten means vary less than the first ten. Mean-chart control limits are distinct from the individual specification 72-78 microns."
+      },
+      "calculated": {
+        "CL": 74.965,
+        "LCL": 74.46739826470419,
+        "UCL": 75.46260173529582,
+        "values": [
+          75.3,
+          75.0,
+          74.8,
+          75.0,
+          75.3,
+          74.8,
+          74.8,
+          74.9,
+          74.6,
+          74.9,
+          75.2,
+          75.1,
+          74.8,
+          74.9,
+          74.9,
+          75.1,
+          75.0,
+          74.9,
+          74.9,
+          75.1
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "grand_mean": 74.965,
+        "Rbar": 3.165,
+        "standard_error": 0.16586724509860418,
+        "n": 24,
+        "first_half_mean": 74.94,
+        "second_half_mean": 74.99,
+        "first_half_mean_sd": 0.22211108331943608,
+        "second_half_mean_sd": 0.12866839377078948
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 74.965,
+              "actual": 74.965,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 74.46739826470419,
+              "actual": 74.46739826470419,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 75.46260173529582,
+              "actual": 75.46260173529582,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00254,
+          "theoretical_probability": 0.0026997960632601866,
+          "absolute_error": 0.0001597960632601864,
+          "ci99_low": 0.002161693162948595,
+          "ci99_high": 0.0029843143707826737,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 74.96448308223819,
+        "target_mean": 74.965,
+        "trials": 100000,
+        "assumption": "Normal independent subgroup means with fixed fitted center and standard error; this is a model check, not a replay of observed data."
+      },
+      "case_seed": 1035362343169926678
+    },
+    {
+      "case": {
+        "id": "10-51",
+        "kind": "range",
+        "page": 513,
+        "pdf_page": 528,
+        "title": "Reliant coating variability",
+        "inputs": {
+          "n": 24,
+          "means": [
+            75.3,
+            75,
+            74.8,
+            75,
+            75.3,
+            74.8,
+            74.8,
+            74.9,
+            74.6,
+            74.9,
+            75.2,
+            75.1,
+            74.8,
+            74.9,
+            74.9,
+            75.1,
+            75,
+            74.9,
+            74.9,
+            75.1
+          ],
+          "ranges": [
+            3.2,
+            3.3,
+            3.6,
+            3.5,
+            3.8,
+            3.7,
+            3.4,
+            3.3,
+            3.4,
+            3.1,
+            3.1,
+            3,
+            3.1,
+            2.9,
+            2.8,
+            2.8,
+            2.7,
+            2.9,
+            2.8,
+            2.9
+          ],
+          "unit": "microns"
+        },
+        "interpretation": "Ranges decline and the last ten are all below CL. Reduced variation may be an improvement; identify the cause, sustain it, then establish a new baseline. The change explains tighter sample means."
+      },
+      "calculated": {
+        "CL": 3.165,
+        "LCL": 1.43058,
+        "UCL": 4.89942,
+        "values": [
+          3.2,
+          3.3,
+          3.6,
+          3.5,
+          3.8,
+          3.7,
+          3.4,
+          3.3,
+          3.4,
+          3.1,
+          3.1,
+          3.0,
+          3.1,
+          2.9,
+          2.8,
+          2.8,
+          2.7,
+          2.9,
+          2.8,
+          2.9
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [
+          {
+            "rule": "eight on one side",
+            "start": 1,
+            "end": 8
+          },
+          {
+            "rule": "eight on one side",
+            "start": 2,
+            "end": 9
+          },
+          {
+            "rule": "eight on one side",
+            "start": 10,
+            "end": 17
+          },
+          {
+            "rule": "eight on one side",
+            "start": 11,
+            "end": 18
+          },
+          {
+            "rule": "eight on one side",
+            "start": 12,
+            "end": 19
+          },
+          {
+            "rule": "eight on one side",
+            "start": 13,
+            "end": 20
+          }
+        ],
+        "Rbar": 3.165,
+        "n": 24,
+        "first_half_mean": 74.94,
+        "second_half_mean": 74.99,
+        "first_half_mean_sd": 0.22211108331943608,
+        "second_half_mean_sd": 0.12866839377078948
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 3.165,
+              "actual": 3.165,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 1.43058,
+              "actual": 1.43058,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 4.89942,
+              "actual": 4.89942,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "simulated_mean": 3.169865418399089,
+        "target_mean": 3.165,
+        "mean_standard_error": 0.0018334259785178029,
+        "mean_ci99_low": 3.165142826037735,
+        "mean_ci99_high": 3.1745880107604427,
+        "target_in_mean_ci99": false,
+        "mean_absolute_error": 0.004865418399088828,
+        "out_of_limits_fraction": 0.00502,
+        "trials": 100000,
+        "assumption": "IID normal individual observations. R limits use rounded appendix factors; the range distribution is not normal."
+      },
+      "case_seed": 15509999111034994050
+    },
+    {
+      "case": {
+        "id": "10-52",
+        "kind": "p",
+        "page": 513,
+        "pdf_page": 528,
+        "title": "Photomatic print quality",
+        "inputs": {
+          "n": 2000,
+          "p": 0.001,
+          "counts": [
+            3,
+            1,
+            2,
+            4,
+            4,
+            2,
+            2,
+            3,
+            1,
+            0,
+            2,
+            2,
+            1,
+            3,
+            2,
+            2,
+            0,
+            4,
+            2,
+            0
+          ]
+        },
+        "interpretation": "No points exceed limits. A p chart evaluates stability relative to the target; it does not prove the manufacturer specification is satisfied."
+      },
+      "calculated": {
+        "CL": 0.001,
+        "LCL": 0.0,
+        "UCL": 0.0031202594180901547,
+        "values": [
+          0.0015,
+          0.0005,
+          0.001,
+          0.002,
+          0.002,
+          0.001,
+          0.001,
+          0.0015,
+          0.0005,
+          0.0,
+          0.001,
+          0.001,
+          0.0005,
+          0.0015,
+          0.001,
+          0.001,
+          0.0,
+          0.002,
+          0.001,
+          0.0
+        ],
+        "below_LCL": [],
+        "above_UCL": [],
+        "pattern_signals": [],
+        "n": 2000,
+        "standard_error": 0.0007067531393633848,
+        "observed_proportion": 0.0010000000000000002,
+        "center_source": "specified target"
+      },
+      "comparisons": {
+        "book": {
+          "status": "NO_BOOK_ANSWER",
+          "fields": [],
+          "note": "The supplied PDF has no printed worked answer for this case."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "CL",
+              "expected": 0.001,
+              "actual": 0.001,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "LCL",
+              "expected": 0,
+              "actual": 0.0,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            },
+            {
+              "field": "UCL",
+              "expected": 0.0031202594180901547,
+              "actual": 0.0031202594180901547,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "out_of_limits": {
+          "estimate": 0.00473,
+          "theoretical_probability": 0.004509769004537931,
+          "absolute_error": 0.00022023099546206876,
+          "ci99_low": 0.004203032475040072,
+          "ci99_high": 0.005322684469500363,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "simulated_mean": 0.00099876,
+        "target_mean": 0.001,
+        "trials": 100000,
+        "assumption": "IID Bernoulli observations at the specified/estimated p; binomial tail is exact and discrete."
+      },
+      "case_seed": 9325101855114892571
+    },
+    {
+      "case": {
+        "id": "10-55a",
+        "kind": "acceptance",
+        "page": 514,
+        "pdf_page": 529,
+        "title": "Read risk from OC graph",
+        "inputs": {
+          "n": 300,
+          "c": 3,
+          "N": 3000,
+          "p": 0.005,
+          "risk": "producer",
+          "model": "poisson"
+        },
+        "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+      },
+      "calculated": {
+        "probability": 0.06564245437845007,
+        "acceptance_probability": 0.9343575456215499,
+        "binomial_probability": 0.06517018357868731,
+        "poisson_probability": 0.06564245437845007,
+        "model": "poisson",
+        "finite_lot_defectives": 15,
+        "finite_lot_probability": 0.055097589415809556
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "approximate_graph_reading",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.07,
+              "actual": 0.06564245437845007,
+              "absolute_error": 0.004357545621549941,
+              "tolerance": 0.02,
+              "passed": true
+            }
+          ],
+          "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.06564245437845018,
+              "actual": 0.06564245437845007,
+              "absolute_error": 1.1102230246251565e-16,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.06472,
+          "theoretical_probability": 0.06564245437845007,
+          "absolute_error": 0.0009224543784500661,
+          "ci99_low": 0.06274469331260324,
+          "ci99_high": 0.06675306361113445,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.05484,
+          "theoretical_probability": 0.055097589415809556,
+          "absolute_error": 0.00025758941580955597,
+          "ci99_low": 0.05301489602742858,
+          "ci99_high": 0.05672417186489605,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 9887518974255679006
+    },
+    {
+      "case": {
+        "id": "10-55b",
+        "kind": "acceptance",
+        "page": 514,
+        "pdf_page": 529,
+        "title": "Read risk from OC graph",
+        "inputs": {
+          "n": 300,
+          "c": 3,
+          "N": 3000,
+          "p": 0.01,
+          "risk": "producer",
+          "model": "poisson"
+        },
+        "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+      },
+      "calculated": {
+        "probability": 0.35276811121776874,
+        "acceptance_probability": 0.6472318887822313,
+        "binomial_probability": 0.3527662253574603,
+        "poisson_probability": 0.35276811121776874,
+        "model": "poisson",
+        "finite_lot_defectives": 30,
+        "finite_lot_probability": 0.35244031598453107
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "approximate_graph_reading",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.35,
+              "actual": 0.35276811121776874,
+              "absolute_error": 0.002768111217768765,
+              "tolerance": 0.02,
+              "passed": true
+            }
+          ],
+          "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.35276811121776874,
+              "actual": 0.35276811121776874,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.35159,
+          "theoretical_probability": 0.35276811121776874,
+          "absolute_error": 0.0011781112177687292,
+          "ci99_low": 0.3477107635394241,
+          "ci99_high": 0.3554889288540971,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.35256,
+          "theoretical_probability": 0.35244031598453107,
+          "absolute_error": 0.00011968401546891272,
+          "ci99_low": 0.3486782523423801,
+          "ci99_high": 0.3564613113426867,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 5485707496290796921
+    },
+    {
+      "case": {
+        "id": "10-55c",
+        "kind": "acceptance",
+        "page": 514,
+        "pdf_page": 529,
+        "title": "Read risk from OC graph",
+        "inputs": {
+          "n": 300,
+          "c": 3,
+          "N": 3000,
+          "p": 0.015,
+          "risk": "producer",
+          "model": "poisson"
+        },
+        "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+      },
+      "calculated": {
+        "probability": 0.657704044165409,
+        "acceptance_probability": 0.34229595583459105,
+        "binomial_probability": 0.6596171647132354,
+        "poisson_probability": 0.657704044165409,
+        "model": "poisson",
+        "finite_lot_defectives": 45,
+        "finite_lot_probability": 0.6729319881591501
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "approximate_graph_reading",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.66,
+              "actual": 0.657704044165409,
+              "absolute_error": 0.002295955834591079,
+              "tolerance": 0.02,
+              "passed": true
+            }
+          ],
+          "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.657704044165409,
+              "actual": 0.657704044165409,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.65744,
+          "theoretical_probability": 0.657704044165409,
+          "absolute_error": 0.0002640441654089276,
+          "ci99_low": 0.6535640995040801,
+          "ci99_high": 0.6612950099195707,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.6754,
+          "theoretical_probability": 0.6729319881591501,
+          "absolute_error": 0.002468011840849882,
+          "ci99_low": 0.6715745494140658,
+          "ci99_high": 0.6792021769128419,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 10921295900137730611
+    },
+    {
+      "case": {
+        "id": "10-56a",
+        "kind": "acceptance",
+        "page": 514,
+        "pdf_page": 529,
+        "title": "Read risk from OC graph",
+        "inputs": {
+          "n": 300,
+          "c": 3,
+          "N": 3000,
+          "p": 0.01,
+          "risk": "consumer",
+          "model": "poisson"
+        },
+        "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+      },
+      "calculated": {
+        "probability": 0.6472318887822313,
+        "acceptance_probability": 0.6472318887822313,
+        "binomial_probability": 0.6472337746425397,
+        "poisson_probability": 0.6472318887822313,
+        "model": "poisson",
+        "finite_lot_defectives": 30,
+        "finite_lot_probability": 0.6475596840154689
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "approximate_graph_reading",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.65,
+              "actual": 0.6472318887822313,
+              "absolute_error": 0.002768111217768765,
+              "tolerance": 0.02,
+              "passed": true
+            }
+          ],
+          "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.6472318887822313,
+              "actual": 0.6472318887822313,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.64976,
+          "theoretical_probability": 0.6472318887822313,
+          "absolute_error": 0.002528111217768747,
+          "ci99_low": 0.6458644162814111,
+          "ci99_high": 0.6536357121947445,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.64816,
+          "theoretical_probability": 0.6475596840154689,
+          "absolute_error": 0.0006003159845310302,
+          "ci99_low": 0.6442604554202477,
+          "ci99_high": 0.6520398853585131,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 15334058018665393210
+    },
+    {
+      "case": {
+        "id": "10-56b",
+        "kind": "acceptance",
+        "page": 514,
+        "pdf_page": 529,
+        "title": "Read risk from OC graph",
+        "inputs": {
+          "n": 300,
+          "c": 3,
+          "N": 3000,
+          "p": 0.015,
+          "risk": "consumer",
+          "model": "poisson"
+        },
+        "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+      },
+      "calculated": {
+        "probability": 0.34229595583459105,
+        "acceptance_probability": 0.34229595583459105,
+        "binomial_probability": 0.34038283528676466,
+        "poisson_probability": 0.34229595583459105,
+        "model": "poisson",
+        "finite_lot_defectives": 45,
+        "finite_lot_probability": 0.3270680118408499
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "approximate_graph_reading",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.34,
+              "actual": 0.34229595583459105,
+              "absolute_error": 0.0022959558345910236,
+              "tolerance": 0.02,
+              "passed": true
+            }
+          ],
+          "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.34229595583459105,
+              "actual": 0.34229595583459105,
+              "absolute_error": 0.0,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.34355,
+          "theoretical_probability": 0.34229595583459105,
+          "absolute_error": 0.001254044165408974,
+          "ci99_low": 0.33969225871422437,
+          "ci99_high": 0.3474285004998878,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.32931,
+          "theoretical_probability": 0.3270680118408499,
+          "absolute_error": 0.00224198815915011,
+          "ci99_low": 0.3254933594444759,
+          "ci99_high": 0.3331492892628224,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 13835790982899180409
+    },
+    {
+      "case": {
+        "id": "10-56c",
+        "kind": "acceptance",
+        "page": 514,
+        "pdf_page": 529,
+        "title": "Read risk from OC graph",
+        "inputs": {
+          "n": 300,
+          "c": 3,
+          "N": 3000,
+          "p": 0.02,
+          "risk": "consumer",
+          "model": "poisson"
+        },
+        "interpretation": "The plotted points agree with a Poisson OC approximation (lambda=n*p). Use that model for the graph-reading comparison; also report the binomial probability. Graph readings have limited precision."
+      },
+      "calculated": {
+        "probability": 0.15120388277664784,
+        "acceptance_probability": 0.15120388277664784,
+        "binomial_probability": 0.14851038151125792,
+        "poisson_probability": 0.15120388277664784,
+        "model": "poisson",
+        "finite_lot_defectives": 60,
+        "finite_lot_probability": 0.13480109850321667
+      },
+      "comparisons": {
+        "book": {
+          "status": "MATCH",
+          "provenance": "approximate_graph_reading",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.15,
+              "actual": 0.15120388277664784,
+              "absolute_error": 0.0012038827766478466,
+              "tolerance": 0.02,
+              "passed": true
+            }
+          ],
+          "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+        },
+        "independent": {
+          "status": "MATCH",
+          "provenance": "independently_solved",
+          "fields": [
+            {
+              "field": "probability",
+              "expected": 0.15120388277664787,
+              "actual": 0.15120388277664784,
+              "absolute_error": 2.7755575615628914e-17,
+              "tolerance": 1e-09,
+              "passed": true
+            }
+          ],
+          "note": ""
+        }
+      },
+      "simulation": {
+        "primary": {
+          "estimate": 0.15153,
+          "theoretical_probability": 0.15120388277664784,
+          "absolute_error": 0.000326117223352157,
+          "ci99_low": 0.14863244003575207,
+          "ci99_high": 0.1544737981447636,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        },
+        "finite_lot": {
+          "estimate": 0.1361,
+          "theoretical_probability": 0.13480109850321667,
+          "absolute_error": 0.0012989014967833279,
+          "ci99_low": 0.13333108643997788,
+          "ci99_high": 0.13891719913378647,
+          "theory_in_ci99": true,
+          "trials": 100000,
+          "note": "A valid 99% interval can miss the theoretical value by chance; many cases increase that chance."
+        }
+      },
+      "case_seed": 11311578167659809488
+    }
+  ]
+}

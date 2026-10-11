@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quality Control | Simulation workspace</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="report-theme.css">
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner">
+    <a class="brand" href="index.html">Quality Control<span class="chapter-label">Simulation workspace</span></a>
+    <nav class="report-nav" aria-label="Report navigation"><a href="book-results.html">Book results</a><a href="calculator.html" aria-current="page">Calculator</a></nav>
+    <span class="course">Software Testing · Portfolio</span>
+  </div></header>
+  <main>
+    <header class="report-heading"><div><p class="eyebrow">Calculate, simulate and verify</p><h1>Quality analysis workspace</h1><p class="lede">Verify Chapter 10 exercises, or analyse recorded ForeverMart website checks.</p></div></header>
+    <div class="workflow-picker" role="tablist" aria-label="Project workflow">
+      <button type="button" id="numerical-tab" role="tab" aria-selected="true" aria-controls="numerical-panel" tabindex="0"><span>Part 2B</span>Chapter 10 numericals<small>Exercises 10.40–10.59 only</small></button>
+      <button type="button" id="dataset-tab" role="tab" aria-selected="false" aria-controls="dataset-panel" tabindex="-1"><span>Part 2C</span>Micro and macro datasets<small>Data, formulas, charts and exploration</small></button>
+    </div>
+    <div class="calculator-layout">
+      <section class="exercise entry-panel" aria-label="Calculation inputs">
+        <div id="numerical-panel" role="tabpanel" aria-labelledby="numerical-tab">
+          <form id="calculator-form">
+            <h2>Numerical inputs</h2><p class="form-intro">Choose a question and enter its values. One calculation runs at a time.</p>
+            <label for="data-source">Data source</label><select id="data-source"><option value="book">Compare with a book question</option><option value="own">My own numerical values</option></select>
+            <label for="kind">Calculation type</label><select id="kind" name="kind" disabled><option value="">Loading calculation types…</option></select>
+            <label for="exercise-select">Book question to compare</label><select id="exercise-select" disabled><option value="">Loading assigned questions…</option></select>
+            <p id="source-hint" class="field-hint">Assigned numerical scope: 10.40–10.59.</p>
+            <button type="button" id="load-book-values" class="secondary-button load-values" disabled>Use this question’s book values</button>
+            <div id="mode-container" hidden><label for="entry-mode">Values available to you</label><select id="entry-mode"></select></div>
+            <div id="input-fields" class="input-fields" hidden></div>
+            <details class="advanced-options"><summary>Simulation settings</summary><div>
+              <label for="trials">Random simulation trials</label><select id="trials"><option value="10000">10,000 trials</option><option value="50000">50,000 trials</option><option value="100000">100,000 trials</option></select>
+              <p class="field-hint">The formula gives the calculated answer. Repeating a random experiment checks that result where a simulation model is available. More trials reduce random uncertainty; they do not change the formula.</p>
+            </div></details>
+            <p class="field-hint">Book answers apply to the original book values. If you change those values, a different answer is expected.</p>
+            <div class="form-actions"><button type="submit" id="calculate-button">Calculate and compare</button><button type="button" id="reset-button" class="secondary-button">Clear values</button></div>
+            <p id="form-error" class="form-error" role="alert" hidden></p><p id="loading-message" class="loading-message" role="status" hidden>Python is calculating your result. The first request may take a little longer.</p>
+          </form>
+        </div>
+        <div id="dataset-panel" role="tabpanel" aria-labelledby="dataset-tab" hidden>
+          <form id="dataset-form">
+            <h2>Dataset analysis</h2><p class="form-intro">Analyse recorded website checks and response times, then verify the sampling model and weighted timing mean.</p>
+            <label for="dataset-scale">Project scale</label><select id="dataset-scale"><option value="micro">Micro — focused, smaller dataset</option><option value="macro">Macro — wider, larger dataset</option></select>
+            <p id="scale-hint" class="field-hint">Micro uses focused homepage checks. Macro covers a wider selection of public routes. Both are measured samples; neither is an industrial big-data system.</p>
+            <label for="dataset-source">Dataset source</label><select id="dataset-source"><option value="forevermart">ForeverMart recorded website checks</option><option value="own">My own CSV dataset</option><option value="demo">Synthetic demo (example only)</option></select>
+            <p id="dataset-source-hint" class="field-hint">Recorded HTTP checks from ForeverMart. Timing includes network, TLS and response download; it does not measure browser rendering or prove complete software quality.</p>
+            <div id="csv-inputs" hidden>
+              <label for="csv-file">Import a CSV file</label><input id="csv-file" type="file" accept=".csv,text/csv" aria-describedby="csv-format-hint">
+              <p id="csv-file-status" class="field-hint" role="status"></p>
+              <label for="csv-text">CSV data</label><textarea id="csv-text" rows="7" spellcheck="false" placeholder="period,passed,failed,response_ms&#10;Batch 1,98,2,245&#10;Batch 2,96,4,310" aria-describedby="csv-format-hint"></textarea>
+              <p id="csv-format-hint" class="field-hint">Upload a file to fill this editor, or paste your data here. Required columns: <strong>period</strong> (batch label), <strong>passed</strong> and <strong>failed</strong> (whole-number check counts), <strong>response_ms</strong> (the batch’s mean response time in milliseconds). Each batch must contain at least one check. Maximum: 20,000 batches and 2 MB.</p>
+              <button type="button" id="download-template" class="text-button">Download a CSV template</button>
+            </div>
+            <label for="specification-ms">Response time requirement (ms)</label><input id="specification-ms" type="number" min="0.001" step="any" value="500" placeholder="Enter the maximum acceptable batch mean, e.g. 500" required>
+            <p class="field-hint">A batch mean above this value exceeds your chosen performance target. The default 500 ms is a study target; adjust it to your requirement. It is separate from statistical control limits.</p>
+            <details class="advanced-options"><summary>Simulation settings</summary><div>
+              <label for="dataset-trials">Random simulation trials</label><select id="dataset-trials"><option value="10000">10,000 trials</option><option value="50000">50,000 trials</option><option value="100000">100,000 trials</option></select>
+              <p class="field-hint">Random batches check the calculated probability of crossing the chart limits. Separately, resampled response times check the weighted timing mean. More trials reduce simulation noise; they do not add real website checks.</p>
+            </div></details>
+            <div class="form-actions"><button type="submit" id="analyse-button">Analyse and simulate</button></div>
+            <p id="dataset-error" class="form-error" role="alert" hidden></p><p id="dataset-loading" class="loading-message" role="status" hidden>Python is analysing your dataset and preparing the charts.</p>
+          </form>
+        </div>
+      </section>
+      <section class="result-container" aria-label="Calculation results" aria-live="polite">
+        <div id="empty-result" class="exercise result-placeholder"><span class="eyebrow">Results</span><h2>Your analysis will appear here</h2><p id="empty-result-description">Select an assigned book question, enter its values, then press Enter or select Calculate and compare.</p><ul id="empty-result-list"><li>Answers calculated using the question’s formula</li><li>Comparison with available stored reference answers</li><li>Charts and simulation verification, where applicable</li></ul></div>
+        <div id="result-content" hidden><div id="data-message" role="status" class="data-message"></div><div class="result-toolbar"><span>Analysis complete</span><button id="download-result" type="button" class="secondary-button">Download result JSON</button></div><iframe id="result-frame" title="Calculated results, charts and verification" sandbox="allow-scripts allow-downloads"></iframe></div>
+      </section>
+    </div>
+  </main>
+  <script src="calculator.js" defer></script>
+</body>
+</html>

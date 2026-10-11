@@ -1,0 +1,33 @@
+.workflow-picker{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px}
+.workflow-picker button{text-align:left;background:#30313b;border:1px solid #575962;border-radius:8px;padding:18px 22px;font-size:16px;font-weight:600;color:#eeeef2}
+.workflow-picker button span,.workflow-picker button small{display:block;font-size:11px;font-weight:500;color:#bcc0ca}
+.workflow-picker button span{margin-bottom:5px;text-transform:uppercase;letter-spacing:1.1px;color:#e2939a}
+.workflow-picker button small{margin-top:5px;font-size:12px}
+.workflow-picker button[aria-selected="true"]{background:#3d3038;border-color:#c74854;box-shadow:inset 4px 0 0 #c74854}
+.workflow-picker button:hover{background:#3a323a}
+.calculator-layout{display:grid;grid-template-columns:370px minmax(0,1fr);gap:24px;align-items:start}
+.entry-panel{padding:24px;position:sticky;top:88px;max-height:calc(100vh - 112px);overflow-y:auto}
+.entry-panel h2{font-size:21px}.form-intro{color:#c2c5ce;font-size:13px;line-height:1.6;margin:8px 0 20px}
+form label{display:block;font-size:13px;font-weight:600;margin:16px 0 7px;color:#ececf0}
+select,input,textarea{width:100%;border:1px solid #626571;background:#353640;color:#fff;padding:10px 11px;border-radius:5px;font:13px "Segoe UI",Arial,sans-serif;color-scheme:dark}
+select:focus,input:focus,textarea:focus,button:focus-visible,summary:focus-visible{outline:2px solid #e7828c;outline-offset:3px}
+select:disabled,input:disabled{opacity:.5;cursor:not-allowed}input[type="file"]{font-size:12px;padding:9px}
+textarea{min-height:98px;resize:vertical;line-height:1.6}#csv-text{min-height:160px;font-family:Consolas,"Courier New",monospace;font-size:12px}
+input::placeholder,textarea::placeholder{color:#aaaebc}.field-hint{font-size:12px;line-height:1.65;color:#bec1cb;margin:7px 0 0}.field-hint strong{font-weight:600;color:#dddfe7}
+.input-fields{display:grid;grid-template-columns:1fr;gap:0 14px}.field-wide{grid-column:1/-1}
+.form-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+button{border:1px solid #d24a53;border-radius:5px;padding:11px 14px;background:#be303a;color:#fff;font:600 13px "Segoe UI",Arial,sans-serif;cursor:pointer}
+button:hover{background:#a52832}button:disabled{opacity:.6;cursor:not-allowed}
+.secondary-button{background:#353640;border-color:#656975;color:#e6e7ed}.secondary-button:hover{background:#454750}.load-values{margin:12px 0 0;width:100%;font-size:12px}
+.text-button{background:transparent;border:0;color:#ef9aa3;font-size:12px;padding:8px 0;text-decoration:underline;text-underline-offset:3px}.text-button:hover{background:transparent;color:#fff}
+.advanced-options{margin-top:20px;border-top:1px solid #51535e;border-bottom:1px solid #51535e}.advanced-options summary{font-size:12px;color:#e5e5ed}.advanced-options>div{padding-bottom:16px}.advanced-options label{margin-top:0}
+.form-error{color:#ffd2d7;border-left:3px solid #e77d87;background:#4c2c34;padding:12px;font-size:13px;overflow-wrap:anywhere}.loading-message{font-size:12px;color:#e0bdc3}
+.result-placeholder{min-height:360px;padding:32px}.result-placeholder h2{font-size:23px}.result-placeholder p,.result-placeholder li{font-size:14px;line-height:1.7;color:#c8cbd4}.result-placeholder ul{padding-left:20px;margin-top:24px}.result-placeholder li{margin:12px 0}.result-container{min-width:0}
+.data-message{border:1px solid #79707a;border-left:4px solid #d7505c;background:#3c3038;padding:16px 18px;border-radius:6px;color:#f7e5e8;font-size:13px;line-height:1.6;margin-bottom:14px;overflow-wrap:anywhere}
+.data-message.book-data{background:#293c37;border-color:#4c7869;border-left-color:#8cbda7;color:#dcf0e6}
+.result-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px;font-size:12px;color:#bbc1cd}
+iframe{display:block;width:100%;height:1600px;border:1px solid #50525c;border-radius:9px;background:#292a32}
+[hidden]{display:none!important}
+@media(max-width:1100px){.calculator-layout{grid-template-columns:330px minmax(0,1fr)}}
+@media(max-width:850px){.calculator-layout{grid-template-columns:1fr}.entry-panel{position:static;max-height:none}.input-fields{grid-template-columns:1fr 1fr}.workflow-picker button{padding:15px 18px}.result-placeholder{min-height:260px}}
+@media(max-width:520px){.workflow-picker{grid-template-columns:1fr;gap:10px}.workflow-picker button{font-size:15px}.input-fields{grid-template-columns:1fr}.form-actions{display:grid;grid-template-columns:1fr}.form-actions button{width:100%}.result-toolbar{flex-wrap:wrap}.result-toolbar button{font-size:12px}.entry-panel,.result-placeholder{padding:20px}}

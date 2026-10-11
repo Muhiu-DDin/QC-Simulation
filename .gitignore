@@ -3,4 +3,4 @@ __pycache__/
 *.pyc
 tmp/
 .vercel/
-vercel-site/
+# The prepared web application must be committed for GitHub-based deployment.

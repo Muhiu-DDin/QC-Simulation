@@ -40,13 +40,23 @@ report=report.replace('</head>','<link rel="icon" type="image/svg+xml" href="fav
 target.joinpath('book-results.html').write_text(report,encoding='utf-8')
 for filename in ['comparison.csv','results.json']:
     shutil.copy2(source/filename,target/filename)
-for relative in re.findall(r'<img src="([^"]+)"',report):
+report_assets=re.findall(r'<img src="([^"]+)"',report)
+for relative in report_assets:
     asset=Path(relative)
     if asset.is_absolute() or '..' in asset.parts:
         raise ValueError('Report asset must stay within the output directory')
     destination=target/asset
     destination.parent.mkdir(parents=True,exist_ok=True)
     shutil.copy2(source/asset,destination)
+# This generated folder previously held graphs for the full chapter. Keep only
+# the current report's PNGs so the GitHub deployment stays within the assignment.
+graph_folder=(target/'graphs').resolve()
+if not graph_folder.is_relative_to(target.resolve()):
+    raise ValueError('Generated graph folder must stay within the deployment folder')
+required_assets={(target/relative).resolve() for relative in report_assets}
+for stale in graph_folder.glob('*.png'):
+    if stale.resolve().is_relative_to(graph_folder) and stale.resolve() not in required_assets:
+        stale.unlink()
 for filename in ['calculator.html','calculator.css','calculator.js','favicon.svg']:
     shutil.copy2(ROOT/'web'/filename,target/filename)
 shutil.copy2(ROOT/'web/calculator.html',target/'index.html')
@@ -71,12 +81,15 @@ shutil.copy2(ROOT/'requirements.txt',target/'requirements.txt')
 dependencies=[line.strip() for line in ROOT.joinpath('requirements.txt').read_text().splitlines() if line.strip() and not line.startswith('#')]
 target.joinpath('pyproject.toml').write_text('[project]\nname = "qc-web-calculator"\nversion = "1.0.0"\nrequires-python = ">=3.13,<3.14"\ndependencies = '+json.dumps(dependencies)+'\n',encoding='utf-8')
 target.joinpath('vercel.json').write_text(json.dumps({
+    '$schema':'https://openapi.vercel.sh/vercel.json',
     'framework':None,
+    'buildCommand':'',
+    'outputDirectory':'.',
     'functions':{'api/calculate.py':{'maxDuration':60,'excludeFiles':'{graphs/**,index.html,results.json,comparison.csv}'}},
     'headers':[{'source':'/(.*)','headers':[
         {'key':'X-Content-Type-Options','value':'nosniff'},
         {'key':'Referrer-Policy','value':'strict-origin-when-cross-origin'}]}]
 },indent=2),encoding='utf-8')
-target.joinpath('.vercelignore').write_text('.vercel\n',encoding='utf-8')
+target.joinpath('.vercelignore').write_text('.vercel\n__pycache__/\n**/__pycache__/\n*.pyc\n**/*.pyc\n',encoding='utf-8')
 print('Prepared 22 assigned book cases and ForeverMart micro/macro calculator:',target)
 print('Local custom reports and the Python environment are excluded.')

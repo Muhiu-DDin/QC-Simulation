@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "references": {
+    "10-47a": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.5953543153279742
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-47b": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.3233213054643441
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-47c": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.7142482612060479
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-47d": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.45683102668427533
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-48a": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.19689658999318088
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-48b": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.4214963216504661
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-48c": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.10988575013690904
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-48d": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.27488312768021517
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-55a": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.06564245437845018
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": {
+        "values": {
+          "probability": 0.07
+        },
+        "absolute_tolerance": 0.02,
+        "printed_page": 514,
+        "provenance": "approximate_graph_reading",
+        "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+      }
+    },
+    "10-55b": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.35276811121776874
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": {
+        "values": {
+          "probability": 0.35
+        },
+        "absolute_tolerance": 0.02,
+        "printed_page": 514,
+        "provenance": "approximate_graph_reading",
+        "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+      }
+    },
+    "10-55c": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.657704044165409
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": {
+        "values": {
+          "probability": 0.66
+        },
+        "absolute_tolerance": 0.02,
+        "printed_page": 514,
+        "provenance": "approximate_graph_reading",
+        "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+      }
+    },
+    "10-56a": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.6472318887822313
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": {
+        "values": {
+          "probability": 0.65
+        },
+        "absolute_tolerance": 0.02,
+        "printed_page": 514,
+        "provenance": "approximate_graph_reading",
+        "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+      }
+    },
+    "10-56b": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.34229595583459105
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": {
+        "values": {
+          "probability": 0.34
+        },
+        "absolute_tolerance": 0.02,
+        "printed_page": 514,
+        "provenance": "approximate_graph_reading",
+        "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+      }
+    },
+    "10-56c": {
+      "independent_reference": {
+        "values": {
+          "probability": 0.15120388277664787
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": {
+        "values": {
+          "probability": 0.15
+        },
+        "absolute_tolerance": 0.02,
+        "printed_page": 514,
+        "provenance": "approximate_graph_reading",
+        "note": "Visual reading to roughly two decimals; graph appears to use Poisson approximation."
+      }
+    },
+    "10-40a": {
+      "independent_reference": {
+        "values": {
+          "observed_proportion": 0.0225,
+          "z": 0.7985957062499245,
+          "p_value": 0.2122624390856061
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-40b": {
+      "independent_reference": {
+        "values": {
+          "CL": 0.02,
+          "LCL": 0,
+          "UCL": 0.05756594202199647
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-44": {
+      "independent_reference": {
+        "values": {
+          "CL": 50.0,
+          "LCL": 47.91955417094186,
+          "UCL": 52.08044582905814
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-45": {
+      "independent_reference": {
+        "values": {
+          "CL": 6.75,
+          "LCL": 1.50525,
+          "UCL": 11.99475
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-46": {
+      "independent_reference": {
+        "values": {
+          "total": 825,
+          "largest_count": 303,
+          "largest_category": "Wallboard"
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-50": {
+      "independent_reference": {
+        "values": {
+          "CL": 74.965,
+          "LCL": 74.46739826470419,
+          "UCL": 75.46260173529582
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-51": {
+      "independent_reference": {
+        "values": {
+          "CL": 3.165,
+          "LCL": 1.43058,
+          "UCL": 4.89942
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    },
+    "10-52": {
+      "independent_reference": {
+        "values": {
+          "CL": 0.001,
+          "LCL": 0,
+          "UCL": 0.0031202594180901547
+        },
+        "absolute_tolerance": 1e-09,
+        "provenance": "independently_solved",
+        "method": "Python math formulas in tools/build_references.py; frozen before runtime comparison"
+      },
+      "book_reference": null
+    }
+  }
+}
