@@ -1,0 +1,612 @@
+{
+  "cover": {
+    "start": 1,
+    "end": 1,
+    "title": "ForeverMart"
+  },
+  "contents": {
+    "start": 2,
+    "end": 2,
+    "title": "Table of contents"
+  },
+  "bugs": {
+    "start": 3,
+    "end": 5,
+    "title": "Complete bug register"
+  },
+  "observations": {
+    "start": 6,
+    "end": 6,
+    "title": "Observation register"
+  },
+  "summary": {
+    "start": 7,
+    "end": 7,
+    "title": "Executive summary"
+  },
+  "scope": {
+    "start": 7,
+    "end": 8,
+    "title": "Scope and test environment"
+  },
+  "approach": {
+    "start": 8,
+    "end": 9,
+    "title": "Test approach and acceptance criteria"
+  },
+  "reading": {
+    "start": 9,
+    "end": 10,
+    "title": "How to read the report"
+  },
+  "FM-001": {
+    "start": 10,
+    "end": 10,
+    "title": "FM-001 | Shop Now does not open the catalogue"
+  },
+  "FM-002": {
+    "start": 11,
+    "end": 11,
+    "title": "FM-002 | Best Seller section has no products despite flagged catalogue items"
+  },
+  "FM-003": {
+    "start": 11,
+    "end": 12,
+    "title": "FM-003 | Latest Collection is not ordered by creation date"
+  },
+  "FM-004": {
+    "start": 12,
+    "end": 13,
+    "title": "FM-004 | Reviews tab does not display reviews"
+  },
+  "FM-005": {
+    "start": 13,
+    "end": 13,
+    "title": "FM-005 | Product rating and review count are hard coded"
+  },
+  "FM-006": {
+    "start": 14,
+    "end": 14,
+    "title": "FM-006 | Jacket description describes a short sleeved T-shirt"
+  },
+  "FM-007": {
+    "start": 14,
+    "end": 15,
+    "title": "FM-007 | Detailed Description panel explains ecommerce instead of the product"
+  },
+  "FM-008": {
+    "start": 15,
+    "end": 16,
+    "title": "FM-008 | Product image and title describe different garment styles"
+  },
+  "FM-009": {
+    "start": 16,
+    "end": 16,
+    "title": "FM-009 | Related Products includes the product already being viewed"
+  },
+  "FM-010": {
+    "start": 17,
+    "end": 17,
+    "title": "FM-010 | Selected size carries over when navigating to a related product"
+  },
+  "FM-011": {
+    "start": 17,
+    "end": 18,
+    "title": "FM-011 | Unknown product leaves an incomplete purchase page"
+  },
+  "FM-012": {
+    "start": 18,
+    "end": 19,
+    "title": "FM-012 | Search with no matches displays an unexplained empty grid"
+  },
+  "FM-013": {
+    "start": 19,
+    "end": 19,
+    "title": "FM-013 | Leading and trailing spaces prevent otherwise valid search matches"
+  },
+  "FM-014": {
+    "start": 20,
+    "end": 20,
+    "title": "FM-014 | Collection filters and sorting are lost after returning from a product"
+  },
+  "FM-015": {
+    "start": 20,
+    "end": 21,
+    "title": "FM-015 | Footer navigation labels cannot be opened"
+  },
+  "FM-016": {
+    "start": 21,
+    "end": 22,
+    "title": "FM-016 | Forgot your password has no recovery action"
+  },
+  "FM-017": {
+    "start": 22,
+    "end": 22,
+    "title": "FM-017 | My Profile menu item has no destination"
+  },
+  "FM-018": {
+    "start": 23,
+    "end": 23,
+    "title": "FM-018 | Explore Jobs does not open career information"
+  },
+  "FM-019": {
+    "start": 23,
+    "end": 24,
+    "title": "FM-019 | Newsletter subscription produces no result"
+  },
+  "FM-020": {
+    "start": 24,
+    "end": 25,
+    "title": "FM-020 | Product names are absent from cart and order rows"
+  },
+  "FM-021": {
+    "start": 25,
+    "end": 25,
+    "title": "FM-021 | Guest cart is overwritten after account creation"
+  },
+  "FM-022": {
+    "start": 26,
+    "end": 26,
+    "title": "FM-022 | An empty cart can be submitted as an order"
+  },
+  "FM-023": {
+    "start": 26,
+    "end": 27,
+    "title": "FM-023 | Empty-cart total does not agree with displayed shipping"
+  },
+  "FM-024": {
+    "start": 27,
+    "end": 28,
+    "title": "FM-024 | Whitespace-only delivery information is accepted"
+  },
+  "FM-025": {
+    "start": 28,
+    "end": 28,
+    "title": "FM-025 | Negative phone number is accepted at checkout"
+  },
+  "FM-026": {
+    "start": 29,
+    "end": 29,
+    "title": "FM-026 | Negative postal code is accepted at checkout"
+  },
+  "FM-027": {
+    "start": 29,
+    "end": 30,
+    "title": "FM-027 | Order endpoint accepts a malformed delivery email"
+  },
+  "FM-028": {
+    "start": 30,
+    "end": 31,
+    "title": "FM-028 | Order endpoint accepts a negative fractional quantity"
+  },
+  "FM-029": {
+    "start": 31,
+    "end": 31,
+    "title": "FM-029 | Order endpoint accepts a size not sold for the product"
+  },
+  "FM-030": {
+    "start": 32,
+    "end": 32,
+    "title": "FM-030 | Order endpoint accepts a non-existent product ID"
+  },
+  "FM-031": {
+    "start": 32,
+    "end": 33,
+    "title": "FM-031 | Order endpoint trusts an altered client line-item price"
+  },
+  "FM-032": {
+    "start": 33,
+    "end": 34,
+    "title": "FM-032 | Order endpoint trusts the submitted total amount"
+  },
+  "FM-033": {
+    "start": 34,
+    "end": 35,
+    "title": "FM-033 | Cart endpoint stores a negative fractional quantity"
+  },
+  "FM-034": {
+    "start": 35,
+    "end": 35,
+    "title": "FM-034 | Cart endpoint accepts an unsupported size"
+  },
+  "FM-035": {
+    "start": 36,
+    "end": 36,
+    "title": "FM-035 | Cart endpoint accepts a non-existent product"
+  },
+  "FM-036": {
+    "start": 36,
+    "end": 37,
+    "title": "FM-036 | Guest checkout loses the address when authentication is required"
+  },
+  "FM-037": {
+    "start": 37,
+    "end": 38,
+    "title": "FM-037 | Postal field strips letters from an alphanumeric code"
+  },
+  "FM-038": {
+    "start": 38,
+    "end": 38,
+    "title": "FM-038 | Phone field rejects a normally formatted telephone string"
+  },
+  "FM-039": {
+    "start": 39,
+    "end": 39,
+    "title": "FM-039 | Unknown route has no not-found message or recovery"
+  },
+  "FM-040": {
+    "start": 39,
+    "end": 40,
+    "title": "FM-040 | Profile response includes password and refresh-token fields"
+  },
+  "FM-041": {
+    "start": 40,
+    "end": 41,
+    "title": "FM-041 | Search opener cannot be activated with the keyboard"
+  },
+  "FM-042": {
+    "start": 41,
+    "end": 41,
+    "title": "FM-042 | Search close icon lacks a keyboard action and name"
+  },
+  "FM-043": {
+    "start": 42,
+    "end": 42,
+    "title": "FM-043 | Authenticated account menu is not keyboard operable"
+  },
+  "FM-044": {
+    "start": 42,
+    "end": 43,
+    "title": "FM-044 | Login and Create Account mode switch is not a keyboard control"
+  },
+  "FM-045": {
+    "start": 43,
+    "end": 44,
+    "title": "FM-045 | Product gallery thumbnails are pointer-only controls"
+  },
+  "FM-046": {
+    "start": 44,
+    "end": 44,
+    "title": "FM-046 | Remove cart item is an unnamed pointer-only image"
+  },
+  "FM-047": {
+    "start": 45,
+    "end": 45,
+    "title": "FM-047 | Cart product navigation is available only through a clickable image"
+  },
+  "FM-048": {
+    "start": 45,
+    "end": 46,
+    "title": "FM-048 | Mobile menu opener has no button semantics"
+  },
+  "FM-049": {
+    "start": 46,
+    "end": 47,
+    "title": "FM-049 | Mobile menu Back affordance is not keyboard operable"
+  },
+  "FM-050": {
+    "start": 47,
+    "end": 47,
+    "title": "FM-050 | Closed mobile menu leaves offscreen links in the accessibility tree"
+  },
+  "FM-051": {
+    "start": 48,
+    "end": 48,
+    "title": "FM-051 | Mobile menu does not manage focus or dismiss on Escape"
+  },
+  "FM-052": {
+    "start": 48,
+    "end": 49,
+    "title": "FM-052 | Mobile filter disclosure is a paragraph rather than a control"
+  },
+  "FM-053": {
+    "start": 49,
+    "end": 50,
+    "title": "FM-053 | Payment methods are not keyboard selectable radio controls"
+  },
+  "FM-054": {
+    "start": 50,
+    "end": 50,
+    "title": "FM-054 | Stripe option has no accessible payment-provider name"
+  },
+  "FM-055": {
+    "start": 51,
+    "end": 51,
+    "title": "FM-055 | Selected product size is communicated only by colour"
+  },
+  "FM-056": {
+    "start": 51,
+    "end": 52,
+    "title": "FM-056 | Collection sort selector has no associated label"
+  },
+  "FM-057": {
+    "start": 52,
+    "end": 53,
+    "title": "FM-057 | Delivery fields rely on disappearing placeholders"
+  },
+  "FM-058": {
+    "start": 53,
+    "end": 53,
+    "title": "FM-058 | Authentication fields have no persistent associated labels"
+  },
+  "FM-059": {
+    "start": 54,
+    "end": 54,
+    "title": "FM-059 | Personal-data inputs do not expose their autocomplete purposes"
+  },
+  "FM-060": {
+    "start": 54,
+    "end": 55,
+    "title": "FM-060 | Muted home-page text has insufficient contrast"
+  },
+  "FM-061": {
+    "start": 55,
+    "end": 56,
+    "title": "FM-061 | Newsletter input suppresses its visible keyboard focus"
+  },
+  "FM-062": {
+    "start": 56,
+    "end": 56,
+    "title": "FM-062 | Meaningful product photographs have empty alternative text"
+  },
+  "FM-063": {
+    "start": 57,
+    "end": 57,
+    "title": "FM-063 | Visible page and section titles are not semantic headings"
+  },
+  "FM-064": {
+    "start": 57,
+    "end": 58,
+    "title": "FM-064 | Page content lacks main and footer landmarks"
+  },
+  "FM-065": {
+    "start": 58,
+    "end": 59,
+    "title": "FM-065 | Browser title does not identify the current page"
+  },
+  "FM-066": {
+    "start": 59,
+    "end": 59,
+    "title": "FM-066 | Layout overflows horizontally at 320 CSS pixels"
+  },
+  "FM-067": {
+    "start": 60,
+    "end": 60,
+    "title": "FM-067 | Home-page hero misspells Arrivals"
+  },
+  "FM-068": {
+    "start": 60,
+    "end": 61,
+    "title": "FM-068 | Template filler text remains in customer-facing sections"
+  },
+  "FM-069": {
+    "start": 61,
+    "end": 62,
+    "title": "FM-069 | Contact details conflict between the footer and Contact page"
+  },
+  "FM-070": {
+    "start": 62,
+    "end": 62,
+    "title": "FM-070 | About page contains an incomplete support sentence"
+  },
+  "FM-071": {
+    "start": 62,
+    "end": 63,
+    "title": "FM-071 | Winterwear filter has no matching catalogue classification"
+  },
+  "FM-072": {
+    "start": 63,
+    "end": 64,
+    "title": "FM-072 | Empty cart has no explanatory state or shopping recovery"
+  },
+  "FM-073": {
+    "start": 64,
+    "end": 64,
+    "title": "FM-073 | Checkout does not show the products being purchased"
+  },
+  "FM-074": {
+    "start": 65,
+    "end": 65,
+    "title": "FM-074 | Order history omits order identifiers"
+  },
+  "FM-075": {
+    "start": 65,
+    "end": 66,
+    "title": "FM-075 | Order history loses order-level grouping"
+  },
+  "FM-076": {
+    "start": 66,
+    "end": 67,
+    "title": "FM-076 | Order history omits the final order total and shipping breakdown"
+  },
+  "FM-077": {
+    "start": 67,
+    "end": 67,
+    "title": "FM-077 | Order history has no delivery-address review"
+  },
+  "FM-078": {
+    "start": 67,
+    "end": 68,
+    "title": "FM-078 | About page advertises product ranges absent from the inspected catalogue"
+  },
+  "FM-079": {
+    "start": 68,
+    "end": 69,
+    "title": "FM-079 | Newsletter placeholder contains incorrect wording"
+  },
+  "FM-080": {
+    "start": 69,
+    "end": 69,
+    "title": "FM-080 | Copyright footer contains incomplete grammar and inconsistent branding"
+  },
+  "FM-081": {
+    "start": 70,
+    "end": 70,
+    "title": "FM-081 | Public document has no Content Security Policy"
+  },
+  "FM-082": {
+    "start": 70,
+    "end": 71,
+    "title": "FM-082 | Public document lacks an explicit framing restriction"
+  },
+  "FM-083": {
+    "start": 71,
+    "end": 72,
+    "title": "FM-083 | Public responses omit the nosniff hardening header"
+  },
+  "FM-084": {
+    "start": 72,
+    "end": 72,
+    "title": "FM-084 | Public document has no explicit Referrer Policy"
+  },
+  "FM-085": {
+    "start": 73,
+    "end": 73,
+    "title": "FM-085 | Offscreen catalogue images are not marked for lazy loading"
+  },
+  "FM-086": {
+    "start": 73,
+    "end": 74,
+    "title": "FM-086 | Product images do not advertise responsive source variants"
+  },
+  "FM-087": {
+    "start": 74,
+    "end": 75,
+    "title": "FM-087 | Public pages lack a page-specific meta description"
+  },
+  "FM-088": {
+    "start": 75,
+    "end": 75,
+    "title": "FM-088 | Footer email and telephone cannot be activated directly"
+  },
+  "FM-089": {
+    "start": 76,
+    "end": 76,
+    "title": "FM-089 | Checkout does not state which dollar currency is used"
+  },
+  "FM-090": {
+    "start": 76,
+    "end": 77,
+    "title": "FM-090 | Displayed return and exchange promises lack instructions"
+  },
+  "traceability": {
+    "start": 77,
+    "end": 78,
+    "title": "Requirement and defect traceability"
+  },
+  "decision": {
+    "start": 78,
+    "end": 79,
+    "title": "Checkout decision table"
+  },
+  "purchase": {
+    "start": 79,
+    "end": 80,
+    "title": "Transaction workflow and control boundary"
+  },
+  "severity": {
+    "start": 80,
+    "end": 80,
+    "title": "Defect severity and priority"
+  },
+  "pareto": {
+    "start": 80,
+    "end": 81,
+    "title": "Pareto analysis of supported defects"
+  },
+  "modules": {
+    "start": 81,
+    "end": 82,
+    "title": "Defect distribution by application area"
+  },
+  "status": {
+    "start": 82,
+    "end": 83,
+    "title": "Status and measurement boundaries"
+  },
+  "causes": {
+    "start": 83,
+    "end": 84,
+    "title": "Cause and effect investigation"
+  },
+  "lifecycle": {
+    "start": 84,
+    "end": 85,
+    "title": "Defect lifecycle and triage"
+  },
+  "pdca": {
+    "start": 85,
+    "end": 85,
+    "title": "Continuous improvement plan"
+  },
+  "regression": {
+    "start": 86,
+    "end": 86,
+    "title": "Corrective action and regression matrix"
+  },
+  "evidence-1": {
+    "start": 87,
+    "end": 87,
+    "title": "Screenshot evidence | Hero action and spelling"
+  },
+  "evidence-2": {
+    "start": 87,
+    "end": 87,
+    "title": "Screenshot evidence | Product identity"
+  },
+  "evidence-3": {
+    "start": 88,
+    "end": 88,
+    "title": "Screenshot evidence | Cart product names"
+  },
+  "evidence-4": {
+    "start": 88,
+    "end": 88,
+    "title": "Screenshot evidence | Empty-cart checkout"
+  },
+  "evidence-5": {
+    "start": 89,
+    "end": 89,
+    "title": "Screenshot evidence | Invalid delivery values"
+  },
+  "evidence-6": {
+    "start": 89,
+    "end": 89,
+    "title": "Screenshot evidence | Incorrect jacket description"
+  },
+  "evidence-7": {
+    "start": 90,
+    "end": 90,
+    "title": "Screenshot evidence | Unknown product"
+  },
+  "evidence-8": {
+    "start": 90,
+    "end": 90,
+    "title": "Screenshot evidence | Unknown route"
+  },
+  "api": {
+    "start": 90,
+    "end": 91,
+    "title": "API and persistence evidence"
+  },
+  "book": {
+    "start": 91,
+    "end": 92,
+    "title": "Reference book crosswalk"
+  },
+  "evidence-mobile": {
+    "start": 93,
+    "end": 93,
+    "title": "Screenshot evidence | Mobile and accessibility"
+  },
+  "handover": {
+    "start": 93,
+    "end": 94,
+    "title": "Handover and supporting references"
+  },
+  "references": {
+    "start": 95,
+    "end": 95,
+    "title": "Techniques, tools and reference sources"
+  }
+}

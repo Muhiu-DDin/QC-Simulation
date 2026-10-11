@@ -1,0 +1,383 @@
+{
+  "report": "ForeverMart_Quality_Assurance_Report.pdf",
+  "audit_date": "2026-10-09",
+  "defects": 70,
+  "observations": 20,
+  "target_defects": 100,
+  "shortfall": 30,
+  "report_pages_planned": 117,
+  "files": {
+    "evidence/about-page.jpg": {
+      "bytes": 167895,
+      "sha256": "6b8c03220f668ab6c710bdb58d15bb5fbbb4d790a06fdba73d972541a6a5d602"
+    },
+    "evidence/about-page.json": {
+      "bytes": 3005,
+      "sha256": "a7dd6d62b34edec1da0db85422c8cd288ad13e54ed59ca7f7203ee1da5fb1eba"
+    },
+    "evidence/cart-empty.jpg": {
+      "bytes": 44650,
+      "sha256": "f0e63a3834488fbfd87c901673fd0d27cfdeeb3fde4ee016878feeea08dd66e9"
+    },
+    "evidence/cart-empty.json": {
+      "bytes": 1408,
+      "sha256": "cecd6f288e788c6a87d9613bf7bb5a1a24e888d8120819322cd98bf42ce8c373"
+    },
+    "evidence/cart-one-item.jpg": {
+      "bytes": 52995,
+      "sha256": "1a1222b318bfa3cac86f4b0a13cfbcea0aefb08f08d09d6b7b1877237e2704f5"
+    },
+    "evidence/cart-one-item.json": {
+      "bytes": 1825,
+      "sha256": "f8555e1ed61ae9c748e1e1bd254fe80f31cdf9b2eb64d0f6c0221ec582fdc435"
+    },
+    "evidence/checkout-320-dimensions.json": {
+      "bytes": 31,
+      "sha256": "e4b6a2eb3f09fd319d5cd668bc2e6adda7d85952f027ff871b10e4488c80e97d"
+    },
+    "evidence/checkout-320-verified.jpg": {
+      "bytes": 22468,
+      "sha256": "c6fe05f422e6ed67bdaa68ba969575787df8d003e25ba4c3d897f6e13106b290"
+    },
+    "evidence/checkout-320-verified.json": {
+      "bytes": 1679,
+      "sha256": "3a8eb956d594ba87fe3feda791c141ba55e5497e6f9a2ae6f41c820ebb8ed7bd"
+    },
+    "evidence/checkout-after-mobile.jpg": {
+      "bytes": 48706,
+      "sha256": "486232243b58f9da189f9cc130327214563b721aa625ba3363a207a10b633c4d"
+    },
+    "evidence/checkout-fields.jpg": {
+      "bytes": 48220,
+      "sha256": "3a68c15781effdd6b93f9f608b5b72f63bc4bca9ae55b040346f230eaa05a778"
+    },
+    "evidence/checkout-fields.json": {
+      "bytes": 4082,
+      "sha256": "8908b6484d7ecac799bdc600156af6e10b3307314ce6da26e3a3a1dc20d0e00c"
+    },
+    "evidence/checkout-form-limitations.jpg": {
+      "bytes": 40021,
+      "sha256": "cd4b2e7845e66455c4ee6907508c91b21c6716cbf63f6417454ef8de612187d5"
+    },
+    "evidence/checkout-form-limitations.json": {
+      "bytes": 3675,
+      "sha256": "13026c9a7a717649c9293f63e7e58432aaebbad01cb866c2a2017d1a442adbb3"
+    },
+    "evidence/checkout-guest.jpg": {
+      "bytes": 48236,
+      "sha256": "a66db9dfc9a7b99fa16dcbfb33a0f0cdb7557261bb864d1e9dab16caf5b699a6"
+    },
+    "evidence/checkout-guest.json": {
+      "bytes": 3895,
+      "sha256": "5ad9febb1bdb905d4ee10c708b26b92cb58af27ec5f4b142770eff0a2f0b58a8"
+    },
+    "evidence/checkout-invalid-values.jpg": {
+      "bytes": 45333,
+      "sha256": "8b8ad3e717e51003fffa2ec71f5d7f618e9f80df37a09c20a7a306432d339521"
+    },
+    "evidence/collection-after-back.jpg": {
+      "bytes": 373508,
+      "sha256": "bf67c2ea6ea0a705896ce10c00b748a183522818379c1adb8308ea107223ad3c"
+    },
+    "evidence/collection-after-back.json": {
+      "bytes": 17874,
+      "sha256": "d58c02807208687821a70fef77dc71a9ebe2278ad3ab196d211ee71e527ead8e"
+    },
+    "evidence/collection-criteria.jpg": {
+      "bytes": 171000,
+      "sha256": "ab62e9a567df73063ce279e021b525c7b7c7be81fc33291ec38d1b691e210d0c"
+    },
+    "evidence/collection-criteria.json": {
+      "bytes": 9012,
+      "sha256": "858fb94e4ce0c8b7f892058a246665d20331edd9ac24bb2ddd47eae0bac1e2d2"
+    },
+    "evidence/collection-desktop.jpg": {
+      "bytes": 211178,
+      "sha256": "758c016f16c6fddcc7ba7ce3d72008feb41def51bcb82f533249bc6f8028b4c2"
+    },
+    "evidence/collection-loaded.jpg": {
+      "bytes": 373227,
+      "sha256": "660bebcc629982f525251a9eab6e907cbe1638d853c56565ac41b0bade71559f"
+    },
+    "evidence/collection-mobile.jpg": {
+      "bytes": 309295,
+      "sha256": "364c7d4606dec11d5f51b435b616b802032649aa10cbd771d7a9b14b5bae1fa1"
+    },
+    "evidence/collection-mobile.json": {
+      "bytes": 10862,
+      "sha256": "303bc9af8d809484891eadff3a40ce8a9d6e843fe0e546c6a16c6c55972d68ce"
+    },
+    "evidence/collection-reload.jpg": {
+      "bytes": 373282,
+      "sha256": "d9d5e86fa21066b3b252e3ce55dd3758a8abee79696087958f1b101614b2243c"
+    },
+    "evidence/collection-reload.json": {
+      "bytes": 17874,
+      "sha256": "d58c02807208687821a70fef77dc71a9ebe2278ad3ab196d211ee71e527ead8e"
+    },
+    "evidence/contact-page.jpg": {
+      "bytes": 63446,
+      "sha256": "c0a867799fb6f462f9b8e2fae345520268e416bd9c61f00b77c34f0171bd0360"
+    },
+    "evidence/contact-page.json": {
+      "bytes": 1964,
+      "sha256": "bd71b9980b9f15c2183b7bea99358ca33daab363abd2723788c603bc261f2366"
+    },
+    "evidence/contrast-measurement.json": {
+      "bytes": 311,
+      "sha256": "6eac8fcf669ba68826412bbfbbb694cd378b04f5b11b141ce1d0d8ff8aab6073"
+    },
+    "evidence/empty-order-outcome.jpg": {
+      "bytes": 43588,
+      "sha256": "448a512ecb0e7c87aa234898c3715bf431e4ed868d4fa9726329ef74f96cc9f1"
+    },
+    "evidence/empty-order-outcome.json": {
+      "bytes": 1598,
+      "sha256": "d2dd50259b743e9245e7d55b5ded8dab6ec69087a01e1f5131933c8130219052"
+    },
+    "evidence/forgot-password-no-action.jpg": {
+      "bytes": 42207,
+      "sha256": "43fde7e3a2b973fb539fc7deee04ca2f6ee26aaf90ebb3ed9eec54d6ff27fd16"
+    },
+    "evidence/forgot-password-no-action.json": {
+      "bytes": 2091,
+      "sha256": "38e30636e260479f7999ebfa8352007ad532ea32a49ce3e7f40859a17c2cc7c5"
+    },
+    "evidence/home-desktop.jpg": {
+      "bytes": 190021,
+      "sha256": "ebfe6ca0edf43ddf88b90e5d150b04eb315897ef038f315b93ce69c1f8172db9"
+    },
+    "evidence/home-mobile.jpg": {
+      "bytes": 106502,
+      "sha256": "1dab64d29ea0059a3d893f5af9cb2fe5c656543a97fa56deac1153edd7d93925"
+    },
+    "evidence/home-mobile.json": {
+      "bytes": 2287,
+      "sha256": "6afc80a0e29466c50897f1eb95ce123db3787b0d4108cf9f20a420baf41dfddf"
+    },
+    "evidence/invalid-order-outcome.jpg": {
+      "bytes": 43588,
+      "sha256": "448a512ecb0e7c87aa234898c3715bf431e4ed868d4fa9726329ef74f96cc9f1"
+    },
+    "evidence/invalid-order-outcome.json": {
+      "bytes": 1598,
+      "sha256": "d2dd50259b743e9245e7d55b5ded8dab6ec69087a01e1f5131933c8130219052"
+    },
+    "evidence/jobs-no-action.jpg": {
+      "bytes": 63540,
+      "sha256": "9f1532849a137b5223ebd646fd443b2672f1a871ae1e3f73228a691b2d687a65"
+    },
+    "evidence/jobs-no-action.json": {
+      "bytes": 1964,
+      "sha256": "41fc2129f4c9f1cb2861b4c5f79dd660e9cfa54ca1c9577a61b0f2227c16711e"
+    },
+    "evidence/login-form.jpg": {
+      "bytes": 42207,
+      "sha256": "43fde7e3a2b973fb539fc7deee04ca2f6ee26aaf90ebb3ed9eec54d6ff27fd16"
+    },
+    "evidence/login-form.json": {
+      "bytes": 2100,
+      "sha256": "a6236191c0ceb23104358d95925da452d4873113208e4276a3e6b3798b959376"
+    },
+    "evidence/missing-product.jpg": {
+      "bytes": 90096,
+      "sha256": "64b6cd8520bc39928dfc8c86885c1982ed7ce8e074574bc8238971e3c15f46eb"
+    },
+    "evidence/missing-product.json": {
+      "bytes": 2318,
+      "sha256": "9536ac3ca414c795a9d9197598cc6509e02e930a068743b068e2a1592b88f646"
+    },
+    "evidence/mobile-filters-open.jpg": {
+      "bytes": 317195,
+      "sha256": "3078f1fc950cc8c423c46a4388f84dfb65c5c9e87a6081e42e849dc0338cb988"
+    },
+    "evidence/mobile-filters-open.json": {
+      "bytes": 17910,
+      "sha256": "8a327613aed1e8eafd36aa54555511d63b170be36264f87d02b8752dc22f53f2"
+    },
+    "evidence/mobile-menu-escape.jpg": {
+      "bytes": 121535,
+      "sha256": "69283f05f6b0012875c16ae6af310022fea73ee4568fd3a02b32e84e647aa224"
+    },
+    "evidence/mobile-menu-escape.json": {
+      "bytes": 5912,
+      "sha256": "1fbc3174fa50f1f1142b195c03c576db256d5ac6af6b02c5e717deff2031101f"
+    },
+    "evidence/mobile-menu-open.jpg": {
+      "bytes": 121344,
+      "sha256": "43161943292046b39d4639a5ea6398b1f1ae28358a2bd91a193995a1453aeb3f"
+    },
+    "evidence/mobile-menu-open.json": {
+      "bytes": 5903,
+      "sha256": "56fa3f6171f8773774298e63bc99bad2bc3771574577d9f1c152ac171f23f633"
+    },
+    "evidence/newsletter-focus.jpg": {
+      "bytes": 189709,
+      "sha256": "718a60f1202e09e52c59fae4a70d83b425892b8f32f109711a1ba38fdcdd434f"
+    },
+    "evidence/order-tracking.jpg": {
+      "bytes": 43588,
+      "sha256": "448a512ecb0e7c87aa234898c3715bf431e4ed868d4fa9726329ef74f96cc9f1"
+    },
+    "evidence/order-tracking.json": {
+      "bytes": 1607,
+      "sha256": "dcd38bd7a760f2f20c1824686d398fc281bb6804ea172f56a3efca559d4eb111"
+    },
+    "evidence/orders-validation-tests.jpg": {
+      "bytes": 104830,
+      "sha256": "170a602cb7e41a6b2cb342d1cb69cb2fd227db9e2d94f37af8cea7982c9aaf18"
+    },
+    "evidence/orders-validation-tests.json": {
+      "bytes": 4210,
+      "sha256": "dbde4090be5b630b87d34eb7597e0cc0a943c3107b3ffc0e21149f73586d3c45"
+    },
+    "evidence/product-details.jpg": {
+      "bytes": 172896,
+      "sha256": "8bcf6d3c114ff3586b5adea1851b3c4d0f73c82bc663e1d7b8d47a2d8552e4de"
+    },
+    "evidence/product-details.json": {
+      "bytes": 5352,
+      "sha256": "3da52bc01d53a127a4fff499752b921f749ec55931c98d2f40d0bca98c38f6ca"
+    },
+    "evidence/profile-no-action.jpg": {
+      "bytes": 176080,
+      "sha256": "d8316a54c4959e2965534dc5a9261dc3a942f309697aa40d56b759674e9d0355"
+    },
+    "evidence/profile-no-action.json": {
+      "bytes": 4837,
+      "sha256": "8baf622aa25fa2677cdbdd23283578bdca53eb7f668a742c673145c3b009ed5c"
+    },
+    "evidence/related-size-carryover.jpg": {
+      "bytes": 165357,
+      "sha256": "4dbd2ab734e9edbfb43f6ad4862c66a70cd5d6789481e57b3e9570096f0af3ea"
+    },
+    "evidence/related-size-carryover.json": {
+      "bytes": 4803,
+      "sha256": "90f942e45d22d6ac5adb609a469800504036a63bfc43bec1df014b11f6f5f85e"
+    },
+    "evidence/reviews-no-change.jpg": {
+      "bytes": 172895,
+      "sha256": "134b28fb18ff19966214efa7eb2e88cb3d5fc3960255f6a41c5c5dc458b484c3"
+    },
+    "evidence/search-no-results.jpg": {
+      "bytes": 54871,
+      "sha256": "2fb9d86c3eb12d7ce5b6431027dc4bef9531ae12b37d621b50b18d4f4981b763"
+    },
+    "evidence/search-no-results.json": {
+      "bytes": 3890,
+      "sha256": "cf6b18f73c4a2b939590926f29f01af6e6a8dd1eed7a4d93bc99542ec90314bd"
+    },
+    "evidence/search-spaces.jpg": {
+      "bytes": 53998,
+      "sha256": "0fc7db9eebe91d4d27d8798dd74137b55631d6d15d0dfc38f98583a4cc9901e3"
+    },
+    "evidence/search-spaces.json": {
+      "bytes": 3876,
+      "sha256": "1274b2b1119806ec79087d1e8f8e4edc73d76736ff44c50c5f288f27ba415a5d"
+    },
+    "evidence/second-product-loaded.jpg": {
+      "bytes": 174264,
+      "sha256": "6dca490f014aacc6f78062337867e2d2870abd87fc4cb5ee6f4ef2ed30c52ca2"
+    },
+    "evidence/second-product-loaded.json": {
+      "bytes": 4770,
+      "sha256": "32dd6815fb3d7079da8124ef52dae382e1328b20593c0b35bcab8c2c6c3c7eba"
+    },
+    "evidence/second-product.jpg": {
+      "bytes": 174207,
+      "sha256": "ef829f9154801aaea70ac842b167a9c3a3b2acc047362c4d93222b4f39b79047"
+    },
+    "evidence/second-product.json": {
+      "bytes": 3693,
+      "sha256": "16529dcabd9332909778f64b2ff23e025a23bc59ae1028dafcb71a6892ba9315"
+    },
+    "evidence/session-log.json": {
+      "bytes": 194332,
+      "sha256": "8934727a8670237a64e07095ff4acd9b6ea1bb8e74db32914796505bb2b17df8"
+    },
+    "evidence/shop-now-no-action.jpg": {
+      "bytes": 190608,
+      "sha256": "bd24435eba6abb2680c885756056e3e6008f70e5149d1d9795d10948cac53fda"
+    },
+    "evidence/shop-now-no-action.json": {
+      "bytes": 5878,
+      "sha256": "f2f6aebdfa2a3f2ac7bd61297987e5e67dc01832a098ab78115948499de95fb8"
+    },
+    "evidence/signup-outcome.jpg": {
+      "bytes": 190628,
+      "sha256": "0e63a1b659a4e78a64029cb06049acc34a7b3fa3b5d942dfe4fc8a42c6161904"
+    },
+    "evidence/signup-outcome.json": {
+      "bytes": 5878,
+      "sha256": "f2f6aebdfa2a3f2ac7bd61297987e5e67dc01832a098ab78115948499de95fb8"
+    },
+    "evidence/subscribe-no-feedback.jpg": {
+      "bytes": 193799,
+      "sha256": "fbfb864205f44b1ecf6f05e38d67dd467692676594ed5bc512b7dc111cfeb49c"
+    },
+    "evidence/subscribe-no-feedback.json": {
+      "bytes": 5899,
+      "sha256": "38d4c61fae1fc398405a8030d31eb190ee25af606a5a888a40b5035e50e3fdfb"
+    },
+    "evidence/typography-semantics.json": {
+      "bytes": 16411,
+      "sha256": "10a3178937ba046e2416e10c4147c00bc8a5a679166090542986e27f6878e775"
+    },
+    "evidence/unknown-route.jpg": {
+      "bytes": 29531,
+      "sha256": "4620b4047aa56e1f3378307ecd035192af9dc59e3316f5a246ebe1b079046c44"
+    },
+    "evidence/unknown-route.json": {
+      "bytes": 1154,
+      "sha256": "58b585ad2dd870f15385bc804708c6fb0828e6cc48f38b2d6950906c698caf98"
+    },
+    "evidence/weak-signup-result.jpg": {
+      "bytes": 44641,
+      "sha256": "b0fb1bd71667614755bcd0fc4cc467994a7452deb3c80b2ffc03690638922374"
+    },
+    "evidence/weak-signup-result.json": {
+      "bytes": 2127,
+      "sha256": "8d057fc380ff976fa8ad18eeadc1c03442e079404725eadcd3df744441095a28"
+    },
+    "evidence/winterwear-filter.jpg": {
+      "bytes": 46494,
+      "sha256": "aed84f23802bd665bf7ba6cb874fde9ed5467d9ecaaed25aed014c20b86d88ec"
+    },
+    "evidence/winterwear-filter.json": {
+      "bytes": 3602,
+      "sha256": "fa7fe7d28090a3a310d0e7e796723d0c57ca8ebf03cbd3156947f860b6bf42ee"
+    },
+    "raw/api-validation.json": {
+      "bytes": 23946,
+      "sha256": "3a512d49882d73fe014fbf61ba51dd4e31a5355b8f890c30c967f3805f08d37e"
+    },
+    "raw/app.js": {
+      "bytes": 348116,
+      "sha256": "b29fcb29a9b5474ff7cddef3c039f1bbf747175735d38e99bd5480e876299f4c"
+    },
+    "raw/cart-validation.json": {
+      "bytes": 1747,
+      "sha256": "34a1a59bd7308b92c00e7a97316d9b864e4e83bed6049a9d103e3ded4388865c"
+    },
+    "raw/demo-orders.json": {
+      "bytes": 2423,
+      "sha256": "eb7565e204ccda26c040851a12cd297ace1da39a108c742b169a30d0810b02a5"
+    },
+    "raw/headers.json": {
+      "bytes": 581,
+      "sha256": "fec3c4eec2254fd587488fc822a80543eb6d254c90142ebaea0ebf03616da622"
+    },
+    "raw/home.html": {
+      "bytes": 466,
+      "sha256": "cab5b9fc18d3a8e94a40c280adc70f0b38ef6097595262240e1be4f3fe2ed34c"
+    },
+    "raw/products.json": {
+      "bytes": 28020,
+      "sha256": "e069f4204decfba5c65b5e4ee169a33fb70a5d536eb6d33bd5baa457b585fb39"
+    },
+    "raw/route-responses.json": {
+      "bytes": 942,
+      "sha256": "81529c687c30fc3f50cbb145760079076d69085fd65e6aad7c0d90d0fcd8f638"
+    }
+  }
+}

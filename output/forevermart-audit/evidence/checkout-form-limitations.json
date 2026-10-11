@@ -1,0 +1,104 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- paragraph: DELIVERY INFORMATION\n- paragraph\n- textbox \"First name\"\n- textbox \"Last name\"\n- textbox \"Email address\"\n- textbox \"Street\"\n- textbox \"City\"\n- textbox \"State\"\n- spinbutton: \"11\"\n- textbox \"Country\"\n- spinbutton [active]\n- button \"PLACE ORDER\"\n- paragraph: CART TOTAL\n- paragraph\n- paragraph: Subtotal\n- paragraph: $ 0.00\n- separator\n- paragraph: Shipping Fee\n- paragraph: $ 10.00\n- separator\n- generic: Total\n- generic: $ 0.00\n- paragraph: PAYMENT METHOD\n- paragraph\n- paragraph\n- paragraph\n- paragraph: CASH ON DELIVERY\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "firstName",
+        "placeholder": "First name",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "lastName",
+        "placeholder": "Last name",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "email",
+        "placeholder": "Email address",
+        "required": true,
+        "type": "email"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "street",
+        "placeholder": "Street",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "city",
+        "placeholder": "City",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "state",
+        "placeholder": "State",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "zipCode",
+        "placeholder": "Zipcode",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "country",
+        "placeholder": "Country",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "min": "",
+        "name": "phoneNumber",
+        "placeholder": "Phone number",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "payments": [
+      {
+        "imageAlt": "",
+        "role": null,
+        "tabindex": null,
+        "text": ""
+      },
+      {
+        "role": null,
+        "tabindex": null,
+        "text": "CASH ON DELIVERY"
+      }
+    ],
+    "phone": "",
+    "postal": "11",
+    "url": "https://forevermart.vercel.app/PlaceOrder"
+  }
+}

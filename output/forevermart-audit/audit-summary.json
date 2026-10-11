@@ -1,0 +1,46 @@
+{
+  "classification": {
+    "Defect": 70,
+    "Observation": 20
+  },
+  "severity": {
+    "Medium": 54,
+    "Low": 23,
+    "High": 13
+  },
+  "category": {
+    "Functionality": 20,
+    "Content": 12,
+    "Usability": 11,
+    "Data integrity": 11,
+    "Security": 7,
+    "Accessibility": 26,
+    "Performance": 2,
+    "Discoverability": 1
+  },
+  "module": {
+    "Home": 9,
+    "Product": 11,
+    "Collection": 9,
+    "Shared layout": 12,
+    "Account": 5,
+    "Contact": 3,
+    "Cart": 6,
+    "Checkout": 13,
+    "Order API": 6,
+    "Cart API": 3,
+    "Routing": 2,
+    "Account API": 1,
+    "About": 2,
+    "Orders": 4,
+    "Platform": 4
+  },
+  "status": {
+    "Open": 70,
+    "Review required": 20
+  },
+  "target": 100,
+  "findings": 90,
+  "build_asset": "index-r3xEth_L.js",
+  "bundle_sha256": "b29fcb29a9b5474ff7cddef3c039f1bbf747175735d38e99bd5480e876299f4c"
+}

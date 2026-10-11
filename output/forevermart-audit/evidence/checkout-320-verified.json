@@ -1,0 +1,10 @@
+{
+  "url": "https://forevermart.vercel.app/PlaceOrder",
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- img \"menu icon\"\n- img \"Back\"\n- paragraph: Back\n- link \"Home\":\n  - /url: /\n- link \"Collection\":\n  - /url: /collection\n- link \"About\":\n  - /url: /about\n- link \"Contact\":\n  - /url: /contact\n- generic: 👤 QAAuditDemo\n- paragraph: DELIVERY INFORMATION\n- paragraph\n- textbox \"First name\"\n- textbox \"Last name\"\n- textbox \"Email address\"\n- textbox \"Street\"\n- textbox \"City\"\n- textbox \"State\"\n- spinbutton\n- textbox \"Country\"\n- spinbutton\n- button \"PLACE ORDER\"\n- paragraph: CART TOTAL\n- paragraph\n- paragraph: Subtotal\n- paragraph: $ 0.00\n- separator\n- paragraph: Shipping Fee\n- paragraph: $ 10.00\n- separator\n- generic: Total\n- generic: $ 0.00\n- paragraph: PAYMENT METHOD\n- paragraph\n- paragraph\n- paragraph\n- paragraph: CASH ON DELIVERY\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "dimensions": {
+    "bodyWidth": 352,
+    "documentWidth": 352,
+    "headerRight": 280.0117988586426,
+    "viewport": 320
+  }
+}

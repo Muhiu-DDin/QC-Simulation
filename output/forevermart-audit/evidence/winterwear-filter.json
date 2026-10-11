@@ -1,0 +1,100 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- link \"profile icon\":\n  - /url: /login\n  - img \"profile icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- paragraph: FILTERS\n- paragraph: CATEGORIES\n- paragraph:\n  - checkbox \"Men\"\n  - generic: Men\n- paragraph:\n  - checkbox \"Women\"\n  - generic: Women\n- paragraph:\n  - checkbox \"Kid\"\n  - generic: Kid\n- paragraph: TYPES\n- paragraph:\n  - checkbox \"Topwear\"\n  - generic: Topwear\n- paragraph:\n  - checkbox \"Bottomwear\"\n  - generic: Bottomwear\n- paragraph:\n  - checkbox \"winterwear\" [checked] [active]\n  - generic: winterwear\n- paragraph: ALL COLLECTIONS\n- paragraph\n- combobox:\n  - 'option \"Sort by: Relevant\" [selected]'\n  - 'option \"Sort by: Low to High\"'\n  - 'option \"Sort by: High to Low\"'\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "men",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "women",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "kid",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "Topwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "Bottomwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "winterwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "SELECT",
+        "type": "select-one"
+      }
+    ],
+    "headings": [],
+    "images": [],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/collection",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

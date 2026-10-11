@@ -1,5 +1,7 @@
 # Chapter 10 understanding and exercise coverage
 
+**Current assignment scope:** only exercises 10.40–10.59 are active. This full-chapter guide is retained for source traceability; see [the assigned exercise guide](ASSIGNED_EXERCISES.md) and [the mini-project guide](MINI_PROJECTS.md) for the updated project.
+
 ## Chapter context
 
 Quality is fitness for use and conformance to customer requirements, including reliability, consistency and freedom from defects. It is not equivalent to luxury or price. Inspection separates defective output after production; prevention improves the process so defects do not occur. Relevant costs include inspection, training, process redesign, scrap, rework, warranty, delays and lost customer goodwill.

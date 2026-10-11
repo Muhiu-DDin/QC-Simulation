@@ -1,0 +1,63 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- heading [level=1]\n- paragraph: (122)\n- paragraph: $\n- paragraph\n- paragraph: Select Size\n- button \"ADD TO CART\"\n- separator\n- paragraph: 100% Original product.\n- paragraph: Cash on delivery is available on this product.\n- paragraph: Easy return and exchange policy within 7 days.\n- generic: Description\n- paragraph: Reviews (122)\n- paragraph: An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\n- paragraph: E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.\n- paragraph: RELATED PRODUCTS\n- paragraph\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Women Zip-Front Relaxed Fit Jacket"
+      }
+    ],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760792349/i73ls8iipmxou5os6odw.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760792349/i73ls8iipmxou5os6odw.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760792349/i73ls8iipmxou5os6odw.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146480/hz881bj1vlzm7j3ooqfj.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505491/zwhv63sudzsgmfkjtqok.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505247/l8nceequqtzdtqvybtb5.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505552/ytcybdrzh9fbw0npd5bf.png"
+      }
+    ],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/product/68f38f15f780484273055b41",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

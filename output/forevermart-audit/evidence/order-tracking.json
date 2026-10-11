@@ -1,0 +1,22 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- paragraph: MY ORDERS\n- paragraph\n- paragraph\n- paragraph: $ 200\n- paragraph: \"Quantity : 1\"\n- paragraph: \"Size : M\"\n- paragraph: \"Date : 10/9/2026\"\n- paragraph: \"Payment Method : COD\"\n- paragraph\n- paragraph: Order Placed\n- button \"Track Order\" [active]\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [],
+    "headings": [],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      }
+    ],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/order",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

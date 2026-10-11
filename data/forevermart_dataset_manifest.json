@@ -1,0 +1,50 @@
+{
+  "source_url": "https://forevermart.vercel.app/",
+  "captured_at_utc": "2026-10-11T13:10:59.785200+00:00",
+  "completed_at_utc": "2026-10-11T13:13:04.363602+00:00",
+  "synthetic": false,
+  "method": "Sequential read-only HTTPS GET requests; three requests per CSV batch.",
+  "check_definition": "Pass: HTTP 200, HTML content type, and a React root element in the returned document.",
+  "timing_definition": "Client-observed elapsed milliseconds including connection/TLS, network and downloading the HTTP response; not browser rendering or server-only processing time.",
+  "scope_definition": "Micro: repeated homepage checks. Macro: broader checks across eight public page routes. These are relative project scopes, not an industrial Big Data dataset.",
+  "limitations": [
+    "A returned React document shell does not establish that the rendered route, login, cart or checkout works.",
+    "Checks are serial observations from one client and one capture window; they are not a concurrency or load test.",
+    "Failure counts are failed HTTP checks, not distinct software defects.",
+    "A zero observed failure count does not prove that the true failure probability is zero.",
+    "The 500 ms threshold in the form is an editable study target, not a verified ForeverMart service-level agreement."
+  ],
+  "raw_log": "data/forevermart_http_checks.json",
+  "raw_sha256": "668f5a9d4d023649825fa3c54abb28f7c4b4ee8417a56762bfb1ea49f313b985",
+  "scales": {
+    "micro": {
+      "rows": 20,
+      "checks": 60,
+      "passed": 60,
+      "failed": 0,
+      "routes": [
+        "/"
+      ],
+      "csv": "data/forevermart_micro.csv",
+      "csv_sha256": "770398a690146579e6560a7fa251cb424e767bec03c5be0da2318a0dda7c6212"
+    },
+    "macro": {
+      "rows": 100,
+      "checks": 300,
+      "passed": 300,
+      "failed": 0,
+      "routes": [
+        "/",
+        "/collection",
+        "/about",
+        "/contact",
+        "/cart",
+        "/login",
+        "/orders",
+        "/place-order"
+      ],
+      "csv": "data/forevermart_macro.csv",
+      "csv_sha256": "4ef34f24ad8d88eb827f2230c6127a133cd38a5cff06427ee9c64af49a68fd61"
+    }
+  }
+}

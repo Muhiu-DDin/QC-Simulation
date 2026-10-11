@@ -20,8 +20,8 @@ class handler(BaseHTTPRequestHandler):
     def do_POST(self):
         try:
             length=int(self.headers.get('Content-Length','0'))
-            if not 0<length<=131072:
-                self.send_json(413,{'error':'Provide a dataset smaller than 128 KB.'}); return
+            if not 0<length<=2_097_152:
+                self.send_json(413,{'error':'Provide a dataset smaller than 2 MB (at most 20,000 rows).'}); return
             payload=json.loads(self.rfile.read(length))
             self.send_json(200,evaluate(payload))
         except (ValueError,TypeError,KeyError,OverflowError) as error:

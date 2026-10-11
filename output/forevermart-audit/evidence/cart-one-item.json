@@ -1,0 +1,22 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\":\n  - alert:\n    - text: item added successfully\n    - button \"close\":\n    - progressbar \"notification timer\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- link \"profile icon\":\n  - /url: /login\n  - img \"profile icon\"\n- link \"cart icon 1\" [active]:\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"1\"\n- paragraph: YOUR CART\n- paragraph\n- paragraph\n- paragraph: $200\n- paragraph: M\n- button \"−\"\n- generic: \"1\"\n- button \"+\"\n- paragraph: CART TOTAL\n- paragraph\n- paragraph: Subtotal\n- paragraph: $ 200.00\n- separator\n- paragraph: Shipping Fee\n- paragraph: $ 10.00\n- separator\n- generic: Total\n- generic: $ 210.00\n- button \"PROCEED TO CHECKOUT\"\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [],
+    "headings": [],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      }
+    ],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/cart",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

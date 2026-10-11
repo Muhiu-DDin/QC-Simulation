@@ -1,0 +1,33 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- img \"search icon\"\n- link \"profile icon\":\n  - /url: /login\n  - img \"profile icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- img \"menu icon\"\n- img \"Back\"\n- paragraph: Back\n- link \"Home\":\n  - /url: /\n- link \"Collection\":\n  - /url: /collection\n- link \"About\":\n  - /url: /about\n- link \"Contact\":\n  - /url: /contact\n- paragraph\n- paragraph: OUR BESTSELLERS\n- heading \"Latest Arivals\" [level=1]\n- paragraph: SHOP NOW\n- paragraph\n- paragraph: LATEST COLLECTION\n- paragraph\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, beatae.\n- paragraph: BEST SELLER\n- paragraph\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, beatae.\n- paragraph: Easy Exchange Policy\n- paragraph: We offer hassle free exchange policy\n- paragraph: 7 Days Return Policy\n- paragraph: We provide 7 days free return policy\n- paragraph: Best Customer Support\n- paragraph: We provide 24/7 customer support\n- paragraph: Subscribe now and get 20% off\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, recusandae?\n- textbox \"enter you email\"\n- button \"SUBSCRIBE\"\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": "enter you email",
+        "required": true,
+        "tag": "INPUT",
+        "type": "email"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Latest Arivals"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 390,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+}

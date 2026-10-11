@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "message": "User orders fetched successfully",
+  "orders": [
+    {
+      "_id": "6ac926dcee58ba75d539b5a2",
+      "userId": "6ac92680ee58ba75d539b591",
+      "items": [
+        {
+          "_id": "68ee7c73675d613eba9e96c6",
+          "productName": "Men Round Neck Pure Cotton T-shirt",
+          "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+          "price": 200,
+          "image": [
+            "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png",
+            "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/qodhefrulj8qypvky848.png",
+            "https://res.cloudinary.com/damxkllgw/image/upload/v1760459894/tlf1nf9elnj0ymklvncl.png",
+            "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/wxmmspzquwotcfr57kt5.png"
+          ],
+          "subCategory": "Topwear",
+          "category": "Men",
+          "size": "M",
+          "bestSeller": true,
+          "createdAt": "2025-10-14T16:38:11.048Z",
+          "updatedAt": "2025-10-14T16:38:11.048Z",
+          "__v": 0,
+          "quantity": 1
+        }
+      ],
+      "amount": 210,
+      "address": {
+        "firstName": "   ",
+        "lastName": "   ",
+        "email": "forevermart.qa.20261009@example.com",
+        "street": "   ",
+        "city": "   ",
+        "state": "   ",
+        "country": "   ",
+        "zipCode": "-1",
+        "phoneNumber": "-1"
+      },
+      "status": "Order Placed",
+      "paymentMethod": "COD",
+      "payment": false,
+      "createdAt": "2026-10-09T17:39:41.000Z",
+      "updatedAt": "2026-10-09T17:39:41.000Z",
+      "__v": 0
+    },
+    {
+      "_id": "6ac926fdee58ba75d539b5aa",
+      "userId": "6ac92680ee58ba75d539b591",
+      "items": [],
+      "amount": 10,
+      "address": {
+        "firstName": "Demo",
+        "lastName": "Audit",
+        "email": "forevermart.qa.20261009@example.com",
+        "street": "1 Demo Test Street",
+        "city": "Demo City",
+        "state": "Demo State",
+        "country": "Demo Country",
+        "zipCode": "12345",
+        "phoneNumber": "5550100000"
+      },
+      "status": "Order Placed",
+      "paymentMethod": "COD",
+      "payment": false,
+      "createdAt": "2026-10-09T17:40:13.534Z",
+      "updatedAt": "2026-10-09T17:40:13.534Z",
+      "__v": 0
+    }
+  ]
+}

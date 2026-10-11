@@ -1,0 +1,81 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- link \"profile icon\":\n  - /url: /login\n  - img \"profile icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- heading \"Men Round Neck Pure Cotton T-shirt\" [level=1]\n- paragraph: (122)\n- paragraph: $200\n- paragraph: A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.\n- paragraph: Select Size\n- button \"M\"\n- button \"L\"\n- button \"XL\"\n- button \"ADD TO CART\"\n- separator\n- paragraph: 100% Original product.\n- paragraph: Cash on delivery is available on this product.\n- paragraph: Easy return and exchange policy within 7 days.\n- generic: Description\n- paragraph: Reviews (122)\n- paragraph: An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\n- paragraph: E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.\n- paragraph: RELATED PRODUCTS\n- paragraph\n- link \"Men Round Neck Pure Cotton T-shirt $200\":\n  - /url: /product/68ee7c73675d613eba9e96c6\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $200\n- link \"Men Round Neck Pure Cotton T-shirt $280\":\n  - /url: /product/68ef2f0f6a3e3ef181805049\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $280\n- link \"Men Slim Fit Relaxed Denim Jacket $300\":\n  - /url: /product/68f8f78bb0afda2a7672b7a9\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $300\n- link \"Men Slim Fit Relaxed Denim Jacket $290\":\n  - /url: /product/68ef2f5c6a3e3ef18180504d\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $290\n- link \"Men Round Neck Pure Cotton T-shirt $280\":\n  - /url: /product/68f8f6a5b0afda2a7672b79a\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $280\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Men Round Neck Pure Cotton T-shirt"
+      }
+    ],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/qodhefrulj8qypvky848.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459894/tlf1nf9elnj0ymklvncl.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/wxmmspzquwotcfr57kt5.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505618/kgpqwznwkvvgmhyh2xqz.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146765/lxx26kgeu14e4vwj8fty.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505696/jcmlocy6fllifsixov8t.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146535/end1qhnkpvzdxj0n03yv.png"
+      }
+    ],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

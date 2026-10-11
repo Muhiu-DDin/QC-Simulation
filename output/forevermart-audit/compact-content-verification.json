@@ -1,0 +1,48 @@
+{
+  "pages": 95,
+  "records_verified": 90,
+  "missing_record_values": [],
+  "toc_links": 24,
+  "toc_destinations": [
+    3,
+    6,
+    7,
+    7,
+    8,
+    9,
+    10,
+    77,
+    78,
+    79,
+    80,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    90,
+    91,
+    93,
+    93,
+    95
+  ],
+  "median_unused_bottom_pt": 28.9,
+  "mean_unused_bottom_pt": 48.7,
+  "over_180_pt": [
+    [
+      86,
+      204.2
+    ],
+    [
+      92,
+      219.1
+    ],
+    [
+      94,
+      202.8
+    ]
+  ]
+}

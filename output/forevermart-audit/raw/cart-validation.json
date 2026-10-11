@@ -1,0 +1,78 @@
+{
+  "results": [
+    {
+      "name": "anonymous_cart_read",
+      "path": "/cart/get",
+      "body": {
+        "userId": "6ac92680ee58ba75d539b591"
+      },
+      "status": 401,
+      "response": {
+        "message": "No user token"
+      }
+    },
+    {
+      "name": "unsupported_cart_size",
+      "path": "/cart/add",
+      "body": {
+        "userId": "6ac92680ee58ba75d539b591",
+        "itemId": "68ee7c73675d613eba9e96c6",
+        "size": "QA-NOT-A-SIZE"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "message": "item added successfully"
+      }
+    },
+    {
+      "name": "nonexistent_cart_product",
+      "path": "/cart/add",
+      "body": {
+        "userId": "6ac92680ee58ba75d539b591",
+        "itemId": "000000000000000000000000",
+        "size": "M"
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "message": "item added successfully"
+      }
+    },
+    {
+      "name": "negative_cart_quantity",
+      "path": "/cart/update",
+      "body": {
+        "userId": "6ac92680ee58ba75d539b591",
+        "itemId": "68ee7c73675d613eba9e96c6",
+        "size": "QA-NOT-A-SIZE",
+        "quantity": -0.5
+      },
+      "status": 200,
+      "response": {
+        "success": true,
+        "message": "cart updated successfully",
+        "cartData": {
+          "68ee7c73675d613eba9e96c6": {
+            "QA-NOT-A-SIZE": -0.5
+          },
+          "000000000000000000000000": {
+            "M": 1
+          }
+        }
+      }
+    }
+  ],
+  "cart": {
+    "success": true,
+    "message": "cart fetched successfully",
+    "cartData": {
+      "68ee7c73675d613eba9e96c6": {
+        "QA-NOT-A-SIZE": -0.5
+      },
+      "000000000000000000000000": {
+        "M": 1
+      }
+    }
+  }
+}

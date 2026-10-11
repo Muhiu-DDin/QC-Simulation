@@ -1,0 +1,587 @@
+[
+  {
+    "page": 1,
+    "title": "Cover",
+    "kind": "cover"
+  },
+  {
+    "page": 2,
+    "title": "1 Executive summary",
+    "kind": "section"
+  },
+  {
+    "page": 3,
+    "title": "2 Contents and reading guide",
+    "kind": "section"
+  },
+  {
+    "page": 4,
+    "title": "3 Scope and test environment",
+    "kind": "section"
+  },
+  {
+    "page": 5,
+    "title": "4 Test approach and acceptance criteria",
+    "kind": "section"
+  },
+  {
+    "page": 6,
+    "title": "5 Requirement and defect traceability",
+    "kind": "section"
+  },
+  {
+    "page": 7,
+    "title": "6 Checkout decision table",
+    "kind": "section"
+  },
+  {
+    "page": 8,
+    "title": "7 Transaction workflow and control boundary",
+    "kind": "section"
+  },
+  {
+    "page": 9,
+    "title": "8 Defect severity and priority",
+    "kind": "section"
+  },
+  {
+    "page": 10,
+    "title": "9 Pareto analysis of supported defects",
+    "kind": "section"
+  },
+  {
+    "page": 11,
+    "title": "10 Defect distribution by application area",
+    "kind": "section"
+  },
+  {
+    "page": 12,
+    "title": "11 Status and measurement boundaries",
+    "kind": "section"
+  },
+  {
+    "page": 13,
+    "title": "12 Cause and effect investigation",
+    "kind": "section"
+  },
+  {
+    "page": 14,
+    "title": "13 Defect lifecycle and triage",
+    "kind": "section"
+  },
+  {
+    "page": 15,
+    "title": "14 Continuous improvement plan",
+    "kind": "section"
+  },
+  {
+    "page": 16,
+    "title": "15 Corrective action and regression matrix",
+    "kind": "section"
+  },
+  {
+    "page": 17,
+    "title": "16 Finding index 1 to 30",
+    "kind": "section"
+  },
+  {
+    "page": 18,
+    "title": "16 Finding index 31 to 60",
+    "kind": "section"
+  },
+  {
+    "page": 19,
+    "title": "16 Finding index 61 to 90",
+    "kind": "section"
+  },
+  {
+    "page": 20,
+    "title": "FM-001 Shop Now does not open the catalogue",
+    "kind": "finding"
+  },
+  {
+    "page": 21,
+    "title": "FM-002 Best Seller section has no products despite flagged catalogue items",
+    "kind": "finding"
+  },
+  {
+    "page": 22,
+    "title": "FM-003 Latest Collection is not ordered by creation date",
+    "kind": "finding"
+  },
+  {
+    "page": 23,
+    "title": "FM-004 Reviews tab does not display reviews",
+    "kind": "finding"
+  },
+  {
+    "page": 24,
+    "title": "FM-005 Product rating and review count are hard coded",
+    "kind": "finding"
+  },
+  {
+    "page": 25,
+    "title": "FM-006 Jacket description describes a short sleeved T-shirt",
+    "kind": "finding"
+  },
+  {
+    "page": 26,
+    "title": "FM-007 Detailed Description panel explains ecommerce instead of the product",
+    "kind": "finding"
+  },
+  {
+    "page": 27,
+    "title": "FM-008 Product image and title describe different garment styles",
+    "kind": "finding"
+  },
+  {
+    "page": 28,
+    "title": "FM-009 Related Products includes the product already being viewed",
+    "kind": "finding"
+  },
+  {
+    "page": 29,
+    "title": "FM-010 Selected size carries over when navigating to a related product",
+    "kind": "finding"
+  },
+  {
+    "page": 30,
+    "title": "FM-011 Unknown product leaves an incomplete purchase page",
+    "kind": "finding"
+  },
+  {
+    "page": 31,
+    "title": "FM-012 Search with no matches displays an unexplained empty grid",
+    "kind": "finding"
+  },
+  {
+    "page": 32,
+    "title": "FM-013 Leading and trailing spaces prevent otherwise valid search matches",
+    "kind": "finding"
+  },
+  {
+    "page": 33,
+    "title": "FM-014 Collection filters and sorting are lost after returning from a product",
+    "kind": "finding"
+  },
+  {
+    "page": 34,
+    "title": "FM-015 Footer navigation labels cannot be opened",
+    "kind": "finding"
+  },
+  {
+    "page": 35,
+    "title": "FM-016 Forgot your password has no recovery action",
+    "kind": "finding"
+  },
+  {
+    "page": 36,
+    "title": "FM-017 My Profile menu item has no destination",
+    "kind": "finding"
+  },
+  {
+    "page": 37,
+    "title": "FM-018 Explore Jobs does not open career information",
+    "kind": "finding"
+  },
+  {
+    "page": 38,
+    "title": "FM-019 Newsletter subscription produces no result",
+    "kind": "finding"
+  },
+  {
+    "page": 39,
+    "title": "FM-020 Product names are absent from cart and order rows",
+    "kind": "finding"
+  },
+  {
+    "page": 40,
+    "title": "FM-021 Guest cart is overwritten after account creation",
+    "kind": "finding"
+  },
+  {
+    "page": 41,
+    "title": "FM-022 An empty cart can be submitted as an order",
+    "kind": "finding"
+  },
+  {
+    "page": 42,
+    "title": "FM-023 Empty-cart total does not agree with displayed shipping",
+    "kind": "finding"
+  },
+  {
+    "page": 43,
+    "title": "FM-024 Whitespace-only delivery information is accepted",
+    "kind": "finding"
+  },
+  {
+    "page": 44,
+    "title": "FM-025 Negative phone number is accepted at checkout",
+    "kind": "finding"
+  },
+  {
+    "page": 45,
+    "title": "FM-026 Negative postal code is accepted at checkout",
+    "kind": "finding"
+  },
+  {
+    "page": 46,
+    "title": "FM-027 Order endpoint accepts a malformed delivery email",
+    "kind": "finding"
+  },
+  {
+    "page": 47,
+    "title": "FM-028 Order endpoint accepts a negative fractional quantity",
+    "kind": "finding"
+  },
+  {
+    "page": 48,
+    "title": "FM-029 Order endpoint accepts a size not sold for the product",
+    "kind": "finding"
+  },
+  {
+    "page": 49,
+    "title": "FM-030 Order endpoint accepts a non-existent product ID",
+    "kind": "finding"
+  },
+  {
+    "page": 50,
+    "title": "FM-031 Order endpoint trusts an altered client line-item price",
+    "kind": "finding"
+  },
+  {
+    "page": 51,
+    "title": "FM-032 Order endpoint trusts the submitted total amount",
+    "kind": "finding"
+  },
+  {
+    "page": 52,
+    "title": "FM-033 Cart endpoint stores a negative fractional quantity",
+    "kind": "finding"
+  },
+  {
+    "page": 53,
+    "title": "FM-034 Cart endpoint accepts an unsupported size",
+    "kind": "finding"
+  },
+  {
+    "page": 54,
+    "title": "FM-035 Cart endpoint accepts a non-existent product",
+    "kind": "finding"
+  },
+  {
+    "page": 55,
+    "title": "FM-036 Guest checkout loses the address when authentication is required",
+    "kind": "finding"
+  },
+  {
+    "page": 56,
+    "title": "FM-037 Postal field strips letters from an alphanumeric code",
+    "kind": "finding"
+  },
+  {
+    "page": 57,
+    "title": "FM-038 Phone field rejects a normally formatted telephone string",
+    "kind": "finding"
+  },
+  {
+    "page": 58,
+    "title": "FM-039 Unknown route has no not-found message or recovery",
+    "kind": "finding"
+  },
+  {
+    "page": 59,
+    "title": "FM-040 Profile response includes password and refresh-token fields",
+    "kind": "finding"
+  },
+  {
+    "page": 60,
+    "title": "FM-041 Search opener cannot be activated with the keyboard",
+    "kind": "finding"
+  },
+  {
+    "page": 61,
+    "title": "FM-042 Search close icon lacks a keyboard action and name",
+    "kind": "finding"
+  },
+  {
+    "page": 62,
+    "title": "FM-043 Authenticated account menu is not keyboard operable",
+    "kind": "finding"
+  },
+  {
+    "page": 63,
+    "title": "FM-044 Login and Create Account mode switch is not a keyboard control",
+    "kind": "finding"
+  },
+  {
+    "page": 64,
+    "title": "FM-045 Product gallery thumbnails are pointer-only controls",
+    "kind": "finding"
+  },
+  {
+    "page": 65,
+    "title": "FM-046 Remove cart item is an unnamed pointer-only image",
+    "kind": "finding"
+  },
+  {
+    "page": 66,
+    "title": "FM-047 Cart product navigation is available only through a clickable image",
+    "kind": "finding"
+  },
+  {
+    "page": 67,
+    "title": "FM-048 Mobile menu opener has no button semantics",
+    "kind": "finding"
+  },
+  {
+    "page": 68,
+    "title": "FM-049 Mobile menu Back affordance is not keyboard operable",
+    "kind": "finding"
+  },
+  {
+    "page": 69,
+    "title": "FM-050 Closed mobile menu leaves offscreen links in the accessibility tree",
+    "kind": "finding"
+  },
+  {
+    "page": 70,
+    "title": "FM-051 Mobile menu does not manage focus or dismiss on Escape",
+    "kind": "finding"
+  },
+  {
+    "page": 71,
+    "title": "FM-052 Mobile filter disclosure is a paragraph rather than a control",
+    "kind": "finding"
+  },
+  {
+    "page": 72,
+    "title": "FM-053 Payment methods are not keyboard selectable radio controls",
+    "kind": "finding"
+  },
+  {
+    "page": 73,
+    "title": "FM-054 Stripe option has no accessible payment-provider name",
+    "kind": "finding"
+  },
+  {
+    "page": 74,
+    "title": "FM-055 Selected product size is communicated only by colour",
+    "kind": "finding"
+  },
+  {
+    "page": 75,
+    "title": "FM-056 Collection sort selector has no associated label",
+    "kind": "finding"
+  },
+  {
+    "page": 76,
+    "title": "FM-057 Delivery fields rely on disappearing placeholders",
+    "kind": "finding"
+  },
+  {
+    "page": 77,
+    "title": "FM-058 Authentication fields have no persistent associated labels",
+    "kind": "finding"
+  },
+  {
+    "page": 78,
+    "title": "FM-059 Personal-data inputs do not expose their autocomplete purposes",
+    "kind": "finding"
+  },
+  {
+    "page": 79,
+    "title": "FM-060 Muted home-page text has insufficient contrast",
+    "kind": "finding"
+  },
+  {
+    "page": 80,
+    "title": "FM-061 Newsletter input suppresses its visible keyboard focus",
+    "kind": "finding"
+  },
+  {
+    "page": 81,
+    "title": "FM-062 Meaningful product photographs have empty alternative text",
+    "kind": "finding"
+  },
+  {
+    "page": 82,
+    "title": "FM-063 Visible page and section titles are not semantic headings",
+    "kind": "finding"
+  },
+  {
+    "page": 83,
+    "title": "FM-064 Page content lacks main and footer landmarks",
+    "kind": "finding"
+  },
+  {
+    "page": 84,
+    "title": "FM-065 Browser title does not identify the current page",
+    "kind": "finding"
+  },
+  {
+    "page": 85,
+    "title": "FM-066 Layout overflows horizontally at 320 CSS pixels",
+    "kind": "finding"
+  },
+  {
+    "page": 86,
+    "title": "FM-067 Home-page hero misspells Arrivals",
+    "kind": "finding"
+  },
+  {
+    "page": 87,
+    "title": "FM-068 Template filler text remains in customer-facing sections",
+    "kind": "finding"
+  },
+  {
+    "page": 88,
+    "title": "FM-069 Contact details conflict between the footer and Contact page",
+    "kind": "finding"
+  },
+  {
+    "page": 89,
+    "title": "FM-070 About page contains an incomplete support sentence",
+    "kind": "finding"
+  },
+  {
+    "page": 90,
+    "title": "FM-071 Winterwear filter has no matching catalogue classification",
+    "kind": "finding"
+  },
+  {
+    "page": 91,
+    "title": "FM-072 Empty cart has no explanatory state or shopping recovery",
+    "kind": "finding"
+  },
+  {
+    "page": 92,
+    "title": "FM-073 Checkout does not show the products being purchased",
+    "kind": "finding"
+  },
+  {
+    "page": 93,
+    "title": "FM-074 Order history omits order identifiers",
+    "kind": "finding"
+  },
+  {
+    "page": 94,
+    "title": "FM-075 Order history loses order-level grouping",
+    "kind": "finding"
+  },
+  {
+    "page": 95,
+    "title": "FM-076 Order history omits the final order total and shipping breakdown",
+    "kind": "finding"
+  },
+  {
+    "page": 96,
+    "title": "FM-077 Order history has no delivery-address review",
+    "kind": "finding"
+  },
+  {
+    "page": 97,
+    "title": "FM-078 About page advertises product ranges absent from the inspected catalogue",
+    "kind": "finding"
+  },
+  {
+    "page": 98,
+    "title": "FM-079 Newsletter placeholder contains incorrect wording",
+    "kind": "finding"
+  },
+  {
+    "page": 99,
+    "title": "FM-080 Copyright footer contains incomplete grammar and inconsistent branding",
+    "kind": "finding"
+  },
+  {
+    "page": 100,
+    "title": "FM-081 Public document has no Content Security Policy",
+    "kind": "finding"
+  },
+  {
+    "page": 101,
+    "title": "FM-082 Public document lacks an explicit framing restriction",
+    "kind": "finding"
+  },
+  {
+    "page": 102,
+    "title": "FM-083 Public responses omit the nosniff hardening header",
+    "kind": "finding"
+  },
+  {
+    "page": 103,
+    "title": "FM-084 Public document has no explicit Referrer Policy",
+    "kind": "finding"
+  },
+  {
+    "page": 104,
+    "title": "FM-085 Offscreen catalogue images are not marked for lazy loading",
+    "kind": "finding"
+  },
+  {
+    "page": 105,
+    "title": "FM-086 Product images do not advertise responsive source variants",
+    "kind": "finding"
+  },
+  {
+    "page": 106,
+    "title": "FM-087 Public pages lack a page-specific meta description",
+    "kind": "finding"
+  },
+  {
+    "page": 107,
+    "title": "FM-088 Footer email and telephone cannot be activated directly",
+    "kind": "finding"
+  },
+  {
+    "page": 108,
+    "title": "FM-089 Checkout does not state which dollar currency is used",
+    "kind": "finding"
+  },
+  {
+    "page": 109,
+    "title": "FM-090 Displayed return and exchange promises lack instructions",
+    "kind": "finding"
+  },
+  {
+    "page": 110,
+    "title": "17 Visual evidence of storefront failures",
+    "kind": "section"
+  },
+  {
+    "page": 111,
+    "title": "18 Visual evidence of incomplete customer actions",
+    "kind": "section"
+  },
+  {
+    "page": 112,
+    "title": "19 Visual evidence of invalid input and descriptions",
+    "kind": "section"
+  },
+  {
+    "page": 113,
+    "title": "20 Visual evidence of missing-record handling",
+    "kind": "section"
+  },
+  {
+    "page": 114,
+    "title": "21 Mobile and accessibility evidence",
+    "kind": "section"
+  },
+  {
+    "page": 115,
+    "title": "22 API and persistence evidence",
+    "kind": "section"
+  },
+  {
+    "page": 116,
+    "title": "23 Reference book crosswalk",
+    "kind": "section"
+  },
+  {
+    "page": 117,
+    "title": "24 Handover and supporting references",
+    "kind": "section"
+  }
+]

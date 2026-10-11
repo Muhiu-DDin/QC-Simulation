@@ -1,0 +1,341 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- img \"menu icon\"\n- img \"Back\"\n- paragraph: Back\n- link \"Home\":\n  - /url: /\n- link \"Collection\" [active]:\n  - /url: /collection\n- link \"About\":\n  - /url: /about\n- link \"Contact\":\n  - /url: /contact\n- generic: 👤 QAAuditDemo\n- paragraph:\n  - text: FILTERS\n- paragraph: ALL COLLECTIONS\n- paragraph\n- combobox:\n  - 'option \"Sort by: Relevant\" [selected]'\n  - 'option \"Sort by: Low to High\"'\n  - 'option \"Sort by: High to Low\"'\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "men",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "women",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "kid",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "Topwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "Bottomwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "winterwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "SELECT",
+        "type": "select-one"
+      }
+    ],
+    "headings": [],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760792349/i73ls8iipmxou5os6odw.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145929/l3fecmq5uzea8gouredx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146480/hz881bj1vlzm7j3ooqfj.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760503406/ubb1siajk0iiaqarlzbi.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505618/kgpqwznwkvvgmhyh2xqz.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505759/wbnpk3a8fgvi3e9cmuh7.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504765/of1kyuzornq68uzvmxsr.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146765/lxx26kgeu14e4vwj8fty.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504703/yoygszimkdgtnrakbgk6.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505491/zwhv63sudzsgmfkjtqok.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145431/sjerb9yxz3j1eli9siwg.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145526/iotykbaqswujqulf5mup.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145827/jb7jja4bcr0m11s4qy1g.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145890/eskfjsxearowcc5jv9jx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146090/azvrlfifdqlugqrl9vb6.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760771872/aogrpq1eve5q5aalpfnd.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146650/sjmbogcq9rqmjtqakapc.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146287/ntagkh1llvcrqjnqxyl4.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505696/jcmlocy6fllifsixov8t.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146154/mmqptrfhbjlppjrrzu0l.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146535/end1qhnkpvzdxj0n03yv.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146051/dsgj7g50hgi3uam6lee7.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504616/z7wz0o6oltczwjvr1ffn.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146190/tmnyucdgcbh4o8wzh7mf.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146379/qnlstiybfthi41yew2bx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504813/hmc2opqndfsvauxypvhj.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146015/tckpvoixy5ebnzwa6nt7.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146584/exeyrdxvjoaxuwoft69n.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504979/dv1f2zhdm8h6kxqrvnx7.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505247/l8nceequqtzdtqvybtb5.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146813/sleqv1jrzviy4iaduj6s.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505552/ytcybdrzh9fbw0npd5bf.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760620593/jddogcphi9tbdb1vqvyu.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146444/ubwv5f8xlpyvdphvzfpq.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146699/hx3lgf4t3rlszlz0uc07.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505411/njrcx5qcr8extqwfbnub.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146325/gkn4uudlr0w2xvyna4ir.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146726/jozxmectv9xmxmepdcqr.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504548/cu7nrmztd8rzuig3pnpf.png"
+      }
+    ],
+    "scrollWidth": 390,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/collection",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- link \"profile icon\":\n  - /url: /login\n  - img \"profile icon\"\n- link \"cart icon 1\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"1\"\n- paragraph: DELIVERY INFORMATION\n- paragraph\n- textbox \"First name\"\n- textbox \"Last name\"\n- textbox \"Email address\"\n- textbox \"Street\"\n- textbox \"City\"\n- textbox \"State\"\n- spinbutton\n- textbox \"Country\"\n- spinbutton\n- button \"PLACE ORDER\"\n- paragraph: CART TOTAL\n- paragraph\n- paragraph: Subtotal\n- paragraph: $ 200.00\n- separator\n- paragraph: Shipping Fee\n- paragraph: $ 10.00\n- separator\n- generic: Total\n- generic: $ 210.00\n- paragraph: PAYMENT METHOD\n- paragraph\n- paragraph\n- paragraph\n- paragraph: CASH ON DELIVERY\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "firstName",
+        "placeholder": "First name",
+        "required": true,
+        "tag": "INPUT",
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "lastName",
+        "placeholder": "Last name",
+        "required": true,
+        "tag": "INPUT",
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "email",
+        "placeholder": "Email address",
+        "required": true,
+        "tag": "INPUT",
+        "type": "email"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "street",
+        "placeholder": "Street",
+        "required": true,
+        "tag": "INPUT",
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "city",
+        "placeholder": "City",
+        "required": true,
+        "tag": "INPUT",
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "state",
+        "placeholder": "State",
+        "required": true,
+        "tag": "INPUT",
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "zipCode",
+        "placeholder": "Zipcode",
+        "required": true,
+        "tag": "INPUT",
+        "type": "number"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "country",
+        "placeholder": "Country",
+        "required": true,
+        "tag": "INPUT",
+        "type": "text"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "phoneNumber",
+        "placeholder": "Phone number",
+        "required": true,
+        "tag": "INPUT",
+        "type": "number"
+      }
+    ],
+    "headings": [],
+    "images": [],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

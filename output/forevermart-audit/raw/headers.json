@@ -1,0 +1,16 @@
+{
+  "accept-ranges": "bytes",
+  "access-control-allow-origin": "*",
+  "age": "862",
+  "cache-control": "public, max-age=0, must-revalidate",
+  "content-disposition": "inline",
+  "content-length": "466",
+  "content-type": "text/html; charset=utf-8",
+  "date": "Fri, 09 Oct 2026 17:36:49 GMT",
+  "etag": "\"5cccde6b0f7ef955d61a47a163207eab\"",
+  "last-modified": "Fri, 09 Oct 2026 17:22:26 GMT",
+  "server": "Vercel",
+  "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+  "x-vercel-cache": "HIT",
+  "x-vercel-id": "bom1::gnfh7-1791567409575-b13a904d12bf"
+}

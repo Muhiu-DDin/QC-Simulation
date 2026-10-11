@@ -1,0 +1,191 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\":\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- paragraph: FILTERS\n- paragraph: CATEGORIES\n- paragraph:\n  - checkbox \"Men\" [checked] [active]\n  - generic: Men\n- paragraph:\n  - checkbox \"Women\"\n  - generic: Women\n- paragraph:\n  - checkbox \"Kid\"\n  - generic: Kid\n- paragraph: TYPES\n- paragraph:\n  - checkbox \"Topwear\"\n  - generic: Topwear\n- paragraph:\n  - checkbox \"Bottomwear\"\n  - generic: Bottomwear\n- paragraph:\n  - checkbox \"winterwear\"\n  - generic: winterwear\n- paragraph: ALL COLLECTIONS\n- paragraph\n- combobox:\n  - 'option \"Sort by: Relevant\"'\n  - 'option \"Sort by: Low to High\" [selected]'\n  - 'option \"Sort by: High to Low\"'\n- link \"Men Tapered Fit Flat-Front Trousers $110\":\n  - /url: /product/68ef2bba6a3e3ef181805028\n  - paragraph: Men Tapered Fit Flat-Front Trousers\n  - paragraph: $110\n- link \"Men Round Neck Pure Cotton T-shirt $120\":\n  - /url: /product/68ef2bea6a3e3ef18180502c\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $120\n- link \"Men Round Neck Pure Cotton T-shirt $140\":\n  - /url: /product/68ef2b246a3e3ef181805020\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $140\n- link \"Men Tapered Fit Flat-Front Trousers $145\":\n  - /url: /product/68f8f447b0afda2a7672b771\n  - paragraph: Men Tapered Fit Flat-Front Trousers\n  - paragraph: $145\n- link \"Men Round Neck Pure Cotton T-shirt $150\":\n  - /url: /product/68ef2c8f6a3e3ef181805031\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $150\n- link \"Men Tapered Fit Flat-Front Trousers $190\":\n  - /url: /product/68ef2ae16a3e3ef18180501b\n  - paragraph: Men Tapered Fit Flat-Front Trousers\n  - paragraph: $190\n- link \"Men Round Neck Pure Cotton T-shirt $200\":\n  - /url: /product/68ee7c73675d613eba9e96c6\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $200\n- link \"Men Tapered Fit Flat-Front Trousers $200\":\n  - /url: /product/68f8f420b0afda2a7672b76e\n  - paragraph: Men Tapered Fit Flat-Front Trousers\n  - paragraph: $200\n- link \"Men Printed Plain Cotton Shirt $260\":\n  - /url: /product/68f8f6d6b0afda2a7672b79d\n  - paragraph: Men Printed Plain Cotton Shirt\n  - paragraph: $260\n- link \"Men Round Neck Pure Cotton T-shirt $280\":\n  - /url: /product/68ef2f0f6a3e3ef181805049\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $280\n- link \"Men Round Neck Pure Cotton T-shirt $280\":\n  - /url: /product/68f8f6a5b0afda2a7672b79a\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $280\n- link \"Men Slim Fit Relaxed Denim Jacket $290\":\n  - /url: /product/68ef2f5c6a3e3ef18180504d\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $290\n- link \"Men Slim Fit Relaxed Denim Jacket $300\":\n  - /url: /product/68f8f78bb0afda2a7672b7a9\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $300\n- link \"Men Slim Fit Relaxed Denim Jacket $300\":\n  - /url: /product/68f8f609b0afda2a7672b791\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $300\n- link \"Men Slim Fit Relaxed Denim Jacket $300\":\n  - /url: /product/68f8f764b0afda2a7672b7a6\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $300\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "men",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "women",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "kid",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "Topwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "Bottomwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "winterwear",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "INPUT",
+        "type": "checkbox"
+      },
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": null,
+        "required": false,
+        "tag": "SELECT",
+        "type": "select-one"
+      }
+    ],
+    "headings": [],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504765/of1kyuzornq68uzvmxsr.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504813/hmc2opqndfsvauxypvhj.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504616/z7wz0o6oltczwjvr1ffn.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145929/l3fecmq5uzea8gouredx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504979/dv1f2zhdm8h6kxqrvnx7.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504548/cu7nrmztd8rzuig3pnpf.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145890/eskfjsxearowcc5jv9jx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146584/exeyrdxvjoaxuwoft69n.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505618/kgpqwznwkvvgmhyh2xqz.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146535/end1qhnkpvzdxj0n03yv.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505696/jcmlocy6fllifsixov8t.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146765/lxx26kgeu14e4vwj8fty.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146379/qnlstiybfthi41yew2bx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146726/jozxmectv9xmxmepdcqr.png"
+      }
+    ],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/collection",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

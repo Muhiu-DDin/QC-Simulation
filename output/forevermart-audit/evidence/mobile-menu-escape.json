@@ -1,0 +1,94 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- img \"menu icon\"\n- img \"Back\"\n- paragraph: Back\n- link \"Home\" [active]:\n  - /url: /\n- link \"Collection\":\n  - /url: /collection\n- link \"About\":\n  - /url: /about\n- link \"Contact\":\n  - /url: /contact\n- generic: 👤 QAAuditDemo\n- paragraph\n- paragraph: OUR BESTSELLERS\n- heading \"Latest Arivals\" [level=1]\n- paragraph: SHOP NOW\n- paragraph\n- paragraph: LATEST COLLECTION\n- paragraph\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, beatae.\n- link \"Men Round Neck Pure Cotton T-shirt $200\":\n  - /url: /product/68ee7c73675d613eba9e96c6\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $200\n- link \"Women Zip-Front Relaxed Fit Jacket $399\":\n  - /url: /product/68f38f15f780484273055b41\n  - paragraph: Women Zip-Front Relaxed Fit Jacket\n  - paragraph: $399\n- link \"Men Tapered Fit Flat-Front Trousers $145\":\n  - /url: /product/68f8f447b0afda2a7672b771\n  - paragraph: Men Tapered Fit Flat-Front Trousers\n  - paragraph: $145\n- link \"Women Zip-Front Relaxed Fit Jacket $230\":\n  - /url: /product/68f8f66eb0afda2a7672b797\n  - paragraph: Women Zip-Front Relaxed Fit Jacket\n  - paragraph: $230\n- link \"Girls Round Neck Cotton Top $220\":\n  - /url: /product/68ef266a6a3e3ef181805006\n  - paragraph: Girls Round Neck Cotton Top\n  - paragraph: $220\n- link \"Men Round Neck Pure Cotton T-shirt $280\":\n  - /url: /product/68ef2f0f6a3e3ef181805049\n  - paragraph: Men Round Neck Pure Cotton T-shirt\n  - paragraph: $280\n- link \"Boy Round Neck Pure Cotton T-shirt $300\":\n  - /url: /product/68ef2f9c6a3e3ef181805052\n  - paragraph: Boy Round Neck Pure Cotton T-shirt\n  - paragraph: $300\n- link \"Men Tapered Fit Flat-Front Trousers $110\":\n  - /url: /product/68ef2bba6a3e3ef181805028\n  - paragraph: Men Tapered Fit Flat-Front Trousers\n  - paragraph: $110\n- link \"Men Slim Fit Relaxed Denim Jacket $300\":\n  - /url: /product/68f8f78bb0afda2a7672b7a9\n  - paragraph: Men Slim Fit Relaxed Denim Jacket\n  - paragraph: $300\n- link \"Girls Round Neck Cotton Top $100\":\n  - /url: /product/68ef2b7c6a3e3ef181805024\n  - paragraph: Girls Round Neck Cotton Top\n  - paragraph: $100\n- paragraph: BEST SELLER\n- paragraph\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, beatae.\n- paragraph: Easy Exchange Policy\n- paragraph: We offer hassle free exchange policy\n- paragraph: 7 Days Return Policy\n- paragraph: We provide 7 days free return policy\n- paragraph: Best Customer Support\n- paragraph: We provide 24/7 customer support\n- paragraph: Subscribe now and get 20% off\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, recusandae?\n- textbox \"enter you email\"\n- button \"SUBSCRIBE\"\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": "enter you email",
+        "required": true,
+        "tag": "INPUT",
+        "type": "email"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Latest Arivals"
+      }
+    ],
+    "images": [
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760459893/zflld96yfnpbhzixzd7w.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760792349/i73ls8iipmxou5os6odw.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761145929/l3fecmq5uzea8gouredx.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146480/hz881bj1vlzm7j3ooqfj.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760503406/ubb1siajk0iiaqarlzbi.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505618/kgpqwznwkvvgmhyh2xqz.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760505759/wbnpk3a8fgvi3e9cmuh7.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504765/of1kyuzornq68uzvmxsr.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1761146765/lxx26kgeu14e4vwj8fty.png"
+      },
+      {
+        "alt": "",
+        "loaded": true,
+        "loading": "auto",
+        "src": "https://res.cloudinary.com/damxkllgw/image/upload/v1760504703/yoygszimkdgtnrakbgk6.png"
+      }
+    ],
+    "scrollWidth": 390,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+}

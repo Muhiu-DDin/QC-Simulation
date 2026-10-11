@@ -1,0 +1,2817 @@
+[
+  {
+    "id": "FM-001",
+    "test_id": "TC-001",
+    "title": "Shop Now does not open the catalogue",
+    "module": "Home",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the home page.",
+      "Click SHOP NOW in the hero."
+    ],
+    "expected": "The call to action opens the collection or another defined shopping destination.",
+    "actual": "The URL and page remain unchanged; SHOP NOW is rendered as a paragraph without an action.",
+    "impact": "The primary shopping invitation cannot be used.",
+    "remedy": "Render a real link to /collection with a visible focus state.",
+    "retest": "Mouse click and Enter on the focused link both open Collection.",
+    "evidence": [
+      "evidence/shop-now-no-action.json",
+      "evidence/shop-now-no-action.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The hero is the first invitation to start shopping. A control that looks actionable but cannot navigate breaks that journey before a customer reaches the catalogue. Its wording and visual treatment should agree with its behaviour.",
+      "fix_rationale": "A real link gives the destination a stable URL and makes the same action available to pointer and keyboard users. Keep the link text connected to the collection it opens.",
+      "additional_checks": "Refresh the destination after activation; check that browser Back returns to Home."
+    }
+  },
+  {
+    "id": "FM-002",
+    "test_id": "TC-002",
+    "title": "Best Seller section has no products despite flagged catalogue items",
+    "module": "Home",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test and public code review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Allow the catalogue to finish loading.",
+      "Inspect BEST SELLER and compare the public product flags."
+    ],
+    "expected": "Products marked bestSeller are displayed in the section.",
+    "actual": "The section is empty although five catalogue records have bestSeller=true. The public bundle filters the different key bestseller.",
+    "impact": "Merchandising content disappears and an empty section occupies the home page.",
+    "remedy": "Use the product contract key bestSeller and map productName consistently. Add a populated-fixture component check.",
+    "retest": "The five flagged records render with names and prices; an empty source has a deliberate empty state.",
+    "evidence": [
+      "evidence/home-desktop.jpg",
+      "raw/products.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "This is a data-contract mismatch, rather than evidence that the store has no best sellers. Five qualifying records were present, but the component looked for a differently cased key. Fixing display logic should preserve the original catalogue values.",
+      "fix_rationale": "Use the same field name throughout the API contract and component. Keep the populated and genuinely empty catalogue states distinct so an implementation failure does not masquerade as an empty selection.",
+      "additional_checks": "Include both true and false bestSeller fixtures; ensure repeated loading does not duplicate cards."
+    }
+  },
+  {
+    "id": "FM-004",
+    "test_id": "TC-004",
+    "title": "Reviews tab does not display reviews",
+    "module": "Product",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the product and allow its data to load.",
+      "Click Reviews (122)."
+    ],
+    "expected": "The selected tab displays the reviews or an honest unavailable state.",
+    "actual": "The displayed content does not change; the tab is a paragraph without a click handler.",
+    "impact": "Customers cannot inspect the reviews advertised by the page.",
+    "remedy": "Implement accessible tabs backed by review data, or remove the inactive review tab and count.",
+    "retest": "Selecting Reviews changes the panel; keyboard selection works and the empty state is truthful.",
+    "evidence": [
+      "evidence/reviews-no-change.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The tab advertises review content but does not expose it when selected. A customer can reasonably use reviews to assess a purchase, so a visible review count should lead to corresponding information or an honest explanation of its availability.",
+      "fix_rationale": "The selected tab, displayed panel and keyboard interaction should remain synchronized. Removing the offer is preferable until an actual review source is connected.",
+      "additional_checks": "Switch repeatedly between panels; check the initial panel and a product with no reviews."
+    }
+  },
+  {
+    "id": "FM-005",
+    "test_id": "TC-005",
+    "title": "Product rating and review count are hard coded",
+    "module": "Product",
+    "category": "Content",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test and public code review",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the cotton T-shirt.",
+      "Open the Women Zip-Front Jacket and compare the rating area with the public data and bundle."
+    ],
+    "expected": "Rating and count derive from actual product reviews, or are clearly identified as sample content.",
+    "actual": "Both display the same stars and (122); these values are fixed in the public component and not derived from review data.",
+    "impact": "The storefront presents unsupported customer-feedback claims.",
+    "remedy": "Aggregate approved reviews by product. Hide ratings when no verified review source exists; label demo fixtures explicitly.",
+    "retest": "Products with zero, one and several reviews show the correct counts and calculated ratings.",
+    "evidence": [
+      "evidence/product-details.json",
+      "evidence/second-product-loaded.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An identical hard-coded score across products is not a reliable summary of customer feedback. The report establishes the display/data disconnect; it does not establish the authenticity of any review source that might later be added.",
+      "fix_rationale": "Calculate the count and rating from the same approved set of product reviews. Apply a consistent rounding rule and avoid presenting demo fixtures as genuine customer feedback.",
+      "additional_checks": "Verify different products have independent counts; test an unrated product without fabricated stars."
+    }
+  },
+  {
+    "id": "FM-006",
+    "test_id": "TC-006",
+    "title": "Jacket description describes a short sleeved T-shirt",
+    "module": "Product",
+    "category": "Content",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/product/68f38f15f780484273055b41",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open Women Zip-Front Relaxed Fit Jacket priced $399.",
+      "Read the short product description."
+    ],
+    "expected": "The description explains the jacket actually offered.",
+    "actual": "The jacket uses a generic round-neck, short-sleeved pullover shirt description. The same text is reused across different apparel types.",
+    "impact": "Customers receive incorrect information about the item.",
+    "remedy": "Replace copied descriptions with product-specific material, fit, closure and care details; validate catalogue content before publishing.",
+    "retest": "Jackets, trousers and tops each have accurate descriptions matching their records and images.",
+    "evidence": [
+      "evidence/second-product-loaded.json",
+      "evidence/second-product-loaded.jpg",
+      "raw/products.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A jacket and a short-sleeved shirt have different purchase-relevant characteristics. Reusing the description can mislead a customer about the garment, even when the price and checkout calculations work correctly. This is a product-content accuracy issue.",
+      "fix_rationale": "Populate material, fit, closure and care information for the intended inventory item. A content review should compare the description with the title and photographs before publication.",
+      "additional_checks": "Review more than one garment category; verify unavailable attributes are omitted rather than copied from another item."
+    }
+  },
+  {
+    "id": "FM-007",
+    "test_id": "TC-007",
+    "title": "Detailed Description panel explains ecommerce instead of the product",
+    "module": "Product",
+    "category": "Content",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the product.",
+      "Read the Description panel below the purchase controls."
+    ],
+    "expected": "The panel contains useful details about this product.",
+    "actual": "The text explains what an ecommerce website is rather than describing the selected apparel.",
+    "impact": "A prominent information panel gives customers no product details.",
+    "remedy": "Populate the panel from a product detail field; remove template instructional copy.",
+    "retest": "Changing product changes the details and no ecommerce-definition template text remains.",
+    "evidence": [
+      "evidence/product-details.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The detailed panel should help a customer understand the selected item. An explanation of ecommerce occupies that space without answering product questions. A working tab or panel alone does not make its contents relevant.",
+      "fix_rationale": "Bind the panel to the current product's detail record and provide a deliberate fallback when those details are absent. Avoid reintroducing template text during catalogue changes.",
+      "additional_checks": "Navigate between unrelated products; inspect the detail panel for a record with missing optional text."
+    }
+  },
+  {
+    "id": "FM-008",
+    "test_id": "TC-008",
+    "title": "Product image and title describe different garment styles",
+    "module": "Product",
+    "category": "Content",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open Men Round Neck Pure Cotton T-shirt priced $200.",
+      "Compare the main photo with the title and description."
+    ],
+    "expected": "The images depict the named round-neck, short-sleeved T-shirt.",
+    "actual": "The main photo depicts a pink collared, long-sleeved shirt while the title and description describe a round-neck T-shirt.",
+    "impact": "The shopper cannot reliably determine which garment will be delivered.",
+    "remedy": "Correct the product-to-image association or the product text after checking the intended inventory item.",
+    "retest": "All gallery images match the approved product identity and garment characteristics.",
+    "evidence": [
+      "evidence/product-details.jpg",
+      "evidence/product-details.json",
+      "raw/products.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Product identity depends on agreement between title, description and photography. A mismatched image may lead a customer to select an item on the basis of the wrong appearance. The intended inventory identity must be checked before choosing which field to change.",
+      "fix_rationale": "Verify the authoritative item record first, then correct its image association or copy. Do not assume the photograph is wrong simply because the title differs.",
+      "additional_checks": "Check every gallery image for that item; confirm related cards and cart thumbnails use the approved identity."
+    }
+  },
+  {
+    "id": "FM-009",
+    "test_id": "TC-009",
+    "title": "Related Products includes the product already being viewed",
+    "module": "Product",
+    "category": "Functionality",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test and public code review",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the $200 T-shirt.",
+      "Inspect Related Products."
+    ],
+    "expected": "Recommendations provide other relevant items.",
+    "actual": "The current product appears in its own related-product list; the filter does not exclude the current ID.",
+    "impact": "A recommendation slot is wasted on an item already open.",
+    "remedy": "Exclude the current product ID before limiting related results.",
+    "retest": "No related result has the current ID, including after navigation between related items.",
+    "evidence": [
+      "evidence/product-details.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A related-products list should provide alternatives to the item already open. Including the current item reduces the usefulness of the list and can send a customer back to the same page. The exclusion should be based on identity, not title text.",
+      "fix_rationale": "Apply the current-ID exclusion before limiting the recommendation list. This avoids using one of the available recommendation positions for the same product.",
+      "additional_checks": "Test a category containing only the current item; repeat after opening a related product."
+    }
+  },
+  {
+    "id": "FM-010",
+    "test_id": "TC-010",
+    "title": "Selected size carries over when navigating to a related product",
+    "module": "Product",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Choose size M on the $200 T-shirt.",
+      "Open a related product priced $280.",
+      "Inspect the size selection before choosing a size again."
+    ],
+    "expected": "The new product starts with no selection, or explicitly asks the customer to confirm its variant.",
+    "actual": "M remains selected on the new product even though it was selected for the previous item.",
+    "impact": "A shopper can add the next item using an unintended variant.",
+    "remedy": "Reset variant and gallery state whenever productId changes; validate the selected size against the new product.",
+    "retest": "Navigate between products with different size lists; adding requires a valid selection for the new item.",
+    "evidence": [
+      "evidence/related-size-carryover.json",
+      "evidence/related-size-carryover.jpg"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Size selection belongs to a specific product. Carrying it to a different item can make the purchase state appear complete when the shopper has not selected a variant for that item. Availability should be checked against the new record.",
+      "fix_rationale": "Reset product-scoped state on identity changes and verify the variant again when adding to the cart. Reusing the page component should not reuse the previous customer's selection.",
+      "additional_checks": "Navigate between disjoint size lists; return with browser Back and confirm the displayed selection is valid."
+    }
+  },
+  {
+    "id": "FM-011",
+    "test_id": "TC-011",
+    "title": "Unknown product leaves an incomplete purchase page",
+    "module": "Product",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/product/000000000000000000000000",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the stated non-existent product ID.",
+      "Allow the request to complete."
+    ],
+    "expected": "A Product not found state replaces purchase controls and offers a route back to the collection.",
+    "actual": "The page shows an empty title, a currency symbol without a price, hard-coded review content and ADD TO CART.",
+    "impact": "A broken URL looks like a purchasable item rather than a handled missing record.",
+    "remedy": "Track loading, found, missing and failed states; render purchase controls only for a valid product.",
+    "retest": "Missing and malformed IDs have a clear recovery page; valid products still load normally.",
+    "evidence": [
+      "evidence/missing-product.json",
+      "evidence/missing-product.jpg"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Missing data should not leave a page looking ready for purchase. An empty title and price beside an active cart action make it unclear whether loading is unfinished or the product does not exist. These states need separate handling.",
+      "fix_rationale": "Show purchase controls only after a valid product has loaded. A missing-product state should provide a clear explanation and route back to shopping.",
+      "additional_checks": "Check a malformed ID and a removed fixture product; verify loading and API-failure states separately."
+    }
+  },
+  {
+    "id": "FM-012",
+    "test_id": "TC-012",
+    "title": "Search with no matches displays an unexplained empty grid",
+    "module": "Collection",
+    "category": "Usability",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open search on Collection.",
+      "Enter zzqa-no-such-product."
+    ],
+    "expected": "A no-results message identifies the search and offers a clear or reset action.",
+    "actual": "No product cards appear and no no-results explanation is displayed.",
+    "impact": "Users cannot distinguish an empty result from a failed load.",
+    "remedy": "Render a no-results state after loading completes, with a clear-search action.",
+    "retest": "An impossible query shows the message; clearing it restores products.",
+    "evidence": [
+      "evidence/search-no-results.json",
+      "evidence/search-no-results.jpg"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An empty result grid is ambiguous: it can mean no matching products, an unfinished request or a loading failure. A no-results explanation should appear only after filtering has finished, with enough context for the customer to recover.",
+      "fix_rationale": "Tie the message to the settled search state and expose a clear-query action. Preserve the difference between no matches and a failed catalogue request.",
+      "additional_checks": "Search for an impossible term; clear it while filters are active and verify the remaining criteria are explained."
+    }
+  },
+  {
+    "id": "FM-013",
+    "test_id": "TC-013",
+    "title": "Leading and trailing spaces prevent otherwise valid search matches",
+    "module": "Collection",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test and public code review",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Search for cotton.",
+      "Replace it with two leading spaces, cotton, and two trailing spaces."
+    ],
+    "expected": "Incidental outside whitespace does not change the meaningful query.",
+    "actual": "cotton finds 22 items, while the padded query finds none. The filter lowercases text but does not trim it.",
+    "impact": "Pasted or casually typed queries produce false empty results.",
+    "remedy": "Normalize the search with trim and consistent case handling before filtering.",
+    "retest": "cotton, Cotton and padded cotton return the same matching IDs.",
+    "evidence": [
+      "evidence/search-spaces.json",
+      "evidence/search-spaces.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Whitespace padding does not usually change what a shopper means by a search term. The observed difference between cotton and padded cotton shows that input normalization is inconsistent with that expectation. Normalization should preserve intentional internal text.",
+      "fix_rationale": "Trim the query once before matching and apply consistent case handling. Keep the displayed input and filtering behaviour understandable when the query becomes empty after trimming.",
+      "additional_checks": "Test whitespace-only and mixed-case input; check that internal spaces in a multiword query remain meaningful."
+    }
+  },
+  {
+    "id": "FM-014",
+    "test_id": "TC-014",
+    "title": "Collection filters and sorting are lost after returning from a product",
+    "module": "Collection",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Select Men and Sort by Low to High.",
+      "Open a product.",
+      "Use browser Back."
+    ],
+    "expected": "The previous collection criteria are restored.",
+    "actual": "Men is unchecked and sorting returns to Relevant; all products are shown.",
+    "impact": "Customers must repeat their selection after every product inspection.",
+    "remedy": "Store search, category and sort criteria in URL parameters or durable route state.",
+    "retest": "Back restores the same criteria and results, and a shared filtered URL opens the same view.",
+    "evidence": [
+      "evidence/collection-criteria.json",
+      "evidence/collection-after-back.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Returning from a product should preserve the browsing context that led to it. Losing category and sorting choices forces a customer to reconstruct the search and makes browser Back feel unreliable. Route state should represent the displayed criteria.",
+      "fix_rationale": "Persist the criteria in a recoverable route representation and derive the controls and result list from the same state. Default values should apply only when no saved criteria exist.",
+      "additional_checks": "Check Back and Forward navigation; reopen a copied filtered URL and inspect both controls and results."
+    }
+  },
+  {
+    "id": "FM-015",
+    "test_id": "TC-015",
+    "title": "Footer navigation labels cannot be opened",
+    "module": "Shared layout",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Go to the footer.",
+      "Attempt Home, About Us, Delivery and Privacy Policy."
+    ],
+    "expected": "Each advertised navigation destination is an operable link.",
+    "actual": "All four labels are static list items with no href or action.",
+    "impact": "Customers cannot reach the pages promised by the footer.",
+    "remedy": "Create valid links and publish the intended delivery and privacy content. Grouped here because the same footer implementation affects all four labels.",
+    "retest": "All four destinations work with mouse and keyboard and have meaningful URLs.",
+    "evidence": [
+      "evidence/home-mobile.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Footer labels imply navigation to store information. Static labels do not fulfil that promise and prevent users from reaching the associated pages through this part of the interface. The four symptoms are grouped under one shared footer implementation.",
+      "fix_rationale": "Publish the intended destinations and render genuine links with meaningful names. Check the destination content as well as the fact that a URL changes.",
+      "additional_checks": "Open each link in a new tab; verify deep-link refresh and keyboard activation for all four destinations."
+    }
+  },
+  {
+    "id": "FM-016",
+    "test_id": "TC-016",
+    "title": "Forgot your password has no recovery action",
+    "module": "Account",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/login",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the account form.",
+      "Click Forgot your password?"
+    ],
+    "expected": "A recovery flow or a clearly explained support alternative opens.",
+    "actual": "The page stays unchanged; the text has a pointer cursor but no handler.",
+    "impact": "A user who has forgotten a password has no advertised recovery path.",
+    "remedy": "Implement a verified recovery process, or replace the inactive control with an accurate support instruction.",
+    "retest": "The control opens recovery; account existence is not disclosed by recovery responses.",
+    "evidence": [
+      "evidence/forgot-password-no-action.json",
+      "evidence/forgot-password-no-action.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A password-recovery affordance is most relevant when a customer cannot sign in. A pointer cursor without an action offers no recovery path. The desired process must include a truthful user response without exposing whether another person's account exists.",
+      "fix_rationale": "Use a working recovery destination and a verified recovery process, or provide an accurate support instruction. The interface should not promise email delivery before a service is connected.",
+      "additional_checks": "Compare existing and unknown account responses; test keyboard activation and return to the login form."
+    }
+  },
+  {
+    "id": "FM-017",
+    "test_id": "TC-017",
+    "title": "My Profile menu item has no destination",
+    "module": "Account",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Sign in with the disposable account.",
+      "Open the profile menu and click My Profile."
+    ],
+    "expected": "The profile page opens or the unavailable feature is not presented as an action.",
+    "actual": "No page or panel opens; My Profile is static text.",
+    "impact": "The account menu advertises a function users cannot use.",
+    "remedy": "Link to an implemented profile page or remove the inactive menu item until available.",
+    "retest": "Selecting My Profile opens a working destination with the authenticated demo profile.",
+    "evidence": [
+      "evidence/profile-no-action.json",
+      "evidence/profile-no-action.jpg"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An account menu should contain destinations a signed-in customer can actually use. An inactive My Profile option is different from an authorization failure because no profile navigation is initiated at all.",
+      "fix_rationale": "Connect the option to an implemented authenticated profile view, or remove the option until available. Keep profile navigation and logout as distinct actions.",
+      "additional_checks": "Check direct profile navigation after session expiry; confirm the menu remains usable after returning to the store."
+    }
+  },
+  {
+    "id": "FM-018",
+    "test_id": "TC-018",
+    "title": "Explore Jobs does not open career information",
+    "module": "Contact",
+    "category": "Functionality",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/contact",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open Contact.",
+      "Click Explore Jobs."
+    ],
+    "expected": "The button opens career details or a supported application destination.",
+    "actual": "The page and URL remain unchanged.",
+    "impact": "The careers call to action is nonfunctional.",
+    "remedy": "Provide an actual careers link, or remove the button when no vacancies or careers page exist.",
+    "retest": "Mouse and keyboard activation open the declared destination.",
+    "evidence": [
+      "evidence/jobs-no-action.json",
+      "evidence/jobs-no-action.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The careers button presents a concrete invitation to explore jobs. Without an action or an explanatory state, it creates an avoidable dead end on the Contact page. A truthful no-vacancies state can still provide a useful destination.",
+      "fix_rationale": "Connect the control to approved career information and retain button or link semantics appropriate to the action. Remove the offer if there is no intended careers service.",
+      "additional_checks": "Check a no-vacancies state; verify the destination opens with keyboard activation and refreshes correctly."
+    }
+  },
+  {
+    "id": "FM-019",
+    "test_id": "TC-019",
+    "title": "Newsletter subscription produces no result",
+    "module": "Home",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test and public code review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Enter a syntactically valid synthetic email in Subscribe now.",
+      "Click SUBSCRIBE."
+    ],
+    "expected": "The form records the request and shows success or a useful error.",
+    "actual": "There is no feedback or subscription action. The handler only prevents the default form submission.",
+    "impact": "The advertised 20 percent offer has no usable subscription path.",
+    "remedy": "Connect the form to the intended subscription service and show a result; remove the offer until its fulfilment works.",
+    "retest": "Valid, duplicate and invalid requests produce truthful, accessible feedback without unintended subscriptions.",
+    "evidence": [
+      "evidence/subscribe-no-feedback.json",
+      "evidence/subscribe-no-feedback.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Preventing form submission alone does not subscribe a customer. The missing outcome leaves the customer unable to tell whether an address was accepted or whether the service exists. A success message must reflect an actual service response.",
+      "fix_rationale": "Use the subscription result to drive accessible pending, success and failure feedback. Prevent repeated submissions while one request is being processed.",
+      "additional_checks": "Test a service error and retry; verify duplicate submissions do not produce a misleading success message."
+    }
+  },
+  {
+    "id": "FM-020",
+    "test_id": "TC-020",
+    "title": "Product names are absent from cart and order rows",
+    "module": "Cart",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test and public code review",
+    "url": "https://forevermart.vercel.app/cart",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Add the $200 T-shirt in size M.",
+      "Inspect its cart row, then the own demo order history."
+    ],
+    "expected": "Each row identifies the product by its stored productName.",
+    "actual": "Images, price and size appear but the product name is blank. These views read name while records contain productName.",
+    "impact": "Customers cannot clearly identify line items; the same data-contract mismatch affects both views.",
+    "remedy": "Use one typed product contract and read productName in cart and order components.",
+    "retest": "Names appear for all line items in both cart and order history.",
+    "evidence": [
+      "evidence/cart-one-item.json",
+      "evidence/orders-validation-tests.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Product names are essential identifiers in cart and order records. Photographs and prices alone are weak substitutes, especially when several items look alike. The inspected name/productName mismatch should be repaired consistently in both views.",
+      "fix_rationale": "Centralize the product display contract so all line-item components use the same field. Handle a missing name deliberately instead of leaving an unexplained blank.",
+      "additional_checks": "Use two similarly pictured items; verify names after page refresh and in the saved order history."
+    }
+  },
+  {
+    "id": "FM-021",
+    "test_id": "TC-021",
+    "title": "Guest cart is overwritten after account creation",
+    "module": "Cart",
+    "category": "Functionality",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/cart",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "As a guest, add one item.",
+      "Create the disposable account.",
+      "Inspect the cart after authentication."
+    ],
+    "expected": "The guest selection survives or is merged with the account cart.",
+    "actual": "The badge changes from one item to zero and the guest item disappears when the empty account cart is loaded.",
+    "impact": "A customer loses the prepared purchase at the authentication step.",
+    "remedy": "Merge validated guest items with the account cart on authentication and reconcile the result before replacing local state.",
+    "retest": "Guest-only and existing-account carts merge without loss or duplicate quantities.",
+    "evidence": [
+      "evidence/cart-one-item.json",
+      "evidence/signup-outcome.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Authentication is a state transition, not a reason to discard the shopper's selections. Replacing a populated guest cart with an empty account cart breaks continuity and can force the shopper to rebuild the order.",
+      "fix_rationale": "Resolve the merge before replacing local state. Define how matching product/size pairs combine and how rejected or unavailable entries are reported.",
+      "additional_checks": "Check an overlapping product/size pair; repeat authentication or refresh without adding quantities twice."
+    }
+  },
+  {
+    "id": "FM-022",
+    "test_id": "TC-022",
+    "title": "An empty cart can be submitted as an order",
+    "module": "Checkout",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Use the authenticated demo account with an empty cart.",
+      "Proceed to checkout, complete the delivery form and submit cash on delivery."
+    ],
+    "expected": "Checkout is blocked when there are no valid line items; the server rejects an empty items array.",
+    "actual": "Order creation succeeds and the own-orders response contains an order with items=[] and amount=10.",
+    "impact": "Invalid transactions are stored and can enter fulfilment workflows. Empty orders are also invisible in the flattened history.",
+    "remedy": "Enforce non-empty validated items on the server and block the empty-cart checkout path in the UI.",
+    "retest": "An empty order returns a validation error and creates no record; one valid item succeeds.",
+    "evidence": [
+      "evidence/cart-empty.json",
+      "evidence/empty-order-outcome.json",
+      "raw/demo-orders.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An order without purchasable items has no valid fulfilment content. The persisted empty record demonstrates that the problem reaches the server, so disabling a button alone would leave the underlying rule unprotected.",
+      "fix_rationale": "Validate the full item list before any order write and before applying shipping. Preserve a clear rejection response while leaving valid one-item orders usable.",
+      "additional_checks": "Check empty and missing items fields; verify rejected requests leave the own-orders record count unchanged."
+    }
+  },
+  {
+    "id": "FM-023",
+    "test_id": "TC-023",
+    "title": "Empty-cart total does not agree with displayed shipping",
+    "module": "Cart",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/cart",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open an empty cart.",
+      "Compare Subtotal, Shipping Fee and Total."
+    ],
+    "expected": "Displayed amounts reconcile, and no charge applies to an order that cannot be placed.",
+    "actual": "Subtotal is $0.00 and shipping $10.00, but Total is $0.00. An empty submitted order instead stores $10.",
+    "impact": "The stated payable amount is internally inconsistent.",
+    "remedy": "Use one totals function across display and submission; hide or zero shipping for an empty cart.",
+    "retest": "Empty and populated carts reconcile; submission and receipt equal the final displayed total.",
+    "evidence": [
+      "evidence/cart-empty.json",
+      "evidence/cart-empty.jpg",
+      "raw/demo-orders.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A shopper should see the same monetary result that is later submitted and stored. The observed empty-cart values disagree across subtotal, shipping, displayed total and saved amount. Fixing only one label would leave the calculation inconsistent.",
+      "fix_rationale": "Use one approved empty-cart shipping rule and reconcile displayed and server-derived totals. Treat the invalid empty-order path separately from valid purchase calculations.",
+      "additional_checks": "Compare empty, one-item and cleared-cart totals; check displayed amount against the persisted valid order."
+    }
+  },
+  {
+    "id": "FM-024",
+    "test_id": "TC-024",
+    "title": "Whitespace-only delivery information is accepted",
+    "module": "Checkout",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Enter three spaces in first name, last name, street, city, state and country; use a valid synthetic email.",
+      "Submit a demo COD order."
+    ],
+    "expected": "Required address strings remain non-empty after trimming and are rejected otherwise.",
+    "actual": "The order is accepted; the persisted address contains whitespace-only values.",
+    "impact": "The stored order has no deliverable recipient or address.",
+    "remedy": "Trim and validate required strings on both client and server; show errors beside the fields.",
+    "retest": "Each whitespace-only required field rejects the order without persistence; a valid address succeeds.",
+    "evidence": [
+      "evidence/checkout-invalid-values.jpg",
+      "raw/demo-orders.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Whitespace is a string value, but it is not meaningful delivery information. Accepting it into persisted address fields allows technically non-empty data that cannot support the intended fulfilment task.",
+      "fix_rationale": "Normalize required text before validating it and use the same rule at the API boundary. Field-specific messages should identify the value that needs correction.",
+      "additional_checks": "Submit each required field as spaces independently; verify trimmed legitimate names and addresses remain usable."
+    }
+  },
+  {
+    "id": "FM-025",
+    "test_id": "TC-025",
+    "title": "Negative phone number is accepted at checkout",
+    "module": "Checkout",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Complete other delivery fields and enter -1 for Phone number.",
+      "Submit the authorized demo COD test order."
+    ],
+    "expected": "The contact field accepts a valid telephone string and rejects an impossible negative number.",
+    "actual": "The server stores phoneNumber=\"-1\".",
+    "impact": "The fulfilment team has no usable delivery contact.",
+    "remedy": "Use type=tel and server-side phone validation appropriate to the supported countries; do not treat phone numbers as arithmetic quantities.",
+    "retest": "-1 and malformed phones are rejected; supported formatted numbers remain intact.",
+    "evidence": [
+      "evidence/checkout-invalid-values.jpg",
+      "raw/demo-orders.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Telephone numbers are identifiers rather than quantities. A negative stored string is unsuitable delivery contact data, while a numeric input may also remove valid formatting. Validation needs an explicit supported-country policy.",
+      "fix_rationale": "Retain the telephone value as text and validate its supported representation on the server. Avoid silently changing a phone number into a different identifier.",
+      "additional_checks": "Test leading-zero and international-prefix fixtures; confirm malformed values fail without creating an order."
+    }
+  },
+  {
+    "id": "FM-026",
+    "test_id": "TC-026",
+    "title": "Negative postal code is accepted at checkout",
+    "module": "Checkout",
+    "category": "Data integrity",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Complete the other delivery fields and enter -1 for Zipcode.",
+      "Submit the authorized demo COD order."
+    ],
+    "expected": "Postal codes are validated as country-appropriate identifiers.",
+    "actual": "The persisted order contains zipCode=\"-1\".",
+    "impact": "The order can contain unusable delivery routing data.",
+    "remedy": "Use a text postal-code field and validate it against the selected supported country on the server.",
+    "retest": "Negative values fail; valid supported numeric and alphanumeric codes pass.",
+    "evidence": [
+      "evidence/checkout-invalid-values.jpg",
+      "raw/demo-orders.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Postal formats depend on the supported destination. Accepting a negative value proves a missing validation boundary; it does not justify restricting every country to numeric codes. The allowed format should follow an approved country rule.",
+      "fix_rationale": "Keep the original postal string, then validate it for the selected supported country. Apply the same validation to direct API requests and the visible form.",
+      "additional_checks": "Check whitespace and negative fixtures; retain valid letters and leading zeros where the destination policy permits them."
+    }
+  },
+  {
+    "id": "FM-027",
+    "test_id": "TC-027",
+    "title": "Order endpoint accepts a malformed delivery email",
+    "module": "Order API",
+    "category": "Data integrity",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/order/placeOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Authenticate as the disposable account.",
+      "Submit one valid COD line item with address.email=not-an-email.",
+      "Fetch own orders."
+    ],
+    "expected": "The server rejects a malformed email independently of browser validation.",
+    "actual": "HTTP 200 success is returned and the malformed email persists in the order.",
+    "impact": "API clients can create orders with unusable notification addresses.",
+    "remedy": "Apply the same validated address schema at the API boundary; return a field-specific 4xx error.",
+    "retest": "Malformed email creates no order; a valid synthetic email passes.",
+    "evidence": [
+      "raw/api-validation.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Browser validation can be bypassed by submitting directly to the order endpoint. The persisted malformed email establishes a server-side gap, so repairing only the checkout field would not protect the order data.",
+      "fix_rationale": "Validate the delivery schema before persistence and report the failing field without exposing internal errors. Keep legitimate synthetic test addresses usable.",
+      "additional_checks": "Test malformed direct requests and the UI path; verify the rejected order is absent from subsequent read-back."
+    }
+  },
+  {
+    "id": "FM-028",
+    "test_id": "TC-028",
+    "title": "Order endpoint accepts a negative fractional quantity",
+    "module": "Order API",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/order/placeOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Use the demo account and a valid product ID.",
+      "Submit quantity=-0.5 in a COD order.",
+      "Read back own orders."
+    ],
+    "expected": "Every apparel quantity is a positive integer within the allowed limit.",
+    "actual": "The endpoint returns success and persists -0.5; the history displays that quantity.",
+    "impact": "Invalid units corrupt order and fulfilment calculations.",
+    "remedy": "Validate Number.isSafeInteger(quantity), quantity>=1 and a documented maximum before any write.",
+    "retest": "-0.5, 0, fractional and excessive values fail; 1 and a valid upper bound pass.",
+    "evidence": [
+      "raw/api-validation.json",
+      "evidence/orders-validation-tests.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An apparel line requires a valid count of items. Persisting a negative fraction breaks that model and can affect totals and fulfilment. The same quantity contract should apply to every entry in an order.",
+      "fix_rationale": "Validate numeric type, integer bounds and the allowed maximum before writing any line. An invalid item should not leave a partially created order.",
+      "additional_checks": "Place an invalid quantity beside a valid line; verify the full request is rejected without partial persistence."
+    }
+  },
+  {
+    "id": "FM-029",
+    "test_id": "TC-029",
+    "title": "Order endpoint accepts a size not sold for the product",
+    "module": "Order API",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/order/placeOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Submit the valid T-shirt ID with size=QA-NOT-A-SIZE.",
+      "Fetch the resulting own order."
+    ],
+    "expected": "The chosen size belongs to the server-side product variant list.",
+    "actual": "HTTP 200 success is returned and QA-NOT-A-SIZE is stored and displayed.",
+    "impact": "The order requests an impossible product variant.",
+    "remedy": "Resolve the product from the database and validate the requested variant against its current size list.",
+    "retest": "Unknown sizes fail without persistence; supported sizes succeed.",
+    "evidence": [
+      "raw/api-validation.json",
+      "evidence/orders-validation-tests.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The requested size must belong to the authoritative product record. A client-supplied string alone cannot establish that a variant is available for purchase. The demonstrated unsupported value was persisted as if it were valid.",
+      "fix_rationale": "Resolve the product and size together before pricing or saving the order. Return a clear validation result when the selected variant is no longer available.",
+      "additional_checks": "Test case and whitespace variants under the approved size policy; verify valid variants still produce the correct order line."
+    }
+  },
+  {
+    "id": "FM-030",
+    "test_id": "TC-030",
+    "title": "Order endpoint accepts a non-existent product ID",
+    "module": "Order API",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/order/placeOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Submit item ID 000000000000000000000000 with a copied valid product snapshot.",
+      "Fetch own orders."
+    ],
+    "expected": "Every order line references an existing saleable server-side product.",
+    "actual": "The fabricated ID is accepted and persisted.",
+    "impact": "An order can reference inventory that does not exist.",
+    "remedy": "Look up every product and variant on the server; reject missing or unavailable records before writing the order.",
+    "retest": "Non-existent IDs fail; existing allowed IDs succeed without trusting copied metadata.",
+    "evidence": [
+      "raw/api-validation.json",
+      "raw/products.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A syntactically plausible product ID does not prove that inventory exists. Persisting a fabricated identifier can create an order that has no resolvable item, even if copied client metadata appears complete.",
+      "fix_rationale": "Look up every line against authoritative product data before an order is saved. Handle unavailable items explicitly rather than relying on later rendering to reveal them.",
+      "additional_checks": "Mix a missing ID with a valid line; confirm the rejected request creates no partial order."
+    }
+  },
+  {
+    "id": "FM-031",
+    "test_id": "TC-031",
+    "title": "Order endpoint trusts an altered client line-item price",
+    "module": "Order API",
+    "category": "Security",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/order/placeOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Copy the valid $200 T-shirt line.",
+      "Change its client price to 1 and submit amount=11.",
+      "Fetch own orders."
+    ],
+    "expected": "The server uses its own catalogue price, ignoring a submitted client price.",
+    "actual": "The order stores the altered $1 price and $11 amount.",
+    "impact": "Price manipulation can create underpriced orders. No real payment or fraud was performed.",
+    "remedy": "Accept only product ID, variant and quantity; derive immutable line prices and discounts from server rules.",
+    "retest": "Tampered prices are rejected or ignored and the stored price remains $200.",
+    "evidence": [
+      "raw/api-validation.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The client can change the price it submits. The saved $1 line for an inspected $200 product demonstrates why the submitted price cannot be the authority for monetary calculation. This finding concerns line-price integrity.",
+      "fix_rationale": "Resolve the current approved price and discount on the server, then save the resulting line snapshot. The shopper-facing total should agree with that validated result.",
+      "additional_checks": "Send altered and omitted price fields; verify the stored line remains tied to the authoritative product price."
+    }
+  },
+  {
+    "id": "FM-032",
+    "test_id": "TC-032",
+    "title": "Order endpoint trusts the submitted total amount",
+    "module": "Order API",
+    "category": "Security",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/order/placeOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Keep one valid line priced $200 with quantity 1.",
+      "Submit amount=1 rather than the displayed $210.",
+      "Fetch own orders."
+    ],
+    "expected": "The server calculates the payable total from validated lines and shipping.",
+    "actual": "The amount of 1 is persisted despite the unchanged $200 item.",
+    "impact": "Totals can be manipulated independently of line-item prices.",
+    "remedy": "Recalculate all monetary values on the server with an explicit currency and rounding policy.",
+    "retest": "Altered totals cannot be stored; valid item $200 plus $10 shipping yields $210.",
+    "evidence": [
+      "raw/api-validation.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Even valid line data is insufficient when the final amount is accepted independently from the client. The saved amount of 1 demonstrates a separate total-integrity gap. Line pricing and final-total calculation need one coherent server rule.",
+      "fix_rationale": "Derive the payable amount from validated items and approved shipping, discount and currency rules. Never reconcile the result by simply copying the client's total.",
+      "additional_checks": "Alter only the submitted amount; confirm the valid $200 plus $10 fixture remains $210 on read-back."
+    }
+  },
+  {
+    "id": "FM-033",
+    "test_id": "TC-033",
+    "title": "Cart endpoint stores a negative fractional quantity",
+    "module": "Cart API",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/cart/update",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Use only the demo account cart.",
+      "Update an item quantity to -0.5.",
+      "Fetch the cart and reload its page."
+    ],
+    "expected": "Cart quantities remain positive integers; removal uses an explicit operation.",
+    "actual": "The update succeeds and -0.5 persists. The invalid fixture produced a fractional badge and negative totals.",
+    "impact": "Cart arithmetic and checkout readiness become invalid.",
+    "remedy": "Validate integer bounds server-side and sanitize existing invalid entries before computing totals.",
+    "retest": "Invalid quantities fail and the cart remains unchanged; valid increments and removal still work.",
+    "evidence": [
+      "raw/cart-validation.json",
+      "evidence/session-log.json"
+    ],
+    "note": "Only the invalid demo entries created for this test were subsequently removed.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Invalid cart quantity can contaminate both visible counts and monetary totals. The persisted fraction demonstrates that the API boundary must enforce the cart's quantity model; a frontend stepper alone is insufficient.",
+      "fix_rationale": "Reject unsupported values before changing stored cart state and handle pre-existing invalid entries safely. Define removal as a distinct supported operation rather than an accidental negative quantity.",
+      "additional_checks": "Compare cart read-back before and after rejection; test valid increments, explicit removal and a configured maximum."
+    }
+  },
+  {
+    "id": "FM-034",
+    "test_id": "TC-034",
+    "title": "Cart endpoint accepts an unsupported size",
+    "module": "Cart API",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/cart/add",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Authenticate as the disposable account.",
+      "Add the valid product with size=QA-NOT-A-SIZE.",
+      "Fetch its cart."
+    ],
+    "expected": "The server rejects a variant not listed for that product.",
+    "actual": "The unsupported size is stored in cartData.",
+    "impact": "The cart holds a selection the storefront cannot legitimately fulfil.",
+    "remedy": "Resolve the product variant before writing cart state and return a validation error for unknown sizes.",
+    "retest": "Unsupported size is rejected with no cart change; valid size M is accepted.",
+    "evidence": [
+      "raw/cart-validation.json"
+    ],
+    "note": "The test entry was removed after evidence capture.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Cart selection needs the same product/variant relationship used by checkout. Storing an unknown size allows an invalid state to survive refresh and may defer the error until ordering.",
+      "fix_rationale": "Validate the requested size against the resolved product before saving. Report invalid or stale variant selections without silently substituting a different size.",
+      "additional_checks": "Check invalid and valid sizes for the same product; confirm a rejected update preserves the previous valid cart."
+    }
+  },
+  {
+    "id": "FM-035",
+    "test_id": "TC-035",
+    "title": "Cart endpoint accepts a non-existent product",
+    "module": "Cart API",
+    "category": "Data integrity",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API test",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/cart/add",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Add ID 000000000000000000000000, size M to the demo cart.",
+      "Fetch the cart and reload it."
+    ],
+    "expected": "The cart accepts only existing saleable products.",
+    "actual": "The fabricated ID is stored but cannot be resolved into a visible valid product row.",
+    "impact": "Hidden invalid entries create inconsistent cart state and can break order construction.",
+    "remedy": "Validate product existence on write and safely flag or remove stale references on read.",
+    "retest": "Unknown IDs are rejected; deletion or unavailability of a previously valid product has a clear recovery state.",
+    "evidence": [
+      "raw/cart-validation.json",
+      "evidence/session-log.json"
+    ],
+    "note": "The fabricated test entry was removed after capture.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A cart reference that cannot resolve to a product is different from an empty cart. It can produce hidden entries or counts that do not agree with visible rows. Both write-time and stale-read handling need explicit rules.",
+      "fix_rationale": "Reject new unknown IDs and define what the UI should show when a previously valid product becomes unavailable. Do not silently treat an unresolved row as purchasable.",
+      "additional_checks": "Attempt an unknown-ID write; use a controlled removed-product fixture to verify the declared recovery behaviour."
+    }
+  },
+  {
+    "id": "FM-036",
+    "test_id": "TC-036",
+    "title": "Guest checkout loses the address when authentication is required",
+    "module": "Checkout",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "As a guest with an item, complete the delivery form.",
+      "Press PLACE ORDER.",
+      "Follow the authentication flow."
+    ],
+    "expected": "Authentication is requested before data entry, or the draft and checkout destination are preserved.",
+    "actual": "Login is requested only on submission; the entered address is lost and successful signup returns to Home.",
+    "impact": "A customer must repeat delivery entry and navigate back to checkout.",
+    "remedy": "Guard checkout earlier or preserve a draft and returnTo destination across authentication.",
+    "retest": "Guest-to-login and guest-to-signup flows return to checkout with the valid draft and cart intact.",
+    "evidence": [
+      "evidence/checkout-fields.json",
+      "evidence/signup-outcome.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Authentication interrupts an already-entered checkout draft. Losing that draft and the return destination requires duplicate work and breaks the expected purchase sequence. The address should not be persisted more broadly than necessary.",
+      "fix_rationale": "Choose an early authentication guard or a temporary checkout draft with a controlled return destination. Restore only the intended cart and address data for the authenticated user.",
+      "additional_checks": "Test login and signup separately; cancel authentication and inspect the draft-retention policy."
+    }
+  },
+  {
+    "id": "FM-037",
+    "test_id": "TC-037",
+    "title": "Postal field strips letters from an alphanumeric code",
+    "module": "Checkout",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Type SW1A 1AA into Zipcode using normal keystrokes.",
+      "Read the resulting field value."
+    ],
+    "expected": "A postal identifier is preserved for a supported destination; unsupported countries are explicitly excluded.",
+    "actual": "The number input retains only 11 from SW1A 1AA. Country remains unrestricted free text.",
+    "impact": "A legitimate alphanumeric postal code cannot be entered accurately.",
+    "remedy": "Use type=text, preserve spaces and letters, and validate against the supported-country policy.",
+    "retest": "SW1A 1AA is preserved when the UK is supported; otherwise the UI clearly restricts destination selection.",
+    "evidence": [
+      "evidence/checkout-form-limitations.json",
+      "evidence/checkout-form-limitations.jpg"
+    ],
+    "note": "Supported-country requirements were not supplied; unrestricted country entry makes the current constraint ambiguous.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A number input cannot preserve the letters in the recorded SW1A 1AA example. Since supported-country requirements were not supplied, the corrective decision should either support that destination or clearly restrict country selection.",
+      "fix_rationale": "Use a postal text field and an approved country-specific policy. Validate the entered identifier rather than truncating it into a different code.",
+      "additional_checks": "Check a supported alphanumeric fixture and a numeric code with a leading zero; verify the country restriction is clear."
+    }
+  },
+  {
+    "id": "FM-038",
+    "test_id": "TC-038",
+    "title": "Phone field rejects a normally formatted telephone string",
+    "module": "Checkout",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Type +1 (415) 555-0321 into Phone number.",
+      "Inspect the resulting value."
+    ],
+    "expected": "A telephone string can be entered and normalized without corrupting its meaning.",
+    "actual": "The type=number control does not retain the entered formatted phone; the recorded value is empty.",
+    "impact": "Customers cannot paste a commonly formatted contact number.",
+    "remedy": "Use type=tel and appropriate inputmode, retaining the original string until validated and normalized.",
+    "retest": "Formatted supported phone numbers work; invalid values receive a field-specific error.",
+    "evidence": [
+      "evidence/checkout-form-limitations.json",
+      "evidence/checkout-form-limitations.jpg"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Normally formatted phone strings may include a plus sign and separators. The observed empty recorded value shows the input type is unsuitable for the intended identifier. Changing the field type and validating the supported phone policy are related but separate steps.",
+      "fix_rationale": "Preserve the entered phone as text until validation and any approved normalization are complete. Do not perform arithmetic conversion on a delivery contact identifier.",
+      "additional_checks": "Paste a formatted supported number; verify both the visible value and persisted approved representation."
+    }
+  },
+  {
+    "id": "FM-039",
+    "test_id": "TC-039",
+    "title": "Unknown route has no not-found message or recovery",
+    "module": "Routing",
+    "category": "Functionality",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/qa-route-does-not-exist",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the stated unknown URL.",
+      "Allow the application to settle."
+    ],
+    "expected": "A not-found view explains the invalid route and links to a valid destination.",
+    "actual": "Only the shared header and footer appear; the route receives the SPA HTML with HTTP 200.",
+    "impact": "Broken links leave users in an unexplained page and are difficult to diagnose.",
+    "remedy": "Add a catch-all route with a clear message and recovery link; use an appropriate status when the hosting architecture permits.",
+    "retest": "Unknown routes show Not found; known deep links still load on refresh.",
+    "evidence": [
+      "evidence/unknown-route.json",
+      "evidence/unknown-route.jpg",
+      "raw/route-responses.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Unknown routes should explain that the destination is unavailable and offer a recovery path. The shared shell alone can make a missing route look like a loading failure. A normal deep link must still work under the same hosting setup.",
+      "fix_rationale": "Use a catch-all interface state and keep host-level SPA routing compatible with known pages. The appropriate HTTP status depends on the deployment architecture.",
+      "additional_checks": "Open an unknown path directly and through navigation; refresh a known product route to guard against routing regressions."
+    }
+  },
+  {
+    "id": "FM-040",
+    "test_id": "TC-040",
+    "title": "Profile response includes password and refresh-token fields",
+    "module": "Account API",
+    "category": "Security",
+    "severity": "High",
+    "priority": "P1",
+    "classification": "Defect",
+    "method": "Authenticated API response inspection",
+    "url": "https://foreverbackend-k8zm.onrender.com/api/user/getUser",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Sign in only as the disposable account.",
+      "Inspect the field names returned by the own-profile endpoint."
+    ],
+    "expected": "The response contains only client-required profile data and excludes authentication internals.",
+    "actual": "The field list includes password and refreshToken, as well as internal persistence metadata. Secret values were not copied into this report.",
+    "impact": "Authentication material is unnecessarily exposed to client code. This is not evidence of access to other users.",
+    "remedy": "Return an explicit safe profile DTO and exclude password hashes, refresh tokens and internal metadata from serialization.",
+    "retest": "Own-profile and login responses omit these fields while authorised profile functions still work.",
+    "evidence": [
+      "raw/api-validation.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Backend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Profile consumers do not need password or refresh-token fields to display account details. Returning those fields unnecessarily broadens the exposure of sensitive account data. The report records field presence and does not disclose their secret values.",
+      "fix_rationale": "Serialize an explicit allowlist of safe profile fields. Verify the response boundary wherever the same user object is returned, rather than repairing one screen alone.",
+      "additional_checks": "Inspect profile and login field names; confirm approved account fields remain available after sensitive fields are excluded."
+    }
+  },
+  {
+    "id": "FM-041",
+    "test_id": "TC-041",
+    "title": "Search opener cannot be activated with the keyboard",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect the search icon.",
+      "Traverse the header with Tab and attempt keyboard activation."
+    ],
+    "expected": "The search opener is a named keyboard-operable button.",
+    "actual": "The clickable image has no button role or tabindex and is absent from the normal interactive sequence.",
+    "impact": "Keyboard-only shoppers cannot open search.",
+    "remedy": "Use a button with an accessible name such as Open search, preserving the icon as decorative.",
+    "retest": "Tab reaches the opener and Enter or Space opens the search form.",
+    "evidence": [
+      "evidence/home-mobile.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A pointer-only search opener blocks users who navigate through normal keyboard controls. The image can remain visually unchanged while its wrapper supplies a named, focusable action. This separates icon appearance from interaction semantics.",
+      "fix_rationale": "Use a real named button and keep its icon decorative. Opening search should reveal a usable form without losing track of the originating control.",
+      "additional_checks": "Use Tab followed by Enter and Space; close and reopen search to check a predictable focus sequence."
+    }
+  },
+  {
+    "id": "FM-042",
+    "test_id": "TC-042",
+    "title": "Search close icon lacks a keyboard action and name",
+    "module": "Collection",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the search bar.",
+      "Inspect its close icon and try keyboard traversal."
+    ],
+    "expected": "Close search is a named button reachable with Tab.",
+    "actual": "The close affordance is a clickable image with empty alternative text and no button semantics.",
+    "impact": "The visible closing action is unavailable to keyboard and screen-reader users.",
+    "remedy": "Wrap the icon in a button labelled Close search and restore focus to the opener when it closes.",
+    "retest": "The action is announced by name and closes the bar with Enter or Space.",
+    "evidence": [
+      "evidence/search-no-results.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Closing search is an action with its own purpose and name. An unnamed clickable image makes that action difficult to discover and activate without a pointer. Focus should return to a logical place when the search region disappears.",
+      "fix_rationale": "Provide a Close search button and explicitly restore focus to the opener. Keep closing distinct from submitting the current query.",
+      "additional_checks": "Close after typing a query; repeat using keyboard activation and verify focus returns to the opener."
+    }
+  },
+  {
+    "id": "FM-043",
+    "test_id": "TC-043",
+    "title": "Authenticated account menu is not keyboard operable",
+    "module": "Account",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Sign in and inspect the profile opener.",
+      "Inspect Orders and Logout in its menu."
+    ],
+    "expected": "The opener and menu actions have suitable keyboard behaviour and semantic roles.",
+    "actual": "The opener is a clickable div and image; menu actions are clickable paragraphs without normal keyboard semantics.",
+    "impact": "Keyboard users cannot reliably open or use the account menu, including logout.",
+    "remedy": "Use a named disclosure button, a link for Orders and a button for Logout with proper focus handling.",
+    "retest": "The entire account menu can be opened, traversed, activated and dismissed using the keyboard.",
+    "evidence": [
+      "evidence/profile-no-action.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The authenticated menu combines navigation and session actions. Both must remain reachable without a mouse; adding a name to the opener alone would leave its paragraph-based actions inaccessible.",
+      "fix_rationale": "Use disclosure semantics for opening, links for destinations and buttons for commands such as Logout. Keep focus order consistent with the visible menu.",
+      "additional_checks": "Open and dismiss the menu using the keyboard; verify Orders navigation and Logout independently."
+    }
+  },
+  {
+    "id": "FM-044",
+    "test_id": "TC-044",
+    "title": "Login and Create Account mode switch is not a keyboard control",
+    "module": "Account",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/login",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the account form.",
+      "Inspect and attempt keyboard activation of Login or Create Account."
+    ],
+    "expected": "The mode switch is an operable button or link.",
+    "actual": "The switch is a paragraph with an onClick handler and no keyboard control semantics.",
+    "impact": "Keyboard users cannot select the alternative authentication form.",
+    "remedy": "Use a type=button mode switch or links to explicit account routes.",
+    "retest": "Enter and Space switch modes without submitting the form accidentally.",
+    "evidence": [
+      "evidence/login-form.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Changing account mode is an action inside a form, not ordinary body text. A paragraph click handler misses keyboard behaviour and can leave a user unable to reach the mode required to authenticate.",
+      "fix_rationale": "Use an explicit non-submit button or route link for switching modes. Reset or retain form values according to the approved interaction so a mode change does not cause an unintended request.",
+      "additional_checks": "Switch in both directions; verify Enter or Space changes mode without submitting credentials."
+    }
+  },
+  {
+    "id": "FM-045",
+    "test_id": "TC-045",
+    "title": "Product gallery thumbnails are pointer-only controls",
+    "module": "Product",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the product with multiple gallery images.",
+      "Inspect the thumbnail controls."
+    ],
+    "expected": "Each thumbnail is keyboard operable and identifies the image it selects.",
+    "actual": "Thumbnails are clickable images without button roles or tabindex.",
+    "impact": "Keyboard shoppers cannot inspect alternative product views.",
+    "remedy": "Use named buttons around thumbnails, exposing selected state and a visible focus indicator.",
+    "retest": "All images can be selected using Tab and Enter; selected image state is announced.",
+    "evidence": [
+      "evidence/product-details.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Gallery thumbnails choose which product image is displayed. Their interactive purpose should be exposed separately from the image description, with a clear selected state and focus indicator.",
+      "fix_rationale": "Wrap each thumbnail in a named button and synchronize its selected state with the main view. Informative image alternatives should still describe the photograph.",
+      "additional_checks": "Select first and last thumbnails by keyboard; change products and verify selected state resets correctly."
+    }
+  },
+  {
+    "id": "FM-046",
+    "test_id": "TC-046",
+    "title": "Remove cart item is an unnamed pointer-only image",
+    "module": "Cart",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/cart",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Add one valid item.",
+      "Inspect the bin icon used to remove the row."
+    ],
+    "expected": "Removal is a named keyboard-operable button identifying its item.",
+    "actual": "The bin is an image click target without suitable alternative text or button semantics.",
+    "impact": "Keyboard and assistive-technology users cannot reliably remove a line item.",
+    "remedy": "Use a button labelled Remove [product name] with a clear focus style.",
+    "retest": "The item is removable with the keyboard and focus moves to a sensible remaining control.",
+    "evidence": [
+      "evidence/cart-one-item.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Removing an item changes cart state and may remove the control holding focus. An unnamed image leaves keyboard users without a clear action and makes it harder to determine which item would be removed.",
+      "fix_rationale": "Use a named button tied to the product identity and move focus deliberately after removal. Reconcile badge, rows and totals from the resulting cart.",
+      "additional_checks": "Remove one of several items; remove the final item and inspect focus and the empty-cart state."
+    }
+  },
+  {
+    "id": "FM-047",
+    "test_id": "TC-047",
+    "title": "Cart product navigation is available only through a clickable image",
+    "module": "Cart",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/cart",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Add one item.",
+      "Inspect its image-based route to the product."
+    ],
+    "expected": "An ordinary product link is available and identifies the destination.",
+    "actual": "The image uses a click handler rather than an anchor; the visible product name is also blank.",
+    "impact": "Keyboard users cannot use the cart shortcut back to product details.",
+    "remedy": "Use an anchor containing an informative product name or image alternative.",
+    "retest": "Tab reaches a named product link and Enter opens the correct product.",
+    "evidence": [
+      "evidence/cart-one-item.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Product navigation should be recognizable as a link and identify its destination. An image click handler lacks normal link behaviour, while the blank product name compounds the identification problem.",
+      "fix_rationale": "Use an anchor around accurate product content. Repair the product-name contract independently so the visible and accessible destination descriptions agree.",
+      "additional_checks": "Activate the product link with Enter; open it in a new tab and verify the matching product ID."
+    }
+  },
+  {
+    "id": "FM-048",
+    "test_id": "TC-048",
+    "title": "Mobile menu opener has no button semantics",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Responsive DOM review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Use a 390 px viewport.",
+      "Inspect the menu icon."
+    ],
+    "expected": "Open menu is a named button with its expanded state exposed.",
+    "actual": "The visible opener is a clickable image without button semantics or aria-expanded.",
+    "impact": "Keyboard and assistive-technology users cannot reliably open mobile navigation.",
+    "remedy": "Use a button with aria-expanded and aria-controls tied to the menu panel.",
+    "retest": "Keyboard activation opens the menu and the announced state changes.",
+    "evidence": [
+      "evidence/home-mobile.json",
+      "evidence/mobile-menu-open.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The mobile menu opener is a state-changing action. Its accessible role, name and expanded state should agree with the panel users see. An image alone does not expose that relationship.",
+      "fix_rationale": "Use a button linked to the panel and update expanded state when it opens or closes. This complements, rather than replaces, panel focus and visibility handling.",
+      "additional_checks": "Open and close the panel repeatedly; check the accessible expanded value on every transition."
+    }
+  },
+  {
+    "id": "FM-049",
+    "test_id": "TC-049",
+    "title": "Mobile menu Back affordance is not keyboard operable",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Responsive DOM review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open mobile navigation.",
+      "Inspect its Back image and text."
+    ],
+    "expected": "The visible closing control is a keyboard-operable, named button.",
+    "actual": "Back is implemented with a clickable div, image and paragraph rather than a button.",
+    "impact": "A keyboard user lacks a reliable explicit close control.",
+    "remedy": "Use a Close menu button and return focus to the original opener.",
+    "retest": "Tab reaches Close menu; Enter or Space closes the panel and restores focus.",
+    "evidence": [
+      "evidence/mobile-menu-open.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The panel's Back affordance acts as a close command. It should be reachable and named as such, and closing should not leave keyboard focus on content that is no longer visible.",
+      "fix_rationale": "Use a close button and restore focus to the menu opener. Keep its purpose distinct from browser Back navigation.",
+      "additional_checks": "Activate with Enter and Space; verify the panel closes without changing the current route unexpectedly."
+    }
+  },
+  {
+    "id": "FM-050",
+    "test_id": "TC-050",
+    "title": "Closed mobile menu leaves offscreen links in the accessibility tree",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Responsive DOM and code review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "At mobile width, close the menu.",
+      "Inspect the menu links and their hiding mechanism."
+    ],
+    "expected": "Collapsed navigation content is removed from interactive and accessibility navigation.",
+    "actual": "The panel is moved with translate-x-full; its links remain in the snapshot and are not inert or aria-hidden.",
+    "impact": "Assistive navigation can expose offscreen destinations unrelated to the visible interface.",
+    "remedy": "Conditionally mount the closed panel or use an appropriate inert/hidden state, restoring it when opened.",
+    "retest": "Closed links are absent from the accessibility and tab sequence; opening makes them available.",
+    "evidence": [
+      "evidence/home-mobile.json",
+      "raw/app.js"
+    ],
+    "note": "The observed accessibility-tree exposure is confirmed; individual assistive-technology behaviour was not separately tested.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Moving a closed panel offscreen is a visual operation, not necessarily an accessibility-state change. The saved snapshot still exposed its links. This finding is about the observed tree and does not claim separately tested assistive-technology outcomes.",
+      "fix_rationale": "Make closed content hidden or inert according to the chosen implementation, and restore it on opening. Do not leave focus inside content being hidden.",
+      "additional_checks": "Inspect the closed tree and tab order; open the panel and verify those links become available again."
+    }
+  },
+  {
+    "id": "FM-051",
+    "test_id": "TC-051",
+    "title": "Mobile menu does not manage focus or dismiss on Escape",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open the mobile menu.",
+      "Press Escape while a navigation item is focused.",
+      "Inspect focus handling."
+    ],
+    "expected": "An overlay menu provides predictable focus and dismissal behaviour.",
+    "actual": "Escape leaves the menu open; no opening focus transfer or closing focus restoration is implemented.",
+    "impact": "Keyboard users can lose their position in navigation.",
+    "remedy": "Choose a disclosure or dialog interaction model and implement its focus and Escape behaviour consistently.",
+    "retest": "Open, traverse, Escape and reopen the menu; focus remains predictable throughout.",
+    "evidence": [
+      "evidence/mobile-menu-escape.json",
+      "evidence/mobile-menu-open.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Opening and dismissing a menu creates a focus transition. Without an intentional interaction model, Escape may do nothing and focus may remain behind the visible panel. The correct model should be chosen before adding isolated key handlers.",
+      "fix_rationale": "Implement the selected disclosure or dialog pattern consistently for opening, traversal, dismissal and focus restoration. Avoid mixing behaviours from incompatible patterns.",
+      "additional_checks": "Open, traverse, press Escape and reopen; check focus after both keyboard and pointer dismissal."
+    }
+  },
+  {
+    "id": "FM-052",
+    "test_id": "TC-052",
+    "title": "Mobile filter disclosure is a paragraph rather than a control",
+    "module": "Collection",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Responsive DOM review",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Use mobile Collection.",
+      "Inspect the FILTERS toggle."
+    ],
+    "expected": "A button opens filters and exposes expanded or collapsed state.",
+    "actual": "The toggle is a clickable paragraph without button semantics or expanded-state metadata.",
+    "impact": "Keyboard and assistive users cannot reliably discover and operate filtering.",
+    "remedy": "Use a button with aria-expanded and aria-controls for the filter group.",
+    "retest": "Keyboard opening works and the state is announced correctly.",
+    "evidence": [
+      "evidence/mobile-filters-open.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Showing and hiding filters changes the availability of related controls. The disclosure must convey both its action and its current state. A clickable paragraph provides neither normal keyboard semantics nor the observed expanded-state metadata.",
+      "fix_rationale": "Use a named button tied to the filter region and synchronize expanded state with visibility. Preserve selected criteria when the panel is collapsed.",
+      "additional_checks": "Toggle by keyboard after choosing a filter; verify the selection survives collapse and reopening."
+    }
+  },
+  {
+    "id": "FM-053",
+    "test_id": "TC-053",
+    "title": "Payment methods are not keyboard selectable radio controls",
+    "module": "Checkout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Open checkout.",
+      "Traverse to the Stripe and Cash on Delivery choices."
+    ],
+    "expected": "Payment methods form a labelled radio group with keyboard selection and selected-state exposure.",
+    "actual": "The choices are clickable divs and decorative circles, with no radio or button semantics.",
+    "impact": "Keyboard customers cannot select a payment method reliably.",
+    "remedy": "Use labelled radio inputs in a fieldset and expose the selected payment option.",
+    "retest": "Tab and arrow keys select each method; the selected method is announced.",
+    "evidence": [
+      "evidence/checkout-form-limitations.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Payment selection is a single-choice decision. Native radio behaviour communicates available options and the checked choice while providing a familiar keyboard interaction. Styling should not hide the underlying input semantics.",
+      "fix_rationale": "Use labelled inputs in one fieldset and keep the selected option synchronized with submission state. A visual circle should represent, not replace, that checked state.",
+      "additional_checks": "Move between options with arrow keys; verify the final submitted method equals the announced selection."
+    }
+  },
+  {
+    "id": "FM-054",
+    "test_id": "TC-054",
+    "title": "Stripe option has no accessible payment-provider name",
+    "module": "Checkout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM review",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Inspect the Stripe choice in the checkout accessibility snapshot."
+    ],
+    "expected": "The provider name Stripe is available as text or an accessible label.",
+    "actual": "Only a logo with alt=\"\" appears; the option has no text label and is absent as a named choice.",
+    "impact": "A screen-reader user cannot identify this visible payment option.",
+    "remedy": "Add the text label Stripe to its radio option; retain the logo as decorative.",
+    "retest": "The provider is announced as Stripe together with its selected state.",
+    "evidence": [
+      "evidence/checkout-form-limitations.json",
+      "evidence/checkout-form-limitations.jpg"
+    ],
+    "note": "This checks the accessible name, separately from the keyboard-selection defect.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A payment logo can be recognizable visually while providing no provider name to other users. The Stripe name is a separate requirement from whether the choice can be activated by keyboard.",
+      "fix_rationale": "Attach the provider name to its labelled payment input and keep a redundant logo decorative. Confirm the name and selected state refer to the same choice.",
+      "additional_checks": "Inspect the accessible name with the logo present and absent; ensure the provider label remains available."
+    }
+  },
+  {
+    "id": "FM-055",
+    "test_id": "TC-055",
+    "title": "Selected product size is communicated only by colour",
+    "module": "Product",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Select size M.",
+      "Inspect its button attributes before and after selection."
+    ],
+    "expected": "The selected variant has a programmatically exposed state.",
+    "actual": "Only the border/background classes change; no aria-pressed or radio checked state indicates the selected size.",
+    "impact": "Assistive users cannot determine which size will be added.",
+    "remedy": "Use a labelled size radio group, or expose aria-pressed consistently on selection buttons.",
+    "retest": "Selecting M announces its state and clears the previous selection.",
+    "evidence": [
+      "evidence/related-size-carryover.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A border or background change does not expose the selected size programmatically. A customer needs to distinguish both which sizes are available and which one is currently chosen. Selection should not depend on colour perception.",
+      "fix_rationale": "Use a labelled single-choice group or consistent pressed state on size buttons. Only the current selection should carry the selected state.",
+      "additional_checks": "Choose consecutive sizes; verify the previous state clears and the cart receives the announced size."
+    }
+  },
+  {
+    "id": "FM-056",
+    "test_id": "TC-056",
+    "title": "Collection sort selector has no associated label",
+    "module": "Collection",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and code review",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect the sort select element and its labels or aria-label."
+    ],
+    "expected": "The control has a programmatic label explaining its purpose.",
+    "actual": "The select has no label, id association or aria-label; only option text contains Sort by.",
+    "impact": "The control purpose depends on selected option text rather than a stable accessible name.",
+    "remedy": "Associate a Sort products label with the select.",
+    "retest": "The control is announced by its purpose with each available option.",
+    "evidence": [
+      "evidence/collection-loaded.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Option wording alone is not a persistent label for the sort control's purpose. The selector should identify what it sorts even after a customer changes from the initial option.",
+      "fix_rationale": "Associate a visible Sort products label with the select and retain it across option changes. This makes the same purpose available visually and programmatically.",
+      "additional_checks": "Inspect the name before and after sorting; verify keyboard selection updates the catalogue order."
+    }
+  },
+  {
+    "id": "FM-057",
+    "test_id": "TC-057",
+    "title": "Delivery fields rely on disappearing placeholders",
+    "module": "Checkout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Inspect delivery inputs before entry.",
+      "Type values into first name, address and contact fields."
+    ],
+    "expected": "Persistent visible labels identify the fields after entry and provide programmatic associations.",
+    "actual": "There are no associated labels; placeholders disappear as values are entered. Numeric postal and phone controls appear unnamed in the snapshot.",
+    "impact": "Customers lose field context and assistive users encounter unnamed controls.",
+    "remedy": "Add label elements linked to stable input IDs for every delivery field; keep placeholders as optional examples.",
+    "retest": "All nine fields retain visible and accessible names after entry.",
+    "evidence": [
+      "evidence/checkout-fields.json",
+      "evidence/checkout-form-limitations.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An address value should not replace the field's identity. Once a placeholder disappears, customers may struggle to review several delivery entries, and some inspected fields were unnamed in the snapshot.",
+      "fix_rationale": "Use stable input IDs and associated visible labels. Keep example placeholders separate from labels and pair errors with the corresponding field.",
+      "additional_checks": "Fill all nine fields and review them; verify labels and errors remain associated after validation fails."
+    }
+  },
+  {
+    "id": "FM-058",
+    "test_id": "TC-058",
+    "title": "Authentication fields have no persistent associated labels",
+    "module": "Account",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM and public code review",
+    "url": "https://forevermart.vercel.app/login",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open Signup or Login.",
+      "Fill username, email and password and inspect labels."
+    ],
+    "expected": "Each credential field retains a visible label and programmatic association.",
+    "actual": "Only placeholders identify the fields; no label associations are present.",
+    "impact": "Entered forms lose clear visual context and depend on placeholder interpretation.",
+    "remedy": "Add associated Username, Email and Password labels to the account form.",
+    "retest": "Both modes keep field names visible and expose them correctly after entry.",
+    "evidence": [
+      "evidence/login-form.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Authentication requires customers to understand each credential field in both modes. Placeholder-only identification disappears during entry and does not provide the persistent label association needed by the form.",
+      "fix_rationale": "Add associated labels and keep their meaning consistent when switching modes. Password visibility or other auxiliary controls should not replace the Password label.",
+      "additional_checks": "Fill and switch between modes; inspect every remaining field's visible and accessible name."
+    }
+  },
+  {
+    "id": "FM-059",
+    "test_id": "TC-059",
+    "title": "Personal-data inputs do not expose their autocomplete purposes",
+    "module": "Checkout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM review",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Authenticated disposable demo account; cash on delivery; no real payment.",
+    "steps": [
+      "Inspect autocomplete attributes on delivery name, address, email and phone inputs."
+    ],
+    "expected": "Known personal-data purposes are exposed using appropriate autocomplete tokens.",
+    "actual": "The fields do not specify purpose tokens such as given-name, street-address, postal-code or tel.",
+    "impact": "Assistive personalization and reliable browser autofill lack explicit field-purpose metadata.",
+    "remedy": "Add correct autocomplete tokens for each supported personal-data field and authentication mode.",
+    "retest": "Inspect the corrected DOM and verify a test autofill preserves each field purpose.",
+    "evidence": [
+      "evidence/checkout-form-limitations.json",
+      "evidence/login-form.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Personal-data fields have distinct purposes even when their values are all strings. Missing autocomplete tokens prevent the form from explicitly describing those purposes to compatible browser and assistive features.",
+      "fix_rationale": "Assign the appropriate purpose tokens to address and authentication inputs. Check that a token describes the actual field rather than being copied across unrelated entries.",
+      "additional_checks": "Autofill a disposable test profile; verify name, address, telephone and account tokens map to the intended fields."
+    }
+  },
+  {
+    "id": "FM-060",
+    "test_id": "TC-060",
+    "title": "Muted home-page text has insufficient contrast",
+    "module": "Home",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Computed-style measurement",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect policy and newsletter text rendered in gray-400 on white.",
+      "Calculate contrast from the observed computed colour."
+    ],
+    "expected": "Normal-size text meets a minimum 4.5:1 contrast ratio.",
+    "actual": "The computed colour is oklch(0.707 0.022 261.325) at 16 px on white, approximately RGB [153, 161, 175]. The calculated contrast ratio is 2.60:1, below 4.5:1.",
+    "impact": "Low-vision users may struggle to read service-policy and newsletter text.",
+    "remedy": "Use a darker approved text colour and check all states against the real background.",
+    "retest": "The same text at 16 px measures at least 4.5:1 without relying on rounding.",
+    "evidence": [
+      "evidence/typography-semantics.json",
+      "evidence/contrast-measurement.json"
+    ],
+    "note": "The exact converted sRGB colour and ratio are included in the evidence summary.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The captured muted text is normal-sized text on white, so the comparison uses the stated 4.5:1 threshold. The observed 2.60:1 ratio describes that measured colour/background pair; it is not a claim about every text style in the store.",
+      "fix_rationale": "Select an approved darker text colour and measure the actual rendered pair. Avoid borderline passing values produced only by rounding.",
+      "additional_checks": "Re-measure the same 16 px text; inspect equivalent muted copy and interaction states on their real backgrounds."
+    }
+  },
+  {
+    "id": "FM-061",
+    "test_id": "TC-061",
+    "title": "Newsletter input suppresses its visible keyboard focus",
+    "module": "Home",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Keyboard test and style review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Focus SUBSCRIBE, then Shift+Tab into the email input.",
+      "Inspect the focus outline and screenshot."
+    ],
+    "expected": "Keyboard focus is visibly indicated on the input.",
+    "actual": "The input uses outline-none and no focus shadow; the observed focus has no visible outline or replacement.",
+    "impact": "Keyboard users cannot easily locate the active subscription field.",
+    "remedy": "Provide a distinct focus-visible border or outline with sufficient contrast.",
+    "retest": "Tab and Shift+Tab clearly indicate focus without requiring pointer interaction.",
+    "evidence": [
+      "evidence/newsletter-focus.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Keyboard users need to see where focus currently is. Removing the newsletter outline without a replacement hides that state even though the field can still receive keyboard input.",
+      "fix_rationale": "Provide a visible focus treatment that is distinguishable from the unfocused field and is not clipped by its container. Keep pointer and keyboard interaction visually coherent.",
+      "additional_checks": "Tab and Shift+Tab through the form; verify the indicator remains visible on both narrow and wide layouts."
+    }
+  },
+  {
+    "id": "FM-062",
+    "test_id": "TC-062",
+    "title": "Meaningful product photographs have empty alternative text",
+    "module": "Product",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM review",
+    "url": "https://forevermart.vercel.app/product/68ee7c73675d613eba9e96c6",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect the main product image and gallery alternatives."
+    ],
+    "expected": "Meaningful product views have concise text alternatives describing the item or view.",
+    "actual": "The product images use alt=\"\" despite conveying garment identity and appearance.",
+    "impact": "Screen-reader users cannot obtain information conveyed by the product photography.",
+    "remedy": "Provide accurate item and view alternatives; use empty alt only for genuinely decorative or fully redundant images.",
+    "retest": "The main image and each informative gallery view expose useful, non-duplicative alternatives.",
+    "evidence": [
+      "evidence/product-details.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Product photography conveys garment appearance and identity. Empty alternative text is appropriate only when that information is genuinely redundant or decorative; the inspected informative photographs need useful descriptions.",
+      "fix_rationale": "Describe the item and relevant view accurately without repeating unrelated marketing copy. Different gallery views should have meaningful distinctions when they convey different details.",
+      "additional_checks": "Inspect the main view and gallery names; compare alternatives with the actual approved photographs."
+    }
+  },
+  {
+    "id": "FM-063",
+    "test_id": "TC-063",
+    "title": "Visible page and section titles are not semantic headings",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "DOM review",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect Collection, Cart, Checkout, About and Contact heading outlines."
+    ],
+    "expected": "Page titles and major sections use a logical h1-h2 hierarchy.",
+    "actual": "The inspected pages have paragraph-based titles and no h1-h3 outline; the common title component renders a p.",
+    "impact": "Assistive heading navigation cannot follow the visible document structure.",
+    "remedy": "Use semantic headings in the shared title component with context-appropriate levels.",
+    "retest": "Every page has a meaningful h1 and logical section headings without skipped structural levels.",
+    "evidence": [
+      "evidence/collection-reload.json",
+      "evidence/about-page.json",
+      "evidence/contact-page.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Heading structure helps users understand and navigate page sections. Changing the appearance of a paragraph does not create that structure. A shared title component can correct several routes if its level is chosen appropriately.",
+      "fix_rationale": "Render actual heading elements with context-sensitive levels and preserve the visual design. Ensure the page hierarchy follows its content rather than font size alone.",
+      "additional_checks": "Inspect each route's heading outline; verify product and collection titles remain meaningful after navigation."
+    }
+  },
+  {
+    "id": "FM-064",
+    "test_id": "TC-064",
+    "title": "Page content lacks main and footer landmarks",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "DOM review",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect document landmarks on Home and Collection."
+    ],
+    "expected": "Main content and the site footer have suitable landmark semantics.",
+    "actual": "No main or contentinfo/footer landmarks are present; major regions are generic containers.",
+    "impact": "Assistive users have fewer efficient ways to navigate page regions.",
+    "remedy": "Use one main element per page and a footer for shared closing content.",
+    "retest": "Landmark navigation identifies Navigation, Main and Content information in a sensible order.",
+    "evidence": [
+      "evidence/typography-semantics.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Landmarks identify major page regions independently of visual layout. Generic containers do not expose a main-content or footer region for landmark navigation, even when those regions are clear to a sighted reader.",
+      "fix_rationale": "Use semantic main and footer elements around the intended regions. Avoid duplicating the main landmark when route content changes inside a shared shell.",
+      "additional_checks": "Check the landmark tree across routes; verify the main content changes without creating duplicate Main regions."
+    }
+  },
+  {
+    "id": "FM-065",
+    "test_id": "TC-065",
+    "title": "Browser title does not identify the current page",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/collection",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Navigate between Home, Collection, Product, About and Checkout.",
+      "Compare document.title."
+    ],
+    "expected": "Each title describes its page purpose and the store.",
+    "actual": "All inspected routes retain Forever Mart.",
+    "impact": "Tabs and assistive page announcements do not distinguish destinations.",
+    "remedy": "Set route-specific titles such as Collection | ForeverMart and include product names on detail pages.",
+    "retest": "Each route and direct deep link exposes an accurate title.",
+    "evidence": [
+      "evidence/collection-reload.json",
+      "evidence/product-details.json",
+      "evidence/about-page.json",
+      "evidence/checkout-fields.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "A document title identifies a browser tab, history entry and current page context. Retaining the same store title for all inspected routes loses the distinction between browsing, checkout and a specific product.",
+      "fix_rationale": "Update the title from settled route and product data while preserving the store name. Handle loading and missing-product states without retaining another item's title.",
+      "additional_checks": "Open routes directly and via client navigation; inspect titles after Back, Forward and a missing-product result."
+    }
+  },
+  {
+    "id": "FM-066",
+    "test_id": "TC-066",
+    "title": "Layout overflows horizontally at 320 CSS pixels",
+    "module": "Shared layout",
+    "category": "Accessibility",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Responsive measurement",
+    "url": "https://forevermart.vercel.app/PlaceOrder",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Set the viewport to 320 CSS px.",
+      "Inspect the header and checkout document width."
+    ],
+    "expected": "The page reflows without horizontal scrolling for ordinary content.",
+    "actual": "At 320 CSS px, the settled checkout document and body are both 352 px wide. The totals panel uses min-w-80 within the page margins.",
+    "impact": "Small-screen and zoomed users must pan horizontally to reach content.",
+    "remedy": "Remove fixed minimum widths that exceed the available content area; wrap header controls and stacked form panels.",
+    "retest": "At 320 CSS px, document width is no greater than the viewport and all controls remain usable.",
+    "evidence": [
+      "evidence/checkout-320-verified.json",
+      "evidence/checkout-320-verified.jpg",
+      "raw/app.js"
+    ],
+    "note": "Reproduced again at the stated viewport; a screenshot and the full DOM snapshot are retained.",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Frontend developer",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The measured checkout width exceeded the 320 px viewport by 32 px. That concrete overflow supports the finding; it should be checked against the settled layout rather than inferred from a screenshot alone.",
+      "fix_rationale": "Remove oversized minimum widths and make panels fit their available parent width. Reflow controls and text while preserving the information needed to complete checkout.",
+      "additional_checks": "Measure document width at 320 and 390 px; test long field values and confirm all actions remain reachable."
+    }
+  },
+  {
+    "id": "FM-067",
+    "test_id": "TC-067",
+    "title": "Home-page hero misspells Arrivals",
+    "module": "Home",
+    "category": "Content",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Open Home and read the hero heading."
+    ],
+    "expected": "The heading reads Latest Arrivals.",
+    "actual": "The visible heading reads Latest Arivals.",
+    "impact": "The first impression contains a spelling mistake.",
+    "remedy": "Correct the copy and add a content proofreading checklist.",
+    "retest": "The rendered heading and accessible heading text both read Latest Arrivals.",
+    "evidence": [
+      "evidence/home-desktop.jpg",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The hero heading is prominent first-contact copy, so a spelling error is visible before a shopper reaches any products. Correcting it is small work, but the acceptance check should cover the rendered text as well as the source string.",
+      "fix_rationale": "Replace the misspelled word in its authoritative copy source and include hero text in the release proofreading checklist. A purely visual replacement should not leave a different accessible heading.",
+      "additional_checks": "Reload Home after the change; search the production copy for the old spelling and check the heading text in the DOM."
+    }
+  },
+  {
+    "id": "FM-068",
+    "test_id": "TC-068",
+    "title": "Template filler text remains in customer-facing sections",
+    "module": "Shared layout",
+    "category": "Content",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Read the home collection descriptions, newsletter copy and footer."
+    ],
+    "expected": "Public copy explains the store and each section.",
+    "actual": "Several visible paragraphs contain Lorem ipsum template text.",
+    "impact": "Customers see unfinished content instead of useful information.",
+    "remedy": "Replace all placeholder paragraphs with approved store copy and search the production content for template text.",
+    "retest": "No Lorem ipsum remains on public routes; reviewed copy is meaningful.",
+    "evidence": [
+      "evidence/home-desktop.jpg",
+      "evidence/about-page.json",
+      "raw/app.js"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Template filler signals that customer-facing content is unfinished and substitutes no useful store information. A single replacement is insufficient when the captured paragraphs occur in several shared and page-specific sections.",
+      "fix_rationale": "Inventory the visible placeholder locations, replace them with approved copy and review the final rendered paragraphs. Avoid adding unsupported store claims merely to replace filler.",
+      "additional_checks": "Inspect Home and shared footer routes; scan the published text for Lorem ipsum and other known template markers."
+    }
+  },
+  {
+    "id": "FM-069",
+    "test_id": "TC-069",
+    "title": "Contact details conflict between the footer and Contact page",
+    "module": "Contact",
+    "category": "Content",
+    "severity": "Medium",
+    "priority": "P2",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/contact",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Compare Contact page details with its footer."
+    ],
+    "expected": "The store publishes one verified contact set, or clearly labels different departments.",
+    "actual": "The footer shows +1-212-444-780 and contact@foreveryou.com; Contact shows (415) 555-0321 and admin@forever.com without an explanation.",
+    "impact": "Customers do not know which contact details belong to the store.",
+    "remedy": "Centralize approved contact data and label any distinct support or administrative contacts.",
+    "retest": "Each route shows the same approved support contact or explains the difference.",
+    "evidence": [
+      "evidence/contact-page.json",
+      "evidence/contact-page.jpg"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "Customers need a dependable route to contact the store. Different phone and email values may be legitimate department contacts, but the inspected interface does not explain that distinction. The remedy needs owner-approved values rather than guessed replacements.",
+      "fix_rationale": "Centralize the approved support set and label any departmental exceptions. Update both the Contact page and shared footer from that source.",
+      "additional_checks": "Compare all public support surfaces; verify any mailto and tel destinations agree with their visible values."
+    }
+  },
+  {
+    "id": "FM-070",
+    "test_id": "TC-070",
+    "title": "About page contains an incomplete support sentence",
+    "module": "About",
+    "category": "Content",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/about",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Read the support paragraph on About."
+    ],
+    "expected": "The sentence is complete and understandable.",
+    "actual": "The copy ends with assist you the way, leaving the intended meaning incomplete.",
+    "impact": "The About page communicates unfinished copy.",
+    "remedy": "Rewrite the sentence and proofread the complete About page.",
+    "retest": "The paragraph is grammatically complete and approved by the content owner.",
+    "evidence": [
+      "evidence/about-page.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "An incomplete support sentence weakens the page's meaning, even when it does not block an interaction. The content owner should approve the intended message so proofreading does not introduce a service promise the store cannot fulfil.",
+      "fix_rationale": "Rewrite the complete sentence in its copy source and review the surrounding paragraph for grammar and meaning. Keep the revised text accurate for the store's actual support scope.",
+      "additional_checks": "Read the full rendered paragraph; check narrow-layout wrapping and confirm no truncated or old phrase remains."
+    }
+  },
+  {
+    "id": "FM-079",
+    "test_id": "TC-079",
+    "title": "Newsletter placeholder contains incorrect wording",
+    "module": "Home",
+    "category": "Content",
+    "severity": "Low",
+    "priority": "P3",
+    "classification": "Defect",
+    "method": "Browser test",
+    "url": "https://forevermart.vercel.app/",
+    "preconditions": "Public deployment available; use the stated page and test data.",
+    "steps": [
+      "Inspect the newsletter email placeholder."
+    ],
+    "expected": "The field instruction is clear and correctly written.",
+    "actual": "The placeholder reads enter you email.",
+    "impact": "A visible entry instruction contains a grammar error.",
+    "remedy": "Use a persistent Email address label and an optional example placeholder.",
+    "retest": "The form contains clear approved wording before and after entry.",
+    "evidence": [
+      "evidence/home-mobile.json"
+    ],
+    "note": "",
+    "status": "Open",
+    "detected": "2026-10-09",
+    "close_date": "Not closed",
+    "build": "Public deployment observed 9 October 2026",
+    "proposed_owner": "Content owner",
+    "assigned_to": "Not assigned",
+    "developer_comment": "Not supplied",
+    "client_comment": "Not supplied",
+    "explanatory_context": {
+      "quality_context": "The newsletter instruction contains a grammar error and disappears when a value is entered. Correcting the placeholder is useful, but a persistent Email address label gives the field a clear identity throughout the interaction.",
+      "fix_rationale": "Use approved wording for the label and keep an optional example distinct from the instruction. This copy repair should be checked separately from whether the subscription service works.",
+      "additional_checks": "Inspect the empty and filled field; check its visible and accessible name without relying on placeholder text."
+    }
+  }
+]

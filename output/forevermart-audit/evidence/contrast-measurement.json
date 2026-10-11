@@ -1,0 +1,13 @@
+{
+  "observed_colour": "oklch(0.707 0.022 261.325)",
+  "background": "white",
+  "font_size_css_px": 16,
+  "srgb_rounded": [
+    153,
+    161,
+    175
+  ],
+  "contrast_ratio": 2.6023019013629582,
+  "threshold": 4.5,
+  "method": "OKLCH to linear sRGB; WCAG relative-luminance contrast against white"
+}

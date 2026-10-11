@@ -1,0 +1,7 @@
+period,passed,failed,response_ms
+example-batch-01,98,2,280.5
+example-batch-02,118,2,296.7
+example-batch-03,87,3,310.2
+example-batch-04,97,3,288.9
+example-batch-05,90,10,540.1
+example-batch-06,119,1,279.3

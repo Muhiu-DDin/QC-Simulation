@@ -1,0 +1,28 @@
+{
+  "snapshot": "- region \"Notifications Alt+T\"\n- link \"Logo\":\n  - /url: /\n  - img \"Logo\"\n- navigation:\n  - list:\n    - link \"Home\":\n      - /url: /\n    - link \"Collection\":\n      - /url: /collection\n    - link \"About\" [active]:\n      - /url: /about\n    - link \"Contact\":\n      - /url: /contact\n- img \"search icon\"\n- img \"profile icon\"\n- generic: QAAu...\n- img \"dropdown icon\"\n- link \"cart icon 0\":\n  - /url: /cart\n  - img \"cart icon\"\n  - paragraph: \"0\"\n- paragraph: ABOUT US\n- paragraph\n- paragraph: \"Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea: to provide a platform where customers can easily discover, explore, and purchase a wide range of products from the comfort of their homes.\"\n- paragraph: Since our inception, we've worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer an extensive collection sourced from trusted brands and suppliers.\n- generic: Our Mission\n- paragraph: Our mission at Forever is to empower customers with choice, convenience, and confidence. We’re dedicated to providing a seamless shopping experience that exceeds expectations, from browsing and ordering to delivery and beyond.\n- paragraph: WHY CHOOSE US\n- paragraph\n- generic: \"Quality Assurance:\"\n- paragraph: We meticulously select and vet each product to ensure it meets our stringent quality standards.\n- generic: \"Convenience:\"\n- paragraph: With our user-friendly interface and hassle-free ordering process, shopping has never been easier.\n- generic: \"Exceptional Customer Service:\"\n- paragraph: Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top priority.\n- paragraph: Subscribe now and get 20% off\n- paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, recusandae?\n- textbox \"enter you email\"\n- button \"SUBSCRIBE\"\n- paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias praesentium porro?\n- paragraph: COMPANY\n- list:\n  - listitem: Home\n  - listitem: About Us\n  - listitem: Delivery\n  - listitem: Privacy Policy\n- paragraph: GET IN TOUCH\n- list:\n  - listitem: +1-212-444-780\n  - listitem: contact@foreveryou.com\n- separator\n- paragraph: Copyright 2025@ forever.com -All Right Reserved.",
+  "details": {
+    "fields": [
+      {
+        "ariaLabel": null,
+        "autocomplete": "",
+        "id": "",
+        "max": "",
+        "min": "",
+        "name": "",
+        "placeholder": "enter you email",
+        "required": true,
+        "tag": "INPUT",
+        "type": "email"
+      }
+    ],
+    "headings": [],
+    "images": [],
+    "scrollWidth": 1280,
+    "title": "Forever Mart",
+    "url": "https://forevermart.vercel.app/about",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+}

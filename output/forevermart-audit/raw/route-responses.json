@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/forever-logo.svg",
+    "status": 200,
+    "type": "image/svg+xml",
+    "bodyStart": "<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\">\n  <!-- Shopping bag icon -->\n  <g transform=\"translate(20, 10)\">\n    <!-- Bag body -->\n    <path d=\"M 15 80 L 8 220 Q"
+  },
+  {
+    "path": "/qa-route-does-not-exist",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bodyStart": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/forever-logo.svg\"/>\n    <meta name=\"viewport\" content=\"width"
+  },
+  {
+    "path": "/collection",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bodyStart": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/forever-logo.svg\"/>\n    <meta name=\"viewport\" content=\"width"
+  }
+]

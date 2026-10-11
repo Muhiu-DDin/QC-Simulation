@@ -10,12 +10,13 @@ from .comparison import compare
 from .simulation import simulate
 from .reporting import plot_case
 from .report_ui import render_report
+from .scope import assigned_cases
 
 ROOT=Path(__file__).resolve().parents[1]
 PLOT_LOCK=threading.Lock()
 
 def catalog():
-    return json.loads(ROOT.joinpath('data/chapter10_inputs.json').read_text(encoding='utf-8'))['cases']
+    return assigned_cases()
 
 def signature(kind,inputs):
     cleaned={k:v for k,v in inputs.items() if k not in ('unit','attribute','labels')}
@@ -26,6 +27,11 @@ def signature(kind,inputs):
 
 def evaluate(payload):
     if not isinstance(payload,dict): raise ValueError('Please provide a calculation object.')
+    if payload.get('project_type')=='dataset':
+        from .dataset_projects import evaluate_dataset
+        # Matplotlib shares global state between numerical and dataset requests.
+        with PLOT_LOCK:
+            return evaluate_dataset(payload)
     kind=payload.get('kind'); inputs=payload.get('inputs')
     if not isinstance(inputs,dict): raise ValueError('Input values are required.')
     if len(json.dumps(inputs))>100000: raise ValueError('Please use a smaller dataset.')

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "label": "Chapter 10: Exercises 10.40-10.59",
+  "first_exercise": 40,
+  "last_exercise": 59,
+  "exercise_count": 20,
+  "numerical_exercise_count": 11,
+  "numerical_case_count": 22,
+  "conceptual_exercise_count": 9,
+  "source": {
+    "book": "Statistics for Management, Chapter 10: Quality and Quality Control",
+    "printed_pages": [511, 512, 513, 514],
+    "pdf_pages_one_based": [526, 527, 528, 529],
+    "verification": "Data tables, subparts and the OC graph visually checked against the user-supplied PDF.",
+    "reference_note": "Regular exercise solutions are independently solved references, not a publisher answer key. Exercises 10.55 and 10.56 additionally use approximate readings of the printed OC graph."
+  },
+  "exercises": [
+    {
+      "exercise": "10-40", "number": 40, "classification": "numerical", "case_ids": ["10-40a", "10-40b"],
+      "method": "One-sided proportion test and weekly p control chart",
+      "computed_subparts": ["a", "b"], "discussion_subparts": ["b"],
+      "note": "Use 2,000 audited-client observations in the aggregate test and 16 weekly subgroups of 125 in the chart. The exercise does not specify alpha; the project states its 0.05 assumption."
+    },
+    {
+      "exercise": "10-41", "number": 41, "classification": "conceptual", "case_ids": [],
+      "method": "Pareto prioritisation", "project_explanation": "Concentrate on the vital few causes contributing most to the problem; also consider severity. No numerical counts are supplied."
+    },
+    {
+      "exercise": "10-42", "number": 42, "classification": "conceptual", "case_ids": [],
+      "method": "Binary attribute classification", "project_explanation": "Binary coding has two outcomes; the alternative four-category marital-status coding is not binary. Define the population and coding clearly, including previously married people. No numerical observations are supplied."
+    },
+    {
+      "exercise": "10-43", "number": 43, "classification": "conceptual", "case_ids": [],
+      "method": "Sources of variation and stratification", "project_explanation": "The number of deposit items has an identifiable effect on service time. Compare transactions of similar complexity before interpreting chart signals; investigate the systematic cause rather than calling it unexplained random noise. No service-time data are supplied."
+    },
+    {
+      "exercise": "10-44", "number": 44, "classification": "numerical", "case_ids": ["10-44"],
+      "method": "Mean control chart", "computed_subparts": ["a"], "discussion_subparts": ["b"],
+      "note": "Use 16 hourly subgroup means and ranges with subgroup size 10. Discussion of the shift between the two work shifts accompanies the chart; it is not a separate numerical input case."
+    },
+    {
+      "exercise": "10-45", "number": 45, "classification": "numerical", "case_ids": ["10-45"],
+      "method": "Range control chart", "computed_subparts": ["a"], "discussion_subparts": ["b"],
+      "note": "Reuses the data of 10.44. Assess variability alongside the mean chart."
+    },
+    {
+      "exercise": "10-46", "number": 46, "classification": "numerical", "case_ids": ["10-46"],
+      "method": "Pareto chart", "computed_subparts": [], "discussion_subparts": [],
+      "note": "Use the ten subcontractor fault counts. The counts total faults; 500 condos is not a denominator for a defective-condo rate because one condo can have multiple faults."
+    },
+    {
+      "exercise": "10-47", "number": 47, "classification": "numerical", "case_ids": ["10-47a", "10-47b", "10-47c", "10-47d"],
+      "method": "Producer risk in single acceptance sampling", "computed_subparts": ["a", "b", "c", "d"], "discussion_subparts": [],
+      "note": "Use AQL 0.01 and the four (n,c) sampling plans from lots of 2,500. The project reports binomial risks and, where the lot defect count is integral, the additional finite-lot hypergeometric model."
+    },
+    {
+      "exercise": "10-48", "number": 48, "classification": "numerical", "case_ids": ["10-48a", "10-48b", "10-48c", "10-48d"],
+      "method": "Binomial consumer-risk approximation", "computed_subparts": ["a", "b", "c", "d"], "discussion_subparts": [],
+      "note": "Reuses the four sampling plans in 10.47 at LTPD 0.015. An exact fixed-lot model needs an integer defective count: 2,500 times 0.015 is 37.5, so that count is not silently rounded."
+    },
+    {
+      "exercise": "10-49", "number": 49, "classification": "conceptual", "case_ids": [],
+      "method": "Service-process quality", "project_explanation": "Different customers do not prevent reducing avoidable variation in service accuracy, timeliness and reliability. Group comparable customer needs or transaction complexity before analysing a service process. No numerical samples are supplied."
+    },
+    {
+      "exercise": "10-50", "number": 50, "classification": "numerical", "case_ids": ["10-50"],
+      "method": "Mean control chart", "computed_subparts": ["a"], "discussion_subparts": ["b", "c"],
+      "note": "Use the 20 batch means and ranges with subgroup size 24. Discuss the lower variability in the last ten means. The 72-78 micron individual-product specification is separate from subgroup control limits."
+    },
+    {
+      "exercise": "10-51", "number": 51, "classification": "numerical", "case_ids": ["10-51"],
+      "method": "Range control chart", "computed_subparts": ["a"], "discussion_subparts": ["b", "c"],
+      "note": "Reuses the data in 10.50. Interpret the declining ranges and their relationship to the tighter subgroup means; a beneficial change is still a process change."
+    },
+    {
+      "exercise": "10-52", "number": 52, "classification": "numerical", "case_ids": ["10-52"],
+      "method": "Target-centred p control chart", "computed_subparts": [], "discussion_subparts": [],
+      "note": "Use 20 defect counts with 2,000 prints per subgroup and target proportion 0.001. Limits assess process signals; absence of violations does not prove conformance to the supplier's maximum defect claim."
+    },
+    {
+      "exercise": "10-53", "number": 53, "classification": "conceptual", "case_ids": [],
+      "method": "Acceptance risks and hypothesis-test errors", "project_explanation": "Producer risk is the probability of rejecting a good lot, analogous to Type I error; consumer risk is the probability of accepting a bad lot, analogous to Type II error. No numerical sampling plan is supplied."
+    },
+    {
+      "exercise": "10-54", "number": 54, "classification": "conceptual", "case_ids": [],
+      "method": "Common and special causes", "project_explanation": "Potential common causes include small flow fluctuations, measurement noise and material variation. Potential special causes include miscalibrated scales, a blocked feeder or changed settings. These are candidate explanations, not measured causes established by data."
+    },
+    {
+      "exercise": "10-55", "number": 55, "classification": "numerical", "case_ids": ["10-55a", "10-55b", "10-55c"],
+      "method": "Producer risk from an operating-characteristic graph", "computed_subparts": ["a", "b", "c"], "discussion_subparts": [],
+      "note": "Use n=300, c=3, lot size 3,000 and AQL 0.005, 0.010 or 0.015. The graph is a low-precision reference. A Poisson curve consistent with its ordinates is an explicitly labelled project inference, alongside the binomial calculation."
+    },
+    {
+      "exercise": "10-56", "number": 56, "classification": "numerical", "case_ids": ["10-56a", "10-56b", "10-56c"],
+      "method": "Consumer risk from an operating-characteristic graph", "computed_subparts": ["a", "b", "c"], "discussion_subparts": [],
+      "note": "Reuses the 10.55 OC graph at LTPD 0.010, 0.015 or 0.020. The graph readings use probability tolerance 0.02; they are not printed four-decimal answers."
+    },
+    {
+      "exercise": "10-57", "number": 57, "classification": "conceptual_no_data", "case_ids": [],
+      "method": "Design GPA and grade-proportion monitoring", "project_explanation": "Use a mean chart of comparable annual subgroup GPAs and, when ranges are available, a companion range chart. Use a p chart for the A/B proportion with total grades as its denominator. The question describes 200 students from 20 classes but supplies no GPA values, subgroup ranges or grade counts, so numerical charts require additional data."
+    },
+    {
+      "exercise": "10-58", "number": 58, "classification": "conceptual", "case_ids": [],
+      "method": "Acceptance sampling versus complete inspection", "project_explanation": "Acceptance sampling can reduce inspection cost and avoid destructive inspection of every item while giving suppliers consistent quality incentives. It retains producer and consumer risks and does not assure every accepted item is conforming. No numerical sampling plan is supplied."
+    },
+    {
+      "exercise": "10-59", "number": 59, "classification": "conceptual_no_data", "case_ids": [],
+      "method": "Graduation-rate chart design", "project_explanation": "Graduation is a binary outcome at student level, so a p chart is appropriate for consistently defined cohort proportions; use cohort-specific limits if denominators vary. Graduation rate alone is an incomplete quality measure and is affected by admissions, student preparation and retention policy. No cohort counts or rates are supplied."
+    }
+  ]
+}
